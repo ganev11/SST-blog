@@ -251,7 +251,6 @@ export default {
   padding: 20px 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 20;
-
   position: absolute;
   min-width: 300px;
   min-height: 300px;
@@ -260,6 +259,14 @@ export default {
   max-width: 270px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 430px) {
+  .mobile-nav-menu {
+    width: calc(100% - 30px);
+  }
+  .flex-between {
+    min-width: calc(100% - 30px);
+  }
 }
 .mobile-nav-item {
   display: flex;

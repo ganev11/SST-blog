@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     isMobile() {
-      return this.screenWidth < 1000
+      return this.screenWidth < 1200
     }
   },
   mounted() {
