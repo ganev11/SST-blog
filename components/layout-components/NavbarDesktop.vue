@@ -30,10 +30,10 @@
     </div>
     <div class="right-side-nav">
       <div class="flex-text">
-        <span class="nav-item">Log in</span>
+        <span class="nav-item" @click="redirect(`http://www.sst.com/login`)">Log in</span>
         <arrowSide class="arrow" />
       </div>
-      <div class="try-chatgpt flex-text">
+      <div class="try-chatgpt flex-text" @click="redirect(`/try`)">
         Try ChatGPT
         <arrowSide class="arrow" />
       </div>
@@ -48,54 +48,10 @@ import down from '../assets/svg/down.vue'
 import logoNavMain from '../assets/svg/logoNavMain.vue'
 
 export default {
-  props: ['isScrolled'],
+  props: ['isScrolled', 'menuItems'],
   data() {
     return {
-      hasScrolled: false,
-      menuItems: [
-        {
-          text: 'Research',
-          href: '/',
-          hasArrow: true,
-          isOpen: false,
-          subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
-          ]
-        },
-        {
-          text: 'API',
-          href: '/',
-          hasArrow: true,
-          isOpen: false,
-          subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
-          ]
-        },
-        {
-          text: 'Chat GPT',
-          href: '/',
-          hasArrow: true,
-          isOpen: false,
-          subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
-          ]
-        },
-        { text: 'Safety', href: '/', hasArrow: false, isOpen: false },
-        {
-          text: 'Company',
-          href: '/',
-          hasArrow: true,
-          isOpen: false,
-          subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
-          ]
-        }
-        // Add more items with hasArrow set to true if needed
-      ]
+      hasScrolled: false
     }
   },
   components: {
@@ -139,6 +95,9 @@ export default {
           }
         })
       }
+    },
+    redirect(url) {
+      window.location.href = url
     },
     handleSubItemClick(subItem) {
       // Example of navigation with Vue Router

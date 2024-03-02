@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="isMobile">
-      <navbar-mobile />
+      <navbar-mobile :menuItems="menuItems" />
     </div>
     <div v-else>
-      <navbar-desktop :isScrolled="isScrolled" />
+      <navbar-desktop :menuItems="menuItems" :isScrolled="isScrolled" />
     </div>
     <slot />
   </div>
@@ -22,7 +22,50 @@ export default {
   data() {
     return {
       screenWidth: 0,
-      isScrolled: false // Track if user has scrolled
+      isScrolled: false,
+      menuItems: [
+        {
+          text: 'Research',
+          href: '/',
+          hasArrow: true,
+          isOpen: false,
+          subItems: [
+            { text: 'Sub-item 1', href: '/sub1' },
+            { text: 'Sub-item 2', href: '/sub2' }
+          ]
+        },
+        {
+          text: 'API',
+          href: '/',
+          hasArrow: true,
+          isOpen: false,
+          subItems: [
+            { text: 'Sub-item 1', href: '/sub1' },
+            { text: 'Sub-item 2', href: '/sub2' }
+          ]
+        },
+        {
+          text: 'Chat GPT',
+          href: '/',
+          hasArrow: true,
+          isOpen: false,
+          subItems: [
+            { text: 'Sub-item 1', href: '/sub1' },
+            { text: 'Sub-item 2', href: '/sub2' }
+          ]
+        },
+        { text: 'Safety', href: '/safety', hasArrow: false, isOpen: false },
+        {
+          text: 'Company',
+          href: '/',
+          hasArrow: true,
+          isOpen: false,
+          subItems: [
+            { text: 'Sub-item 1', href: '/sub1' },
+            { text: 'Sub-item 2', href: '/sub2' }
+          ]
+        }
+      ]
     }
   },
   computed: {
