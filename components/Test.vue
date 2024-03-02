@@ -1,11 +1,13 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
 const QUERY = `
   {
     allPosts {
       id
       title
       text
+      img {
+        url
+      }
     }
   }
 `
@@ -21,22 +23,24 @@ const handleClick = () => {
   const verticalPosition = window.scrollY
   console.log(`Vertical scroll position: ${verticalPosition}`)
 }
-// // Make sure to add and remove the event listener
-// onMounted(() => {
-//   window.addEventListener('scroll', logScrollPosition)
-// })
-
-// onUnmounted(() => {
-//   window.removeEventListener('scroll', logScrollPosition)
-// })
 </script>
 
 <template>
   <div v-for="(post, index) in data.allPosts" :key="index">
-    title {{ post.title }}
-    <br />
-    text {{ post.text }}
+    <!-- Changed key to post.id for better key usage -->
+    <h2>{{ post.title }}</h2>
+    <!-- Use h2 for title for semantic HTML, you can change as needed -->
+    <p>{{ post.text }}</p>
+    {{ post.img.url }}
+    <img :src="post.img.url" :alt="`Image for ${post.title}`" class="img" />
+    <!-- Display the image -->
   </div>
-
-  <!-- <button @click="handleClick">Click me</button> -->
 </template>
+
+<style scoped>
+.img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+</style>
