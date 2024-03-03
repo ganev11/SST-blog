@@ -92,7 +92,6 @@ export default {
       }
     }
   },
-
   components: {
     up,
     down,
@@ -104,21 +103,21 @@ export default {
   },
   mounted() {
     if (process.client) {
-      window.addEventListener('scroll', this.onScroll)
+      //   window.addEventListener('scroll', this.onScroll)
       document.addEventListener('click', this.handleDocumentClick)
     }
   },
   beforeUnmount() {
     // updated from beforeDestroy as it's the correct lifecycle hook name in Vue 3
     if (process.client) {
-      window.removeEventListener('scroll', this.onScroll)
+      //   window.removeEventListener('scroll', this.onScroll)
       document.removeEventListener('click', this.handleDocumentClick)
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
 .navbar {
   position: fixed;
   width: 100%;
@@ -175,7 +174,7 @@ export default {
   color: black;
 }
 .sub-items {
-  padding-left: 20px; /* Indent sub-items */
+  padding: 20px 0; /* Indent sub-items */
   display: flex;
   flex-direction: column;
   gap: 5px;

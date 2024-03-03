@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isMobile">
-      <navbar-mobile :menuItems="menuItems" />
+      <navbar-mobile :menuItems="menuItems" :isScrolled="isScrolled" />
     </div>
     <div v-else>
       <navbar-desktop :menuItems="menuItems" :isScrolled="isScrolled" />

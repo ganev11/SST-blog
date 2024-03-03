@@ -1,17 +1,15 @@
 <script setup>
 const QUERY = `
-{
-  allArticles {
-    id
-    title
-    description
-    content
-    author {
+  {
+    allPosts {
       id
-      name
+      title
+      text
+      img {
+        url
+      }
     }
   }
-}
 `
 const { data } = await useGraphqlQuery({ query: QUERY })
 // console.log('data :>> ', data.value.allPosts)
@@ -28,13 +26,13 @@ const handleClick = () => {
 </script>
 
 <template>
-  <div v-for="(post, index) in data.allArticles" :key="index">
+  <div v-for="(post, index) in data.allPosts" :key="index">
     <!-- Changed key to post.id for better key usage -->
     <h2>{{ post.title }}</h2>
     <!-- Use h2 for title for semantic HTML, you can change as needed -->
-    <p>{{ post.description }}</p>
-    {{ post.content }}
-    <!-- <img :src="post.img.url" :alt="`Image for ${post.title}`" class="img" /> -->
+    <p>{{ post.text }}</p>
+    {{ post.img.url }}
+    <img :src="post.img.url" :alt="`Image for ${post.title}`" class="img" />
     <!-- Display the image -->
   </div>
 </template>

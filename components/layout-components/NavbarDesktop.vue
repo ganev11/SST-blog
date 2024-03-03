@@ -11,7 +11,8 @@
           class="nav-item flex-text"
           :class="{ 'has-arrow': item.hasArrow, 'nav-item-open': item.isOpen }"
         >
-          {{ item.text }}
+          <span class="nav-item"> {{ item.text }}</span>
+
           <down class="arrow m-right" v-if="!item.isOpen && item.hasArrow" />
           <up class="arrow m-right" v-if="item.isOpen && item.hasArrow" />
           <!-- Dropdown Menu -->
