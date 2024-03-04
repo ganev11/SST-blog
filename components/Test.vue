@@ -1,11 +1,14 @@
 <script setup>
 const QUERY = `
 {
-  allArticles {
+  allArticles(first: 4) {
     id
     title
     description
     content
+    featuredImage {
+      url
+    }
     author {
       id
       name
@@ -28,13 +31,13 @@ const handleClick = () => {
 </script>
 
 <template>
-  <div v-for="(post, index) in data.allArticles" :key="index">
+  <div class="test" v-for="(post, index) in data.allArticles" :key="index">
     <!-- Changed key to post.id for better key usage -->
     <h2>{{ post.title }}</h2>
     <!-- Use h2 for title for semantic HTML, you can change as needed -->
     <p>{{ post.description }}</p>
     {{ post.content }}
-    <!-- <img :src="post.img.url" :alt="`Image for ${post.title}`" class="img" /> -->
+    <img :src="post.featuredImage.url" :alt="`Image for ${post.title}`" class="img" />
     <!-- Display the image -->
   </div>
 </template>
@@ -44,5 +47,8 @@ const handleClick = () => {
   width: 100%;
   max-width: 300px;
   height: auto;
+}
+.test {
+  color: white;
 }
 </style>

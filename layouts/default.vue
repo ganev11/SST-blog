@@ -91,7 +91,6 @@ export default {
       this.screenWidth = window.innerWidth
     },
     handleScroll() {
-      console.log('window.scrollY :>> ', window.scrollY)
       this.isScrolled = window.scrollY > 0 // Update isScrolled based on scroll position
     }
   }

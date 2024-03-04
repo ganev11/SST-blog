@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <!-- VIDEO START -->
     <div class="video-background">
       <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
         <source src="../assets/videos/paper-planes.mp4" type="video/mp4" />
@@ -29,8 +30,109 @@
         </div>
       </div>
     </div>
-    <!-- Rest of your content -->
-
+    <!-- VIDEO END -->
+    <!-- LINKS START -->
+    <div class="flex-container">
+      <div class="flex-item" @click="redirect(`/research/overview`)">
+        <h2>Pioneering research on the path to AGI</h2>
+        <p class="flex-link">Learn about our research</p>
+      </div>
+      <div class="flex-item" @click="redirect(`/product`)">
+        <h2>Transforming work and creativity with AI</h2>
+        <p class="flex-link">Explore our products</p>
+      </div>
+      <div class="flex-item" @click="redirect(`/careers`)">
+        <h2>Join us in shaping the future of technology</h2>
+        <p class="flex-link">View careers</p>
+      </div>
+    </div>
+    <hr class="flex-line" />
+    <!-- LINKS END -->
+    <!-- UPDATES START -->
+    <div class="subtitle">Latest updateds</div>
+    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <hr class="flex-line" />
+    <!-- UPDATES END -->
+    <!-- SAFETY START -->
+    <div class="flex-subtitle">
+      <div class="subtitle">Safety & responsibility</div>
+      <div class="subtitle-text">
+        <div>
+          Our work to create safe and beneficial AI requires a deep understanding of the potential risks and
+          benefits, as well as careful consideration of the impact.
+        </div>
+        <p class="flex-link" @click="redirect(`/safety`)">Learn about safety</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <img src="../assets/img/image_five_bg.webp" alt="Safety Image" class="full-width-image" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr class="flex-line" />
+    <!-- SAFETY END -->
+    <!-- RESEARCH START -->
+    <div class="flex-subtitle">
+      <div class="subtitle">Research</div>
+      <div class="subtitle-text">
+        <div>We research generative models and how to align them with human values.</div>
+        <p class="flex-link" @click="redirect(`/safety`)">Learn about our research</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <hr class="flex-line" />
+    <!-- RESEARCH END -->
+    <!-- PRODUCTS START -->
+    <div class="flex-subtitle">
+      <div class="subtitle">Products</div>
+      <div class="subtitle-text">
+        <div>Our API platform offers our latest models and guides for safety best practices.</div>
+        <p class="flex-link" @click="redirect(`/safety`)">Explore our products</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <hr class="flex-line" />
+    <!-- PRODUCTS END -->
+    <!-- CAREERS START -->
+    <div class="flex-subtitle">
+      <div class="subtitle">Careers at OpenAI</div>
+      <div class="subtitle-text">
+        <div>
+          Developing safe and beneficial AI requires people from a wide range of disciplines and backgrounds.
+        </div>
+        <p class="flex-link" @click="redirect(`/safety`)">View careers</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <img src="../assets/img/image_bg_thirteen.avif" alt="Safety Image" class="full-width-image" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr class="flex-line" />
+    <!-- CAREERS END -->
+    <!-- TESTIMONY START -->
+    <div class="quote-image-container">
+      <div class="text-container">
+        <p class="quote">
+          “I encourage my team to keep learning. Ideas in different topics or fields can often inspire new
+          ideas and broaden the potential solution space.”
+        </p>
+        <p class="author">Lilian Weng<br />Applied AI at OpenAI</p>
+      </div>
+      <div class="image-container">
+        <img src="../assets/img/image_portrait_alex_w.webp" alt="Lilian Weng" class="profile-image" />
+      </div>
+    </div>
     <br />
     <br />
     <br />
@@ -38,60 +140,22 @@
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <Test />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <p>adsf</p>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <hr class="flex-line" />
+    <Footer />
+    <!-- TESTIMONY END -->
   </div>
 </template>
 
 <script>
 import play from '../assets/svg/play.vue'
 import pause from '../assets/svg/pause.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     play,
-    pause
+    pause,
+    Footer
   },
   data() {
     return {
@@ -108,6 +172,7 @@ export default {
     if (process.client) {
       window.addEventListener('resize', this.updateScreenWidth)
     }
+    this.updateScreenWidth()
   },
   beforeUnmount() {
     if (process.client) {
@@ -115,6 +180,9 @@ export default {
     }
   },
   methods: {
+    redirect(url) {
+      this.$router.push(url)
+    },
     updateScreenWidth() {
       this.screenWidth = window.innerWidth
     },
@@ -144,6 +212,7 @@ export default {
 .video-background {
   position: relative;
   width: 100%;
+  max-width: 100vw;
   height: 100vh; /* Adjust the height as needed */
   overflow: hidden;
 }
@@ -204,6 +273,9 @@ export default {
   */
 }
 @media screen and (max-width: 943px) {
+  .subtitle-text {
+    width: 100% !important;
+  }
   .blue {
     width: 0 !important;
   }
@@ -294,5 +366,108 @@ button:hover {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  height: 75px;
+}
+/* LINK: */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Align items to the start of the container */
+  padding: 40px 20px;
+  background-color: black; /* Your container background color */
+  color: white; /* Text color */
+  justify-content: space-between;
+}
+.flex-item h2 {
+  max-width: 350px;
+  font-weight: 600;
+}
+.flex-item {
+  color: white; /* Link color */
+  cursor: pointer;
+}
+
+.flex-link {
+  color: white; /* Link color */
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-top: 5px; /* Space between title and link */
+  text-decoration: underline;
+}
+
+.flex-line {
+  border: none;
+  height: 1px;
+  background-color: white; /* Line color */
+  width: auto; /* Line full width */
+  margin: 20px; /* Space between link and line */
+}
+.subtitle {
+  color: white;
+  font-size: 2.5rem;
+  padding: 20px;
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+}
+.flex-subtitle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.subtitle-text {
+  display: flex;
+  letter-spacing: -0.01em;
+  font-size: 24px;
+  flex-direction: column;
+  width: 50%;
+  color: white; /* Link color */
+  padding: 20px;
+}
+.subtitle-text p {
+  cursor: pointer;
+  font-size: 21px;
+}
+.full-width-image {
+  min-width: 99.49vw;
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+  margin-left: calc(-50vw + 50%); /* Center the image */
+}
+.quote-image-container {
+  display: flex;
+  justify-content: space-between; /* Puts maximum space between text and image */
+  padding: 20px;
+}
+
+.text-container {
+  flex-basis: 50%; /* Takes up half the width of the container */
+  padding-right: 50px; /* Adds some space between the text and the image */
+}
+
+.quote {
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-weight: 400;
+  font-size: 2.5em; /* Adjust the size as needed */
+  margin-bottom: 0.5em; /* Spacing between quote and author */
+  color: white;
+}
+
+.author {
+  font-weight: bold;
+  color: white;
+}
+
+.image-container {
+  flex-basis: 50%; /* Takes up the other half of the width of the container */
+}
+
+.profile-image {
+  width: 100%; /* Makes the image responsive, adjusting to the width of its container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 </style>
