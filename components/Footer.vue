@@ -60,11 +60,11 @@
         </div>
         <div class="social-links">
           <div class="flex-soc">
-            <p @click="redirect('ahoj')">Twitter</p>
-            <p @click="redirect('#')">YouTube</p>
-            <p @click="redirect('#')">GitHub</p>
-            <p @click="redirect('#')">SoundCloud</p>
-            <p @click="redirect('#')">LinkedIn</p>
+            <p class="link-social" @click="redirect('ahoj')">Twitter</p>
+            <p class="link-social" @click="redirect('#')">YouTube</p>
+            <p class="link-social" @click="redirect('#')">GitHub</p>
+            <p class="link-social" @click="redirect('#')">SoundCloud</p>
+            <p class="link-social" @click="redirect('#')">LinkedIn</p>
           </div>
           <a href="#" @click.prevent="scrollToTop">Back to top ↑</a>
         </div>
@@ -127,7 +127,12 @@ export default {
 .footer-section ul li:hover {
   text-decoration: underline;
 }
-
+.link-social {
+  cursor: pointer;
+}
+.link-social:hover {
+  text-decoration: underline;
+}
 .footer-section ul li:last-child {
   margin-bottom: 0;
 }
