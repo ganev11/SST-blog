@@ -50,7 +50,7 @@
     <!-- LINKS END -->
     <!-- UPDATES START -->
     <div class="subtitle">Latest updateds</div>
-    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" />
     <hr class="flex-line" />
     <!-- UPDATES END -->
     <!-- SAFETY START -->
@@ -84,7 +84,7 @@
     </div>
     <br />
     <br />
-    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
     <hr class="flex-line" />
     <!-- RESEARCH END -->
     <!-- PRODUCTS START -->
@@ -97,7 +97,7 @@
     </div>
     <br />
     <br />
-    <ListOfArticles :redirectUrl="'blog'" :topic="'Product'" />
+    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['S9HLumu1TQKcty1NCnnZ9g']" />
     <hr class="flex-line" />
     <!-- PRODUCTS END -->
     <!-- CAREERS START -->
@@ -147,6 +147,25 @@
 </template>
 
 <script>
+// "topics": [
+//     {
+//         "id": "S9HLumu1TQKcty1NCnnZ9g",
+//         "topic": "Product"
+//     },
+//     {
+//         "id": "F40oLv3XSbaxpddA2i6SUQ",
+//         "topic": "Announcements"
+//     },
+//     {
+//         "id": "Y88ajMn7TwyihvOb2Uxstg",
+//         "topic": "Research"
+//     },
+//     {
+//         "id": "XkzJQr4pR4OZpcwqzgDDbA",
+//         "topic": "AI"
+//     }
+// ],
+
 import play from '../assets/svg/play.vue'
 import pause from '../assets/svg/pause.vue'
 import Footer from '~/components/Footer.vue'
