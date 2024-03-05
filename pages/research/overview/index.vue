@@ -8,10 +8,78 @@
     <br />
     <br />
     <br />
-    <div class="main-title">Blog</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- TITLE SECTION START -->
+    <div class="container">
+      <div class="text">
+        <h1>Pioneering research on the path to AGI</h1>
+      </div>
+      <div class="text">
+        <p>
+          We believe our research will eventually lead to artificial general intelligence, a system that can
+          solve human-level problems. Building safe and beneficial AGI is our mission.
+        </p>
+        <div class="flex-btns">
+          <div class="view-research-index flex-text" @click="redirect(`/try`)">View research index</div>
+          <span class="underline">Learn about safety</span>
+        </div>
+      </div>
+    </div>
+    <div class="img-wrap">
+      <img src="~/assets/img/image_office.webp" alt="Research" class="profile-image" />
+    </div>
+    <!-- TITLE SECTION END -->
     <hr class="flex-line" />
-    <div class="subtitle">Latest updateds</div>
-    <ListOfArticles :amount="10" :bckgColor="'white'" :color="'#000'" :redirectUrl="'blog'" />
+    <div class="text-container">
+      <p class="quote">
+        “Safely aligning powerful AI systems is one of the most important unsolved problems for our mission.
+        Techniques like learning from human feedback are helping us get closer, and we are actively
+        researching new techniques to help us fill the gaps.”
+      </p>
+      <div class="font-size-20">
+        <span><b> Josh Achiam </b> </span>
+        <br />
+        <span> Researcher at OpenAI</span>
+      </div>
+    </div>
+    <br />
+    <br />
+    <!-- FOCUS START -->
+    <hr class="flex-line" />
+    <div class="container">
+      <div class="text">
+        <div class="subtitle">Focus areas</div>
+      </div>
+      <div class="text">
+        <p>
+          We build our generative models using a technology called deep learning, which leverages large
+          amounts of data to train an AI system to perform a task.
+        </p>
+      </div>
+    </div>
+    <!-- FOCUS END -->
+    <!-- Text START -->
+    <hr class="flex-line" />
+    <div class="container">
+      <div class="text">
+        <h2>Text</h2>
+      </div>
+      <div class="text">
+        <span>
+          Our text models are advanced language processing tools that can generate, classify, and summarize
+          text with high levels of coherence and accuracy.
+        </span>
+      </div>
+    </div>
+    <!-- Text END -->
+    <ListOfArticlesThreeMax :bckgColor="'white'" :color="'#000'" :redirectUrl="'blog'" />
     <!-- :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" -->
     <!-- <hr class="flex-line" /> -->
     <Footer />
@@ -96,6 +164,94 @@ export default {
 </script>
 
 <style scoped>
+.profile-image {
+  margin-top: 50px;
+  height: auto; /* Maintains the aspect ratio of the image */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+.img-wrap {
+  padding: 20px;
+}
+.container {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.flex-btns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.text {
+  flex: 1; /* Adjust as needed */
+  padding: 0 40px 10px 0px;
+  /* background-color: red; */
+  min-width: 300px;
+}
+.text p {
+  margin-top: 0;
+  font-size: 24px;
+}
+.text span {
+  margin-top: 0;
+  font-size: 18px;
+}
+.text-container {
+  flex-basis: 50%; /* Takes up half the width of the container */
+  margin: 40px;
+  padding-right: 50px; /* Adds some space between the text and the image */
+}
+
+.quote {
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-weight: 400;
+  font-size: 2.8em; /* Adjust the size as needed */
+  margin-bottom: 1em; /* Spacing between quote and author */
+  color: rgb(0, 0, 0);
+}
+.view-research-index {
+  padding: 7px 23px 7px 13px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.view-research-index:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.text h1 {
+  margin-top: 0;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  font-family: Soehne, system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
+}
+.text h2 {
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  font-family: Soehne, system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
+}
+.image {
+  /* background-color: blue; */
+  flex: 1; /* Adjust as needed */
+  padding: 10px;
+  min-width: 300px;
+}
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.underline:hover {
+  color: #737373;
+}
+
 .main {
   height: calc(100% - 80px);
   background-color: rgb(255, 255, 255);
@@ -127,8 +283,14 @@ export default {
     max-width: 100%;
     font-size: 40px !important;
   }
+  .quote {
+    font-size: 2em; /* Adjust the size as needed */
+  }
 }
-
+.font-size-20 {
+  font-size: 20px;
+  font-weight: 400;
+}
 .video-content {
   position: absolute;
   top: 50%;
@@ -226,7 +388,7 @@ button:hover {
 .subtitle {
   color: rgb(0, 0, 0);
   font-size: 2.5rem;
-  padding: 20px;
+  padding: 0 20px 20px 0px;
   font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 2.1rem;
   font-weight: 400;
@@ -262,19 +424,6 @@ button:hover {
   display: flex;
   justify-content: space-between; /* Puts maximum space between text and image */
   padding: 20px;
-}
-
-.text-container {
-  flex-basis: 50%; /* Takes up half the width of the container */
-  padding-right: 50px; /* Adds some space between the text and the image */
-}
-
-.quote {
-  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-  font-weight: 400;
-  font-size: 2.5em; /* Adjust the size as needed */
-  margin-bottom: 0.5em; /* Spacing between quote and author */
-  color: white;
 }
 
 .author {

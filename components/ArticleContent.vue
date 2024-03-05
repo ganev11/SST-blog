@@ -119,6 +119,9 @@ export default {
   letter-spacing: -0.02em;
   font-family: Soehne, system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
 }
+.text p {
+  font-size: 24px;
+}
 .tags {
   max-width: 300px;
   display: flex;
