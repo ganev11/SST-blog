@@ -84,7 +84,7 @@
     </div>
     <br />
     <br />
-    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
+    <ListOfArticles :amount="4" :redirectUrl="'research'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
     <hr class="flex-line" />
     <!-- RESEARCH END -->
     <!-- PRODUCTS START -->

@@ -67,7 +67,7 @@ const formatDate = dateString => {
 }
 const handleClick = post => {
   router.push({
-    path: `${props.redirectUrl}/${post.slug}`,
+    path: `/${props.redirectUrl}/${post.slug}`,
     query: { postId: post.id }
   })
 }
@@ -105,7 +105,7 @@ const handleClick = post => {
   justify-content: center;
   padding: 20px;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 35px;
 }
 
 .article-card {

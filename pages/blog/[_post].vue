@@ -8,10 +8,22 @@
     <br />
     <br />
     <br />
-    <div class="main-title">Post</div>
-    <hr class="flex-line" />
-    <div class="subtitle">Latest updateds</div>
+    <div class="bread-crumb">
+      <p>
+        <a href="/blog" class="blog-title">Blog</a>
+      </p>
+    </div>
     <Article :postId="postId" />
+    <hr class="flex-line" />
+    <div class="subtitle">Research</div>
+    <ListOfArticles
+      :amount="4"
+      :bckgColor="'white'"
+      :color="'#000'"
+      :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']"
+      :redirectUrl="'research'"
+    />
+
     <Footer />
   </div>
 </template>
@@ -78,6 +90,17 @@ export default {
 </script>
 
 <style scoped>
+.blog-title {
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black; /* Your desired color */
+}
+
+.blog-title:hover {
+  text-decoration: underline;
+}
 .main {
   height: calc(100% - 80px);
   background-color: rgb(255, 255, 255);
@@ -163,6 +186,15 @@ button {
 button:hover {
   background-color: white;
   color: black;
+}
+.bread-crumb {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black; /* Your desired color */
+}
+.bread-crumb p {
+  margin-bottom: 0;
 }
 .flex-between-video {
   /* background-color: red; */

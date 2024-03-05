@@ -55,11 +55,7 @@ const formatDate = dateString => {
 
 <template>
   <div :key="rerender">
-    {{ props.postId }}
-    <div v-if="article">
-      <h1>{{ article.title }}</h1>
-      <div v-html="article.content"></div>
-    </div>
+    <ArticleContent :article="article" />
   </div>
 </template>
 
