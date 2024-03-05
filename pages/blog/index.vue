@@ -38,8 +38,8 @@
 //     }
 // ],
 
-import play from '../assets/svg/play.vue'
-import pause from '../assets/svg/pause.vue'
+import play from '../../assets/svg/play.vue'
+import pause from '../../assets/svg/pause.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {

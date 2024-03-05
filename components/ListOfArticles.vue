@@ -66,7 +66,10 @@ const formatDate = dateString => {
   return date.toLocaleDateString('en-US', options)
 }
 const handleClick = post => {
-  router.push(`${props.redirectUrl}/${post.id}`)
+  router.push({
+    path: `${props.redirectUrl}/${post.slug}`,
+    query: { postId: post.id }
+  })
 }
 </script>
 
