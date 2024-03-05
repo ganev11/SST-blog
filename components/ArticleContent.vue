@@ -15,11 +15,13 @@
     <hr class="flex-line" />
     <div v-if="article">
       <div class="container-content">
-        <div class="content-header">
+        <div class="header-date">
           <span class="date">January 10, 2024</span>
+        </div>
+        <div class="header-author">
           <span class="categories"><b> Authors </b> {{ article.author[0].name }} </span>
         </div>
-        <div class="tags">
+        <div class="header-tags">
           <span v-for="(topic, index) in article.topics" :key="index">
             <span class="topic underlight"> {{ topic.topic }}, </span>
           </span>
@@ -55,23 +57,23 @@ export default {
 .container-content {
   /* background-color: yellow; */
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px;
-  justify-content: space-between;
 }
 .date {
-  margin-bottom: 20px;
   min-width: 150px;
 }
 .content-main {
   padding: 50px 30% 0 20%;
 }
 
-.content-header {
-  display: flex;
-  justify-content: space-between;
-  width: 48%;
+.header-date {
+  width: calc(20% - 20px);
+  margin-left: 20px;
+}
+.header-author {
+  width: 40%;
+}
+.header-tags {
+  width: 40%;
 }
 .categories {
   display: flex;
@@ -79,14 +81,20 @@ export default {
   min-width: 400px;
 }
 @media (max-width: 768px) {
+  .header-author {
+    margin-left: 20px !important;
+  }
+  .header-tags {
+    margin-left: 20px;
+  }
   .container-content {
     flex-direction: column;
   }
-  .content-header {
-    flex-direction: column !important;
-  }
   .content-main {
     padding: 50px 15px 0 15px;
+  }
+  .header-author {
+    margin: 20px 0;
   }
 }
 .container {
