@@ -140,7 +140,6 @@
     <br />
     <br />
     <br />
-    <hr class="flex-line" />
     <Footer />
     <!-- TESTIMONY END -->
   </div>

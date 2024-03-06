@@ -1,7 +1,7 @@
 <template>
   <div :class="['navbar', { scrolled: isScrolled }]" class="general-navbar">
     <div class="left-side-nav">
-      <logoNavMain class="logo" />
+      <logoNavMain class="logo" @click="redirect(`/`)" />
       <nav class="nav-menu">
         <span
           v-for="item in menuItems"

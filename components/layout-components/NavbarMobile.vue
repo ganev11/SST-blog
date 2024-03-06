@@ -1,7 +1,7 @@
 <template>
   <div :class="['navbar', { scrolled: isScrolled }]" class="general-navbar">
     <div class="left-side-nav">
-      <logoNavMain class="logo" />
+      <logoNavMain class="logo" @click="redirect(`/`)" />
     </div>
     <div class="right-side-nav font-size-mobile" @click="toggleMobileMenu">
       {{ mobileMenuOpen ? 'Close' : 'Menu' }}
@@ -16,7 +16,7 @@
             <minus class="arrow" v-if="item.isOpen && item.hasArrow" />
             <right class="arrow" v-if="!item.hasArrow" />
           </div>
-          <div v-if="item.isOpen" class="sub-items">
+          <div v-if="item.isOpen && item.hasArrow" class="sub-items">
             <span v-for="subItem in item.subItems" :key="subItem.text">
               {{ subItem.text }}
             </span>
@@ -78,7 +78,7 @@ export default {
     },
     handleSubItemClick(subItem) {
       // Example of navigation with Vue Router
-      this.$router.push(subItem.href)
+      this.$router.push(`subItem.href`)
     },
     handleMobileItemClick(item) {
       // Implement navigation or other logic for mobile menu item click

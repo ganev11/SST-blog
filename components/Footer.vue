@@ -48,31 +48,39 @@
         </div>
       </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <hr class="flex-line" />
-    <div class="footer-bottom">
-      <div class="flex-ft-bt-social">
-        <div class="copyright">
-          OpenAI © 2015–2024
-          <br />
-          <span>Terms & policies</span>
-          <span>Privacy policy</span>
-          <span>Brand guidelines</span>
-        </div>
-        <div class="social-links">
-          <div class="flex-soc">
-            <p class="link-social" @click="redirect('ahoj')">Twitter</p>
-            <p class="link-social" @click="redirect('#')">YouTube</p>
-            <p class="link-social" @click="redirect('#')">GitHub</p>
-            <p class="link-social" @click="redirect('#')">SoundCloud</p>
-            <p class="link-social" @click="redirect('#')">LinkedIn</p>
-          </div>
-          <a href="#" @click.prevent="scrollToTop">Back to top ↑</a>
-        </div>
+    <div class="flex-ft-bt-social">
+      <div class="copyright">
+        <b> OpenAI © 2015–2024 </b>
+        <span>Terms & policies</span>
+        <span>Privacy policy</span>
+        <span>Brand guidelines</span>
       </div>
-      <div class="back-to-top">
-        <!-- <a href="#">Back to top ↑</a> -->
+      <div class="social-links">
+        <div class="flex-soc">
+          <p class="link-social" @click="redirect('ahoj')">Twitter</p>
+          <p class="link-social" @click="redirect('#')">YouTube</p>
+          <p class="link-social" @click="redirect('#')">GitHub</p>
+          <p class="link-social" @click="redirect('#')">SoundCloud</p>
+          <p class="link-social" @click="redirect('#')">LinkedIn</p>
+        </div>
+        <p class="link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</p>
       </div>
     </div>
+    <div>
+      <!-- <a href="#">Back to top ↑</a> -->
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
   </footer>
 </template>
 <script>
@@ -102,8 +110,6 @@ export default {
 
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 300px;
 }
 
 .footer-section {
@@ -111,24 +117,27 @@ export default {
 }
 
 .footer-section h4 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
 }
 
 .footer-section ul {
+  margin-top: 5px;
   list-style: none;
+  font-size: 1.1rem;
   padding: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 0.5rem;
   cursor: pointer;
 }
 .footer-section ul li:hover {
   text-decoration: underline;
 }
 .link-social {
+  margin: 0 15px 30px 0;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 .link-social:hover {
   text-decoration: underline;
@@ -137,12 +146,19 @@ export default {
   margin-bottom: 0;
 }
 
+.flex-link {
+  color: white; /* Link color */
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-top: 5px; /* Space between title and link */
+  text-decoration: underline;
+}
+
 .flex-line {
   border: none;
   height: 1px;
-  background-color: #333; /* Lighter line for contrast */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  background-color: white; /* Line color */
+  width: auto; /* Line full width */
 }
 
 .footer-bottom {
@@ -155,12 +171,28 @@ export default {
 .footer-bottom .copyright,
 .footer-bottom .social-links {
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
 }
-
-.footer-bottom .back-to-top a {
-  font-size: 0.875rem;
+.logo-section {
+  width: 35%;
+  margin: 0;
+}
+.copyright {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.social-link {
+  width: 65%;
+}
+.flex-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
+}
+.back-to-top {
+  font-size: 1.1rem;
 }
 
 .social-links a {
@@ -180,23 +212,16 @@ export default {
 }
 @media screen and (max-width: 1220px) {
   .flex-ft-bt-social {
-    gap: 20px !important;
+    flex-direction: column !important;
+    gap: 20px;
   }
   .footer-content {
-    gap: 70px;
+    flex-direction: column;
   }
 }
-.flex-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 60%;
-}
+
 .flex-ft-bt-social {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 200px;
+  flex-direction: row;
 }
 </style>

@@ -30,8 +30,11 @@ export default {
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
+            { text: 'Overview', href: '/research/overview' },
+            { text: 'Index', href: '/sub2' },
+            { text: 'GPT-4', href: '/sub4' },
+            { text: 'DALL·E', href: '/sub5' },
+            { text: 'Sora', href: '/sub6' }
           ]
         },
         {
@@ -40,8 +43,9 @@ export default {
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
+            { text: 'Overview', href: '/sub1' },
+            { text: 'Pricing', href: '/sub2' },
+            { text: 'Docs', href: '/sub3' }
           ]
         },
         {
@@ -50,8 +54,11 @@ export default {
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
+            { text: 'Overview', href: '/sub1' },
+            { text: 'Team', href: '/sub2' },
+            { text: 'Enterprise', href: '/sub3' },
+            { text: 'Pricing', href: '/sub4' },
+            { text: 'Try ChatGPT', href: '/sub5' }
           ]
         },
         { text: 'Safety', href: '/safety', hasArrow: false, isOpen: false },
@@ -61,8 +68,13 @@ export default {
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Sub-item 1', href: '/sub1' },
-            { text: 'Sub-item 2', href: '/sub2' }
+            { text: 'About', href: '/sub1' },
+            { text: 'Blog', href: '/blog' },
+            { text: 'Careers', href: '/sub3' },
+            { text: 'Residency', href: '/sub4' },
+            { text: 'Charter', href: '/sub5' },
+            { text: 'Security', href: '/sub6' },
+            { text: 'Customer stories', href: '/sub7' }
           ]
         }
       ]

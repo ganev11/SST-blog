@@ -78,8 +78,67 @@
         </span>
       </div>
     </div>
-    <!-- Text END -->
     <ListOfArticlesThreeMax :bckgColor="'white'" :color="'#000'" :redirectUrl="'blog'" />
+    <!-- Text END -->
+    <!-- Image START -->
+    <hr class="flex-line" />
+    <div class="container">
+      <div class="text">
+        <h2>Image</h2>
+      </div>
+      <div class="text">
+        <span>
+          Our research on generative modeling for images has led to representation models like CLIP, which
+          makes a map between text and images that an AI can read, and DALL-E, a tool for creating vivid
+          images from text descriptions.
+        </span>
+      </div>
+    </div>
+    <ListOfArticlesThreeMax
+      :topicIDsArray="['S9HLumu1TQKcty1NCnnZ9g']"
+      :bckgColor="'white'"
+      :color="'#000'"
+      :redirectUrl="'blog'"
+    />
+    <!-- Image END -->
+    <!-- Audio START -->
+    <hr class="flex-line" />
+    <div class="container">
+      <div class="text">
+        <h2>Audio</h2>
+      </div>
+      <div class="text">
+        <span>
+          Our research on applying AI to audio processing and audio generation has led to developments in
+          automatic speech recognition and original musical compositions.
+        </span>
+      </div>
+    </div>
+    <ListOfArticlesThreeMax
+      :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']"
+      :bckgColor="'white'"
+      :color="'#000'"
+      :redirectUrl="'blog'"
+    />
+    <br />
+    <img src="~/assets/img/image_laptop.webp" alt="Research" class="profile-image" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Audio END -->
+    <!-- Highlights START -->
+    <hr class="flex-line" />
+    <div class="container">
+      <div class="text">
+        <div class="subtitle">Past highlights</div>
+      </div>
+      <div class="text">
+        <p>Our current AI research builds upon a wealth of previous projects and advances.</p>
+        <span class="underline">Learn about safety</span>
+      </div>
+    </div>
+    <!-- Highlights END -->
     <!-- :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" -->
     <!-- <hr class="flex-line" /> -->
     <Footer />
