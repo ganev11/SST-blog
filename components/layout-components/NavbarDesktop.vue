@@ -61,6 +61,7 @@ export default {
   props: ['isScrolled', 'menuItems'],
   data() {
     return {
+      baseUrl: 'https://sst-blog.vercel.app/',
       hasScrolled: false
     }
   },
@@ -81,11 +82,6 @@ export default {
     if (process.client) {
       window.removeEventListener('scroll', this.onScroll)
       document.removeEventListener('click', this.handleDocumentClick)
-    }
-  },
-  computed: {
-    baseUrl() {
-      return window.baseUrl
     }
   },
   methods: {

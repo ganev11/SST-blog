@@ -68,13 +68,9 @@ export default {
   props: ['isScrolled', 'menuItems'],
   data() {
     return {
+      baseUrl: 'https://sst-blog.vercel.app/',
       hasScrolled: false,
       mobileMenuOpen: false // Controls the visibility of the mobile menu
-    }
-  },
-  computed: {
-    baseUrl() {
-      return window.baseUrl
     }
   },
   methods: {

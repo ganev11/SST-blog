@@ -21,7 +21,6 @@ export default {
   },
   data() {
     return {
-      baseUrl: 'https://sst-blog.vercel.app/',
       screenWidth: 0,
       isScrolled: false,
       menuItems: [
@@ -87,7 +86,6 @@ export default {
     }
   },
   mounted() {
-    window.baseUrl = this.baseUrl
     if (process.client) {
       this.updateScreenWidth()
       window.addEventListener('resize', this.updateScreenWidth)

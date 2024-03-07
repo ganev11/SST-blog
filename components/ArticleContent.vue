@@ -23,7 +23,7 @@
         </div>
         <div class="header-tags">
           <span v-for="(topic, index) in article.topics" :key="index">
-            <span class="topic underlight"> {{ topic.topic }}, </span>
+            <span class="topic"> {{ topic.topic }}, </span>
           </span>
         </div>
       </div>

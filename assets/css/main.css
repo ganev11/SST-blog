@@ -21,6 +21,21 @@ html {
 .anchor:hover {
   text-decoration: underline;
 }
+.mg-top-20 {
+  margin-top: 20px;
+}
+.anchor-content {
+  font-size: 16px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 0.2em;
+}
+.anchor-content:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(105, 105, 105);
+  text-underline-offset: 0.2em;
+}
 .logo-anchor {
   color: rgb(255, 255, 255);
   text-decoration: none;
