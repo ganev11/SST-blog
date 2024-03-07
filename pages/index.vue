@@ -30,7 +30,7 @@
     </div>
   </div>
   <!-- VIDEO END -->
-  <div class="main">
+  <div class="main margin-for-video">
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
@@ -235,19 +235,9 @@ export default {
   position: relative;
   width: 100%;
   max-width: 100vw;
-  height: 110vh; /* Adjust the height as needed */
+  height: auto;
+  max-height: 90vh; /* Adjust the height as needed */
   /* overflow: hidden; */
-}
-
-.video-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
-  z-index: 2; /* Make sure the z-index is higher than the video but lower than the content */
 }
 
 .video-background video {
@@ -256,12 +246,16 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 100%;
+  min-height: 90vh; /* Adjust the height as needed */
+  height: 90vh; /* Adjust the height as needed */
+  max-height: 90vh; /* Adjust the height as needed */
   width: auto;
-  height: auto;
   z-index: 0;
+  object-fit: cover;
 }
-
+.margin-for-video {
+  margin-top: 30vh;
+}
 .container-title {
   width: 100%;
   display: flex;
@@ -280,6 +274,18 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.video-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75vh !important;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+  z-index: 2; /* Make sure the z-index is higher than the video but lower than the content */
+}
+
 .video-background .content {
   /* background-color: seagreen; */
   display: flex;
@@ -291,17 +297,32 @@ export default {
   padding: 20px;
   width: calc(100vw - 60px);
   max-width: 1200px;
-  /*
-  bottom: 200px;
-  */
+  bottom: -170px !important;
 }
 @media (min-width: 1024px) {
+  .video-background .content {
+    /* background-color: seagreen; */
+    bottom: -450px;
+  }
+  .video-background::before {
+    height: 58vh;
+  }
   .video-background .content {
     max-width: 1600px; /* Adjust this value as needed */
     margin: 0 auto; /* Centers the element horizontally */
   }
+  .full-width-image {
+    min-width: 5vw !important;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without stretching */
+  }
 }
 @media screen and (max-width: 943px) {
+  .video-background .content {
+    /* background-color: seagreen; */
+    bottom: -250px;
+  }
   .subtitle-text {
     width: 100% !important;
   }
@@ -460,7 +481,7 @@ button:hover {
   font-size: 21px;
 }
 .full-width-image {
-  /* min-width: 99.49vw; */
+  min-width: 99.49vw;
   max-width: 100%;
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area without stretching */
