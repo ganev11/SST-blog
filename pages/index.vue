@@ -298,7 +298,7 @@ export default {
   padding: 20px;
   width: calc(100vw - 60px);
   max-width: 1200px;
-  bottom: -40vh !important;
+  bottom: -35vh !important;
 }
 @media (min-width: 1024px) {
   .video-background .content {
