@@ -21,12 +21,13 @@ export default {
   },
   data() {
     return {
+      baseUrl: 'https://sst-blog.vercel.app/',
       screenWidth: 0,
       isScrolled: false,
       menuItems: [
         {
           text: 'Research',
-          href: '/',
+          href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
@@ -39,7 +40,7 @@ export default {
         },
         {
           text: 'API',
-          href: '/',
+          href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
@@ -50,7 +51,7 @@ export default {
         },
         {
           text: 'Chat GPT',
-          href: '/',
+          href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
@@ -64,7 +65,7 @@ export default {
         { text: 'Safety', href: '/safety', hasArrow: false, isOpen: false },
         {
           text: 'Company',
-          href: '/',
+          href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
@@ -86,6 +87,7 @@ export default {
     }
   },
   mounted() {
+    window.baseUrl = this.baseUrl
     if (process.client) {
       this.updateScreenWidth()
       window.addEventListener('resize', this.updateScreenWidth)

@@ -1,7 +1,9 @@
 <template>
   <div :class="['navbar', { scrolled: isScrolled }]" class="general-navbar">
     <div class="left-side-nav">
-      <logoNavMain class="logo" @click="redirect(`/`)" />
+      <a class="logo-anchor" href="/">
+        <logoNavMain class="logo" />
+      </a>
       <nav class="nav-menu">
         <span
           v-for="item in menuItems"
@@ -11,19 +13,22 @@
           class="nav-item flex-text"
           :class="{ 'has-arrow': item.hasArrow, 'nav-item-open': item.isOpen }"
         >
-          <span class="nav-item"> {{ item.text }}</span>
+          <span v-if="item.href">
+            <a class="anchor" :href="`${baseUrl}${item.href}`">
+              {{ item.text }}
+            </a>
+          </span>
+          <span v-else class="nav-item"> {{ item.text }}</span>
 
           <down class="arrow m-right" v-if="!item.isOpen && item.hasArrow" />
           <up class="arrow m-right" v-if="item.isOpen && item.hasArrow" />
           <!-- Dropdown Menu -->
           <div v-if="item.isOpen && item.subItems" class="dropdown-menu">
-            <span
-              v-for="(subItem, index) in item.subItems"
-              :key="index"
-              class="dropdown-item"
-              @click="handleSubItemClick(subItem)"
-            >
-              {{ subItem.text }}
+            <span v-for="(subItem, index) in item.subItems" :key="index" class="dropdown-item">
+              <!-- @click="handleSubItemClick(subItem)" -->
+              <a class="anchor" :href="`${baseUrl}${subItem.href}`">
+                {{ subItem.text }}
+              </a>
             </span>
           </div>
         </span>
@@ -31,11 +36,15 @@
     </div>
     <div class="right-side-nav">
       <div class="flex-text">
-        <span class="nav-item" @click="redirect(`http://www.sst.com/login`)">Log in</span>
+        <span class="nav-item">
+          <a class="anchor" :href="`${baseUrl}/login`"> Log in </a>
+        </span>
         <arrowSide class="arrow" />
       </div>
-      <div class="try-chatgpt flex-text" @click="redirect(`/try`)">
-        Try ChatGPT
+      <div class="try-chatgpt flex-text">
+        <span class="nav-item">
+          <a class="anchor" :href="`${baseUrl}/try`">Try ChatGPT</a>
+        </span>
         <arrowSide class="arrow" />
       </div>
     </div>
@@ -74,19 +83,22 @@ export default {
       document.removeEventListener('click', this.handleDocumentClick)
     }
   },
+  computed: {
+    baseUrl() {
+      return window.baseUrl
+    }
+  },
   methods: {
     onScroll() {
       this.hasScrolled = window.scrollY > 0
-    },
-    handleClick(item) {
-      if (item.hasArrow) {
-        item.isOpen = !item.isOpen
-      }
     },
     sc() {
       console.log('scrolled')
     },
     handleClick(clickedItem) {
+      if (!clickedItem.subItem) {
+        console.log('object :>> ')
+      }
       if (clickedItem.hasArrow) {
         this.menuItems.forEach(item => {
           if (item === clickedItem) {

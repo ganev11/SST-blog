@@ -14,3 +14,14 @@ html {
   min-height: 100vh !important;
   overflow-y: auto !important;
 }
+.anchor {
+  color: white;
+  text-decoration: none;
+}
+.anchor:hover {
+  text-decoration: underline;
+}
+.logo-anchor {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}

@@ -11,29 +11,41 @@
         <div class="line"></div>
         <span v-for="item in menuItems" :key="`mobile-${item.text}`" class="mobile-nav-item">
           <div @click="toggleSubItems(item)" class="flex-text flex-between">
-            <span class="nav-item">{{ item.text }}</span>
+            <span v-if="item.href">
+              <a class="anchor" :href="`${baseUrl}${item.href}`">
+                {{ item.text }}
+              </a>
+            </span>
+            <span v-else class="nav-item"> {{ item.text }}</span>
             <plus class="arrow" v-if="!item.isOpen && item.hasArrow" />
             <minus class="arrow" v-if="item.isOpen && item.hasArrow" />
             <right class="arrow" v-if="!item.hasArrow" />
           </div>
           <div v-if="item.isOpen && item.hasArrow" class="sub-items">
-            <span v-for="subItem in item.subItems" :key="subItem.text">
-              {{ subItem.text }}
+            <span v-for="(subItem, index) in item.subItems" :key="index" class="dropdown-item">
+              <!-- @click="handleSubItemClick(subItem)" -->
+              <a class="anchor" :href="`${baseUrl}${subItem.href}`">
+                {{ subItem.text }}
+              </a>
             </span>
           </div>
           <div class="line"></div>
         </span>
 
-        <span class="mobile-nav-item" @click="redirect(`http://www.sst.com/login`)">
+        <span class="mobile-nav-item">
           <div class="flex-text flex-between">
-            <span class="nav-item">Log in</span>
+            <span class="nav-item">
+              <a class="anchor" :href="`${baseUrl}/login`"> Log in </a>
+            </span>
             <arrowSide class="arrow" />
           </div>
           <div class="line"></div>
         </span>
-        <span class="mobile-nav-item" @click="redirect(`/try`)">
+        <span class="mobile-nav-item">
           <div class="flex-text flex-between">
-            <span class="nav-item">Try ChatGPT</span>
+            <span class="nav-item">
+              <a class="anchor" :href="`${baseUrl}/try`">Try ChatGPT</a>
+            </span>
             <arrowSide class="arrow" />
           </div>
           <div class="line"></div>
@@ -58,6 +70,11 @@ export default {
     return {
       hasScrolled: false,
       mobileMenuOpen: false // Controls the visibility of the mobile menu
+    }
+  },
+  computed: {
+    baseUrl() {
+      return window.baseUrl
     }
   },
   methods: {
