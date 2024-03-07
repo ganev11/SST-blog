@@ -246,7 +246,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 90vh; /* Adjust the height as needed */
+  min-height: 900px; /* Adjust the height as needed */
   height: 90vh; /* Adjust the height as needed */
   max-height: 90vh; /* Adjust the height as needed */
   width: auto;
@@ -254,7 +254,7 @@ export default {
   object-fit: cover;
 }
 .margin-for-video {
-  margin-top: 30vh;
+  margin-top: 300px;
 }
 .container-title {
   width: 100%;
@@ -282,6 +282,7 @@ export default {
   left: 0;
   width: 100%;
   height: 75vh !important;
+  min-height: 700px;
   background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
   z-index: 2; /* Make sure the z-index is higher than the video but lower than the content */
 }
@@ -297,7 +298,7 @@ export default {
   padding: 20px;
   width: calc(100vw - 60px);
   max-width: 1200px;
-  bottom: -170px !important;
+  bottom: -40vh !important;
 }
 @media (min-width: 1024px) {
   .video-background .content {
