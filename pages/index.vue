@@ -1,36 +1,36 @@
 <template>
-  <div class="main">
-    <!-- VIDEO START -->
-    <div class="video-background">
-      <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
-        <source src="../assets/videos/paper-planes.mp4" type="video/mp4" />
-      </video>
-      <div class="content">
-        <div class="container-title">
-          <div class="blue"></div>
-          <div class="yellow">
-            <div class="title">Introducing Sora: Creating video from text</div>
-            <div class="flex-between-video">
-              <span>
-                <a href="#" class="learn-more">Learn more about Sora</a>
-              </span>
-              <span>
-                <button class="play-stop" @click="toggleVideoPlayback">
-                  <span class="icon-wrapper">
-                    <play class="icon" v-if="isVideoPlaying" />
-                    <pause class="icon" v-if="!isVideoPlaying" />
-                    <span v-if="!mobile">
-                      {{ isVideoPlaying ? 'Pause video' : 'Play video' }}
-                    </span>
+  <!-- VIDEO START -->
+  <div class="video-background">
+    <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
+      <source src="../assets/videos/paper-planes.mp4" type="video/mp4" />
+    </video>
+    <div class="content">
+      <div class="container-title">
+        <div class="blue"></div>
+        <div class="yellow">
+          <div class="title">Introducing Sora: Creating video from text</div>
+          <div class="flex-between-video">
+            <span>
+              <a href="#" class="learn-more">Learn more about Sora</a>
+            </span>
+            <span>
+              <button class="play-stop" @click="toggleVideoPlayback">
+                <span class="icon-wrapper">
+                  <play class="icon" v-if="isVideoPlaying" />
+                  <pause class="icon" v-if="!isVideoPlaying" />
+                  <span v-if="!mobile">
+                    {{ isVideoPlaying ? 'Pause video' : 'Play video' }}
                   </span>
-                </button>
-              </span>
-            </div>
+                </span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <!-- VIDEO END -->
+  </div>
+  <!-- VIDEO END -->
+  <div class="main">
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
@@ -235,8 +235,8 @@ export default {
   position: relative;
   width: 100%;
   max-width: 100vw;
-  height: 100vh; /* Adjust the height as needed */
-  overflow: hidden;
+  height: 110vh; /* Adjust the height as needed */
+  /* overflow: hidden; */
 }
 
 .video-background::before {
@@ -247,7 +247,7 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
-  z-index: 1;
+  z-index: 2; /* Make sure the z-index is higher than the video but lower than the content */
 }
 
 .video-background video {
@@ -290,9 +290,16 @@ export default {
   flex-direction: column-reverse;
   padding: 20px;
   width: calc(100vw - 60px);
+  max-width: 1200px;
   /*
   bottom: 200px;
   */
+}
+@media (min-width: 1024px) {
+  .video-background .content {
+    max-width: 1600px; /* Adjust this value as needed */
+    margin: 0 auto; /* Centers the element horizontally */
+  }
 }
 @media screen and (max-width: 943px) {
   .subtitle-text {
@@ -453,11 +460,10 @@ button:hover {
   font-size: 21px;
 }
 .full-width-image {
-  min-width: 99.49vw;
+  /* min-width: 99.49vw; */
   max-width: 100%;
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the area without stretching */
-  margin-left: calc(-50vw + 50%); /* Center the image */
 }
 .quote-image-container {
   display: flex;

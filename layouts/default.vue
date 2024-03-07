@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color: black">
     <div v-if="isMobile">
       <navbar-mobile :menuItems="menuItems" :isScrolled="isScrolled" :isMainPage="isMainPage" />
     </div>
@@ -115,3 +115,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.background {
+  background-color: black !important;
+}
+</style>
