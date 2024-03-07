@@ -13,7 +13,7 @@
         <a href="/blog" class="blog-title">Blog</a>
       </p>
     </div>
-    <Article :postId="postId" />
+    <Article :postId="postId" :postSlug="postSlug" />
     <hr class="flex-line" />
     <div class="subtitle">Research</div>
     <ListOfArticles
@@ -43,6 +43,7 @@ export default {
     return {
       screenWidth: 0,
       postId: null, // Initialize postId to null
+      postSlug: null, // Initialize postSlug to null
       isVideoPlaying: true // Assume video is playing initially because of the autoplay attribute
     }
   },
@@ -53,6 +54,8 @@ export default {
   },
   mounted() {
     this.postId = this.$route.query.postId // Access postId from the query
+    // console.log('this.$route :>> ', this.$route.params._post)
+    this.postSlug = this.$route.params._post // Access postSlug from the query
 
     if (process.client) {
       window.addEventListener('resize', this.updateScreenWidth)

@@ -67,8 +67,8 @@ const formatDate = dateString => {
 }
 const handleClick = post => {
   router.push({
-    path: `/${props.redirectUrl}/${post.slug}`,
-    query: { postId: post.id }
+    path: `/${props.redirectUrl}/${post.slug}`
+    // query: { postId: post.id }
   })
 }
 </script>
@@ -136,9 +136,12 @@ const handleClick = post => {
 .article-title {
   color: #fff;
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1em;
 }
-
+.article-title:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 .article-date {
   color: #a8a8a8;
   margin-top: 8px;

@@ -4,15 +4,16 @@ import { useRouter } from 'vue-router'
 import { marked } from 'marked'
 
 const props = defineProps({
-  postId: String
+  postId: String,
+  postSlug: String
 })
 let rerender = ref(0)
 console.log('object rerender :>> ', rerender)
 let article = ref(null)
-const fetchArticle = async postId => {
+const fetchArticle = async postSlug => {
   const QUERY = ref(`
-      {
-        article(filter: { id: { eq: "${postId}" } }) {
+  {
+        article(filter: { slug: { eq: "${postSlug}" } }) {
           id
           slug
           topics {
@@ -33,13 +34,34 @@ const fetchArticle = async postId => {
         }
       }
     `)
+  // {
+  //   article(filter: { id: { eq: "${postId}" } }) {
+  //     id
+  //     slug
+  //     topics {
+  //       id
+  //       topic
+  //     }
+  //     title
+  //     _updatedAt
+  //     description
+  //     content
+  //     featuredImage {
+  //       url
+  //     }
+  //     author {
+  //       id
+  //       name
+  //     }
+  //   }
+  // }
   const { data } = await useGraphqlQuery({ query: QUERY.value })
   console.log('data.value.article :>> ', data.value.article)
   return data.value.article
 }
 watchEffect(async () => {
-  if (props.postId) {
-    article.value = await fetchArticle(props.postId)
+  if (props.postSlug) {
+    article.value = await fetchArticle(props.postSlug)
     if (article.value && article.value.content) {
       article.value.content = marked(article.value.content)
     }
