@@ -65,7 +65,7 @@ import minus from '../assets/svg/minus.vue'
 import right from '../assets/svg/right.vue'
 
 export default {
-  props: ['isScrolled', 'menuItems'],
+  props: ['isScrolled', 'menuItems', 'isMainPage'],
   data() {
     return {
       baseUrl: 'https://sst-blog.vercel.app/',
@@ -115,6 +115,8 @@ export default {
     arrowSide
   },
   mounted() {
+    console.log('this.$route.params._post :>> ', this.$route.params._post)
+
     if (process.client) {
       //   window.addEventListener('scroll', this.onScroll)
       document.addEventListener('click', this.handleDocumentClick)

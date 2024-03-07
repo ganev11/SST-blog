@@ -23,7 +23,11 @@
           <down class="arrow m-right" v-if="!item.isOpen && item.hasArrow" />
           <up class="arrow m-right" v-if="item.isOpen && item.hasArrow" />
           <!-- Dropdown Menu -->
-          <div v-if="item.isOpen && item.subItems" class="dropdown-menu">
+          <div
+            v-if="item.isOpen && item.subItems"
+            class="dropdown-menu"
+            :class="{ 'transparent-bg': isMainPage && !isScrolled }"
+          >
             <span v-for="(subItem, index) in item.subItems" :key="index" class="dropdown-item">
               <!-- @click="handleSubItemClick(subItem)" -->
               <a class="anchor" :href="`${baseUrl}${subItem.href}`">
@@ -58,7 +62,7 @@ import down from '../assets/svg/down.vue'
 import logoNavMain from '../assets/svg/logoNavMain.vue'
 
 export default {
-  props: ['isScrolled', 'menuItems'],
+  props: ['isScrolled', 'menuItems', 'isMainPage'],
   data() {
     return {
       baseUrl: 'https://sst-blog.vercel.app/',
@@ -223,8 +227,12 @@ export default {
   flex-direction: column;
   gap: 10px;
   margin-top: 5px; /* Adjust as needed */
+  transition: background-color 0.3s;
 }
-
+.dropdown-menu.transparent-bg {
+  transition: background-color 0.3s;
+  background-color: transparent;
+}
 .nav-item {
   position: relative; /* Needed for absolute positioning of the dropdown */
 }

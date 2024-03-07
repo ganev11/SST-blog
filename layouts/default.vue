@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="isMobile">
-      <navbar-mobile :menuItems="menuItems" :isScrolled="isScrolled" />
+      <navbar-mobile :menuItems="menuItems" :isScrolled="isScrolled" :isMainPage="isMainPage" />
     </div>
     <div v-else>
-      <navbar-desktop :menuItems="menuItems" :isScrolled="isScrolled" />
+      <navbar-desktop :menuItems="menuItems" :isScrolled="isScrolled" :isMainPage="isMainPage" />
     </div>
     <slot />
   </div>
@@ -83,6 +83,13 @@ export default {
   computed: {
     isMobile() {
       return this.screenWidth < 1200
+    },
+    isMainPage() {
+      if (this.$route.path === '/') {
+        return true
+      } else {
+        return false
+      }
     }
   },
   mounted() {
