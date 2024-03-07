@@ -8,42 +8,43 @@
         <div class="footer-section">
           <h4>Research</h4>
           <ul>
-            <li>Overview</li>
-            <li>Index</li>
-            <li>GPT-4</li>
-            <li>DALL-E 3</li>
-            <li>Sora</li>
+            <li><a class="anchor" :href="`${baseUrl}research/overview`">Overview</a></li>
+            <li><a class="anchor" :href="`${baseUrl}research/index`">Index</a></li>
+            <li><a class="anchor" :href="`${baseUrl}research/gpt-4`">GPT-4</a></li>
+            <li><a class="anchor" :href="`${baseUrl}research/dall-e-3`">DALL-E 3</a></li>
+            <li><a class="anchor" :href="`${baseUrl}research/sora`">Sora</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>API</h4>
           <ul>
-            <li>Overview</li>
-            <li>Pricing</li>
-            <li>Docs</li>
+            <li><a class="anchor" :href="`${baseUrl}api/overview`">Overview</a></li>
+            <li><a class="anchor" :href="`${baseUrl}api/pricing`">Pricing</a></li>
+            <li><a class="anchor" :href="`${baseUrl}api/docs`">Docs</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>ChatGPT</h4>
           <ul>
-            <li>Overview</li>
-            <li>Team</li>
-            <li>Enterprise</li>
-            <li>Pricing</li>
-            <li>Try ChatGPT</li>
+            <li><a class="anchor" :href="`${baseUrl}chatgpt/overview`">Overview</a></li>
+            <li><a class="anchor" :href="`${baseUrl}chatgpt/team`">Team</a></li>
+            <li><a class="anchor" :href="`${baseUrl}chatgpt/enterprise`">Enterprise</a></li>
+            <li><a class="anchor" :href="`${baseUrl}chatgpt/pricing`">Pricing</a></li>
+            <li><a class="anchor" :href="`${baseUrl}chatgpt/try-chatgpt`">Try ChatGPT</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h4>Company</h4>
           <ul>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Careers</li>
-            <li>Charter</li>
-            <li>Security</li>
-            <li>Customer stories</li>
-            <li>Safety</li>
+            <li><a class="anchor" :href="`${baseUrl}company/about`">About</a></li>
+            <li><a class="anchor" :href="`${baseUrl}company/blog`">Blog</a></li>
+            <li><a class="anchor" :href="`${baseUrl}company/careers`">Careers</a></li>
+            <li><a class="anchor" :href="`${baseUrl}company/charter`">Charter</a></li>
+            <li><a class="anchor" :href="`${baseUrl}company/security`">Security</a></li>
+            <li>
+              <a class="anchor" :href="`${baseUrl}company/customer-stories`">Customer stories</a>
+            </li>
+            <li><a class="anchor" :href="`${baseUrl}company/safety`">Safety</a></li>
           </ul>
         </div>
       </div>
@@ -58,20 +59,20 @@
     <hr class="flex-line" />
     <div class="flex-ft-bt-social">
       <div class="copyright">
-        <b> OpenAI © 2015–2024 </b>
-        <span>Terms & policies</span>
-        <span>Privacy policy</span>
-        <span>Brand guidelines</span>
+        <b>OpenAI © 2015–2024</b>
+        <a class="anchor link-copyright" :href="`${baseUrl}terms-policies`">Terms & policies</a>
+        <a class="anchor link-copyright" :href="`${baseUrl}privacy-policy`">Privacy policy</a>
+        <a class="anchor link-copyright" :href="`${baseUrl}brand-guidelines`">Brand guidelines</a>
       </div>
       <div class="social-links">
         <div class="flex-soc">
-          <p class="link-social" @click="redirect('ahoj')">Twitter</p>
-          <p class="link-social" @click="redirect('#')">YouTube</p>
-          <p class="link-social" @click="redirect('#')">GitHub</p>
-          <p class="link-social" @click="redirect('#')">SoundCloud</p>
-          <p class="link-social" @click="redirect('#')">LinkedIn</p>
+          <a class="anchor link-social" :href="`${baseUrl}twitter`">Twitter</a>
+          <a class="anchor link-social" :href="`${baseUrl}youtube`">YouTube</a>
+          <a class="anchor link-social" :href="`${baseUrl}github`">GitHub</a>
+          <a class="anchor link-social" :href="`${baseUrl}soundcloud`">SoundCloud</a>
+          <a class="anchor link-social" :href="`${baseUrl}linkedin`">LinkedIn</a>
         </div>
-        <p class="link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</p>
+        <a class="anchor link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</a>
       </div>
     </div>
     <div>
@@ -87,6 +88,11 @@
 import logoNavMain from '../assets/svg/logoNavMain.vue'
 
 export default {
+  data() {
+    return {
+      baseUrl: 'https://sst-blog.vercel.app/'
+    }
+  },
   components: {
     logoNavMain
   },
@@ -107,7 +113,9 @@ export default {
   font-family: Arial, sans-serif;
   padding: 2rem;
 }
-
+li {
+  margin-top: 7px !important;
+}
 .footer-content {
   display: flex;
 }
@@ -136,8 +144,11 @@ export default {
 }
 .link-social {
   margin: 0 15px 30px 0;
-  cursor: pointer;
   font-size: 1.1rem;
+}
+.link-copyright {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
 }
 .link-social:hover {
   text-decoration: underline;
@@ -182,6 +193,9 @@ export default {
   flex-direction: column;
   width: 35%;
 }
+.copyright b {
+  margin-bottom: 10px;
+}
 .social-link {
   width: 65%;
 }
@@ -217,6 +231,9 @@ export default {
   }
   .footer-content {
     flex-direction: column;
+  }
+  .flex-columns {
+    width: 100%;
   }
 }
 
