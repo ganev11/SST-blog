@@ -7,7 +7,7 @@
 
   <!-- VIDEO START -->
   <div class="video-background">
-    <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
+    <video playsinline autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
       <source ref="videoSource" src="../assets/videos/sst-video.mp4" type="video/mp4" />
     </video>
     <div class="content">
@@ -197,12 +197,7 @@ export default {
     }
   },
   mounted() {
-    // Update the source src attribute when the component is mounted
-    this.$refs.videoSource.src = '../assets/videos/sst-video.mp4'
-    // Load the new video source
-    // Add position: fixed to the video element
-    this.$refs.videoElement.style.position = 'fixed'
-    // this.$refs.videoElement.load()
+    this.$refs.videoElement.play()
     if (process.client) {
       window.addEventListener('resize', this.updateScreenWidth)
     }
