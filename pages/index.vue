@@ -8,7 +8,7 @@
   <!-- VIDEO START -->
   <div class="video-background">
     <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
-      <source src="../assets/videos/paper-planes.mp4" type="video/mp4" />
+      <source src="../assets/videos/sst-video.mp4" type="video/mp4" />
     </video>
     <div class="content">
       <div class="container-title">
