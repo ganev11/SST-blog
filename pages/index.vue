@@ -36,7 +36,7 @@
     </div>
   </div>
   <!-- VIDEO END -->
-  <div class="main margin-for-video">
+  <div class="main">
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
@@ -242,7 +242,7 @@ export default {
   width: 100%;
   max-width: 100vw;
   height: auto;
-  max-height: 90vh; /* Adjust the height as needed */
+  height: 100vh; /* Adjust the height as needed */
   /* overflow: hidden; */
 }
 
@@ -252,9 +252,8 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 900px; /* Adjust the height as needed */
-  height: 90vh; /* Adjust the height as needed */
-  max-height: 90vh; /* Adjust the height as needed */
+  min-height: 100vh; /* Adjust the height as needed */
+  height: 100vh; /* Adjust the height as needed */
   width: auto;
   z-index: 0;
   object-fit: cover;
@@ -265,7 +264,6 @@ export default {
 .container-title {
   width: 100%;
   display: flex;
-  padding-bottom: 20px;
 }
 .blue {
   /* background-color: blue; */
@@ -277,6 +275,8 @@ export default {
   width: 100%;
   height: 270px;
   display: flex;
+  padding-right: 25px;
+
   flex-direction: column;
   justify-content: space-between;
 }
@@ -285,22 +285,19 @@ export default {
   /* background-color: seagreen; */
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   z-index: 2;
   flex-direction: column-reverse;
   padding: 20px;
   width: calc(100vw - 60px);
   max-width: 1200px;
-  bottom: -35vh !important;
+  bottom: 5vh !important;
 }
 @media (min-width: 1024px) {
   .video-background .content {
     /* background-color: seagreen; */
-    bottom: -450px;
-  }
-  .video-background::before {
-    height: 58vh;
+    bottom: 450px;
   }
   .video-background .content {
     max-width: 1600px; /* Adjust this value as needed */
@@ -309,15 +306,10 @@ export default {
   .full-width-image {
     min-width: 5vw !important;
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Cover the area without stretching */
   }
 }
 @media screen and (max-width: 943px) {
-  .video-background .content {
-    /* background-color: seagreen; */
-    bottom: -250px;
-  }
   .subtitle-text {
     width: 100% !important;
   }
@@ -411,7 +403,7 @@ button:hover {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 75px;
+  height: 60px;
 }
 /* LINK: */
 .flex-container {
