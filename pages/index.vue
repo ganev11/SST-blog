@@ -1,4 +1,10 @@
 <template>
+  <Head>
+    <Title>{{ 'titleee' }}</Title>
+    <Meta name="description" :content="'descriptionnnn'" />
+    <Style type="text/css" children="body { background-color: green; }"></Style>
+  </Head>
+
   <!-- VIDEO START -->
   <div class="video-background">
     <video autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
