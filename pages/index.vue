@@ -281,18 +281,6 @@ export default {
   justify-content: space-between;
 }
 
-.video-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75vh !important;
-  min-height: 700px;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
-  z-index: 2; /* Make sure the z-index is higher than the video but lower than the content */
-}
-
 .video-background .content {
   /* background-color: seagreen; */
   display: flex;
