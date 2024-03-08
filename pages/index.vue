@@ -296,10 +296,7 @@ export default {
 }
 @media (min-width: 1024px) {
   .video-background .content {
-    /* background-color: seagreen; */
     bottom: 450px;
-  }
-  .video-background .content {
     max-width: 1600px; /* Adjust this value as needed */
     margin: 0 auto; /* Centers the element horizontally */
   }
@@ -319,6 +316,12 @@ export default {
   .title {
     max-width: 100%;
     font-size: 40px !important;
+  }
+  .yellow {
+    padding-right: 50px;
+  }
+  .video-background .content {
+    width: 100% !important;
   }
 }
 .play-stop .icon {
