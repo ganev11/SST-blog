@@ -2,7 +2,6 @@
   <Head>
     <Title>{{ 'titleee' }}</Title>
     <Meta name="description" :content="'descriptionnnn'" />
-    <Style type="text/css" children="body { background-color: green; }"></Style>
   </Head>
 
   <!-- VIDEO START -->
@@ -248,6 +247,7 @@ export default {
 }
 
 .video-background video {
+  max-width: 100vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -290,9 +290,9 @@ export default {
   position: relative;
   z-index: 2;
   flex-direction: column-reverse;
-  padding: 20px;
-  width: calc(100vw - 60px);
-  max-width: 1200px;
+  padding-left: 20px;
+  width: calc(100vw - 60px) !important;
+  max-width: 90vw;
   bottom: 5vh !important;
 }
 @media (min-width: 1024px) {
