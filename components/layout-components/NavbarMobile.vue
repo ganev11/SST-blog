@@ -270,7 +270,7 @@ export default {
   min-height: 300px;
 }
 .flex-between {
-  max-width: 270px;
+  max-width: 200px;
   display: flex;
   justify-content: space-between;
 }
