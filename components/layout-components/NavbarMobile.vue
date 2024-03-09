@@ -270,7 +270,7 @@ export default {
   min-height: 300px;
 }
 .flex-between {
-  max-width: 200px;
+  max-width: 270px;
   display: flex;
   justify-content: space-between;
 }
@@ -279,7 +279,8 @@ export default {
     width: calc(100% - 30px);
   }
   .flex-between {
-    min-width: calc(100% - 30px);
+    /* min-width: calc(100% - 30px); */
+    max-width: 200px;
   }
 }
 .mobile-nav-item {
