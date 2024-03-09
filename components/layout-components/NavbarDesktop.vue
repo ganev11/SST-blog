@@ -10,7 +10,7 @@
           :key="item.text"
           ref="navItems"
           @click="handleClick(item)"
-          class="nav-item flex-text"
+          class="nav-item flex-text center-hor"
           :class="{ 'has-arrow': item.hasArrow, 'nav-item-open': item.isOpen }"
         >
           <span v-if="item.href">
@@ -242,7 +242,10 @@ export default {
   cursor: pointer;
   padding: 5px 10px;
 }
-
+.center-hor {
+  display: flex;
+  align-items: center;
+}
 .dropdown-item:hover {
   text-decoration: underline;
 }
