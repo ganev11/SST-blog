@@ -279,8 +279,7 @@ export default {
     width: calc(100% - 30px);
   }
   .flex-between {
-    /* min-width: calc(100% - 30px); */
-    max-width: 200px;
+    min-width: calc(100% - 30px);
   }
 }
 .mobile-nav-item {
