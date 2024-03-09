@@ -27,9 +27,7 @@
           </span>
         </div>
       </div>
-      <div class="content-main">
-        <div v-html="article.content"></div>
-      </div>
+      <div class="content-main" v-html="article.content"></div>
     </div>
     <!-- CONTEN END -->
     <br />
@@ -161,7 +159,7 @@ export default {
 }
 .profile-image {
   width: 100%; /* Makes the image responsive, adjusting to the width of its container */
-  height: auto; /* Maintains the aspect ratio of the image */
+  aspect-ratio: 1/1;
   object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 </style>

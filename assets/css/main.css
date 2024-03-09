@@ -46,3 +46,42 @@ html {
     margin: 0 auto; /* Centers the element horizontally */
   }
 }
+
+.content-main {
+  padding: 50px 30% 0 20%;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-main h1 {
+  font-size: 1.8em; /* Size for h1 tags */
+  color: #333; /* Color for h1 tags */
+}
+
+.content-main h2 {
+  font-size: 1.3em; /* Size for h2 tags */
+  color: #666; /* Color for h2 tags */
+}
+
+.content-main p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.content-main img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.content-main a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.content-main a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Add additional styling for other Markdown elements as needed */
