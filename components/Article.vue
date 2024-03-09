@@ -13,25 +13,31 @@ const fetchArticle = async postSlug => {
   const QUERY = ref(`
   {
         article(filter: { slug: { eq: "${postSlug}" } }) {
+        id
+        slug
+        topics {
           id
-          slug
-          topics {
-            id
-            topic
-          }
-          title
-          _updatedAt
+          topic
+        }
+        title
+        _updatedAt
+        description
+        content
+        seo {
           description
-          content
-          featuredImage {
-            url
-          }
-          author {
-            id
-            name
-          }
+          noIndex
+          title
+          twitterCard
+        }
+        featuredImage {
+          url
+        }
+        author {
+          id
+          name
         }
       }
+    }
     `)
   const { data } = await useGraphqlQuery({ query: QUERY.value })
   return data.value.article
