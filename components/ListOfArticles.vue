@@ -21,6 +21,7 @@ const props = defineProps({
     default: '#fff'
   }
 })
+const shouldWrap = computed(() => props.amount > 4)
 
 // Computed property to construct the filter part of the GraphQL query
 const filterTopicIDsArray = computed(() => {
@@ -76,6 +77,7 @@ const handleClick = post => {
 <template>
   <div
     class="articles-container"
+    :class="{ wrap: shouldWrap }"
     :style="`background-color: ${props.bckgColor}`"
     v-if="data && data.allArticles"
   >
@@ -107,11 +109,14 @@ const handleClick = post => {
   justify-content: flex-start;
 }
 /* ... existing styles ... */
+.articles-container.wrap {
+  flex-wrap: wrap;
+}
 
 /* Desktops */
 @media (min-width: 1224px) {
   .articles-container {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   .article-card {
