@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>{{ 'SSTrader Blog' }}</Title>
+    <Meta name="description" :content="'Blog posts about our AI'" />
+  </Head>
   <div class="main">
     <!-- LINKS START -->
     <div class="black"></div>

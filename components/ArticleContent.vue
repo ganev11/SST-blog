@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>{{ 'SSTrader Article' }}</Title>
+    <Meta name="description" :content="`${article.description}`" />
+  </Head>
   <div v-if="article" class="main">
     <!-- TITLE SECTION START -->
     <div class="container">
