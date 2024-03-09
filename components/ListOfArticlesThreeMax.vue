@@ -109,17 +109,47 @@ const handleClick = post => {
 }
 
 .article-card {
-  width: 435px;
+  width: auto;
   /* background-color: #1a1a1a00;  */
-  margin-bottom: 20px;
   /* border-radius: 8px; */
   overflow: hidden;
   cursor: pointer;
 }
+/* Desktops */
+@media (min-width: 1224px) {
+  .articles-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .article-card {
+    flex: 0 0 calc(35% - 45px); /* adjust spacing to match the gap */
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1223px) {
+  .articles-container {
+    justify-content: space-between;
+  }
+  .article-card {
+    flex: 0 0 calc(50% - 18px); /* adjust spacing to match the gap */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .articles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .article-card {
+    width: 100%;
+  }
+}
 
 .image-container {
   width: 100%;
-  height: 435px; /* Adjust height as needed */
   overflow: hidden;
 }
 
