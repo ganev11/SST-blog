@@ -21,7 +21,7 @@
       :bckgColor="'white'"
       :color="'#000'"
       :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']"
-      :redirectUrl="'research'"
+      :redirectUrl="'blog'"
     />
 
     <Footer />

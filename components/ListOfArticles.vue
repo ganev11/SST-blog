@@ -22,6 +22,7 @@ const props = defineProps({
   }
 })
 const shouldWrap = computed(() => props.amount > 4)
+const noSpaceBtwn = computed(() => props.amount < 4)
 
 // Computed property to construct the filter part of the GraphQL query
 const filterTopicIDsArray = computed(() => {
@@ -77,7 +78,7 @@ const handleClick = post => {
 <template>
   <div
     class="articles-container"
-    :class="{ wrap: shouldWrap }"
+    :class="{ wrap: shouldWrap, 'no-space-btwn': noSpaceBtwn }"
     :style="`background-color: ${props.bckgColor}`"
     v-if="data && data.allArticles"
   >
@@ -112,12 +113,15 @@ const handleClick = post => {
 .articles-container.wrap {
   flex-wrap: wrap;
 }
-
+.articles-container {
+  justify-content: space-around;
+}
 /* Desktops */
 @media (min-width: 1224px) {
   .articles-container {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 30px;
   }
   .article-card {
     flex: 0 0 calc(25% - 35px); /* adjust spacing to match the gap */
