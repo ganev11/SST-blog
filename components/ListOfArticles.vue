@@ -101,30 +101,62 @@ const handleClick = post => {
 /* ARTICLE STYLING */
 .articles-container {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   padding: 20px;
   justify-content: flex-start;
-  gap: 35px;
+}
+/* ... existing styles ... */
+
+/* Desktops */
+@media (min-width: 1224px) {
+  .articles-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .article-card {
+    flex: 0 0 calc(25% - 35px); /* adjust spacing to match the gap */
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1223px) {
+  .articles-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .article-card {
+    flex: 0 0 calc(50% - 35px); /* adjust spacing to match the gap */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .articles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .article-card {
+    width: 100%;
+    max-width: 320px; /* maintain the width or make it full according to design */
+  }
 }
 
 .article-card {
   width: 320px;
-  /* background-color: #1a1a1a00;  */
   margin-bottom: 20px;
-  /* border-radius: 8px; */
   overflow: hidden;
   cursor: pointer;
 }
 
 .image-container {
   width: 100%;
-  height: 300px; /* Adjust height as needed */
   overflow: hidden;
 }
 
 .article-image {
   width: 100%;
+  aspect-ratio: 1/1;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the area without distortion */
 }
