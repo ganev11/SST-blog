@@ -147,12 +147,10 @@ const handleClick = post => {
   }
   .article-card {
     width: 100%;
-    max-width: 320px; /* maintain the width or make it full according to design */
   }
 }
 
 .article-card {
-  width: 320px;
   margin-bottom: 20px;
   overflow: hidden;
   cursor: pointer;

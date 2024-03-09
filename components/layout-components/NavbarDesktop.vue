@@ -10,18 +10,18 @@
           :key="item.text"
           ref="navItems"
           @click="handleClick(item)"
-          class="nav-item flex-text center-hor"
+          class="nav-item flex-text"
           :class="{ 'has-arrow': item.hasArrow, 'nav-item-open': item.isOpen }"
         >
           <span v-if="item.href">
-            <a class="anchor" :href="`${baseUrl}${item.href}`">
+            <a class="anchor relative-top-7" :href="`${baseUrl}${item.href}`">
               {{ item.text }}
             </a>
           </span>
           <span v-else class="nav-item"> {{ item.text }}</span>
 
-          <down class="arrow m-right" v-if="!item.isOpen && item.hasArrow" />
-          <up class="arrow m-right" v-if="item.isOpen && item.hasArrow" />
+          <down class="arrow relative-top-5 m-right" v-if="!item.isOpen && item.hasArrow" />
+          <up class="arrow relative-top-5 m-right" v-if="item.isOpen && item.hasArrow" />
           <!-- Dropdown Menu -->
           <div
             v-if="item.isOpen && item.subItems"
@@ -242,9 +242,13 @@ export default {
   cursor: pointer;
   padding: 5px 10px;
 }
-.center-hor {
-  display: flex;
-  align-items: center;
+.relative-top-5 {
+  position: relative;
+  top: 5px;
+}
+.relative-top-7 {
+  position: relative;
+  top: 7px;
 }
 .dropdown-item:hover {
   text-decoration: underline;

@@ -324,6 +324,9 @@ export default {
   .video-background .content {
     width: 100% !important;
   }
+  .quote-image-container {
+    flex-direction: column;
+  }
 }
 .play-stop .icon {
   fill: white; /* Set default color to white */
@@ -387,7 +390,13 @@ export default {
   background-color: white;
   color: black;
 }
-
+/* Tablets */
+@media (max-width: 768px) and (max-width: 1223px) {
+  .profile-image {
+    width: 100% !important;
+    height: auto; /* Maintain aspect ratio */
+  }
+}
 button {
   background: none;
   border: 2px solid white;
@@ -481,13 +490,19 @@ button:hover {
   display: flex;
   justify-content: space-between; /* Puts maximum space between text and image */
   padding: 20px;
+  gap: 40px;
 }
 
-.text-container {
-  flex-basis: 50%; /* Takes up half the width of the container */
-  padding-right: 50px; /* Adds some space between the text and the image */
+/* .text-container {
 }
-
+.image-container {
+} */
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  object-fit: cover;
+}
 .quote {
   font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   font-weight: 400;
@@ -499,15 +514,5 @@ button:hover {
 .author {
   font-weight: bold;
   color: white;
-}
-
-.image-container {
-  flex-basis: 50%; /* Takes up the other half of the width of the container */
-}
-
-.profile-image {
-  width: 100%; /* Makes the image responsive, adjusting to the width of its container */
-  height: auto; /* Maintains the aspect ratio of the image */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 </style>
