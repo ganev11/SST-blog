@@ -74,7 +74,7 @@
     </div>
     <br />
     <br />
-    <img src="../assets/img/image_five_bg.webp" alt="Safety Image" class="full-width-image" />
+    <img src="../assets/img/1.jpeg" alt="Safety Image" class="full-width-image" />
     <br />
     <br />
     <br />
@@ -120,7 +120,7 @@
     </div>
     <br />
     <br />
-    <img src="../assets/img/image_bg_thirteen.avif" alt="Safety Image" class="full-width-image" />
+    <img src="../assets/img/2.png" alt="Safety Image" class="full-width-image" />
     <br />
     <br />
     <br />
@@ -138,7 +138,7 @@
         <p class="author">Lilian Weng<br />Applied AI at OpenAI</p>
       </div>
       <div class="image-container">
-        <img src="../assets/img/image_portrait_alex_w.webp" alt="Lilian Weng" class="profile-image" />
+        <img src="../assets/img/3.png" alt="Lilian Weng" class="profile-image" />
       </div>
     </div>
     <br />
