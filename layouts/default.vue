@@ -1,5 +1,6 @@
 <template>
-  <div style="background-color: black">
+  <!-- <div style="background-color: black"> -->
+  <div :style="`background-color: ${bckgrndColor}`">
     <div v-if="isMobile">
       <navbar-mobile :menuItems="menuItems" :isScrolled="isScrolled" :isMainPage="isMainPage" />
     </div>
@@ -84,6 +85,9 @@ export default {
     isMobile() {
       return this.screenWidth < 1200
     },
+    bckgrndColor() {
+      return this.isMainPage ? 'black' : 'white'
+    },
     isMainPage() {
       if (this.$route.path === '/') {
         return true
@@ -106,6 +110,9 @@ export default {
     }
   },
   methods: {
+    xxx() {
+      console.log('bckgrndColor', this.bckgrndColor)
+    },
     updateScreenWidth() {
       this.screenWidth = window.innerWidth
     },
@@ -116,8 +123,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.background {
-  background-color: black !important;
-}
-</style>
+<style scoped></style>

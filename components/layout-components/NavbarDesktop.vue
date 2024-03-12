@@ -1,5 +1,8 @@
 <template>
-  <div :class="['navbar', { scrolled: isScrolled }]" class="general-navbar">
+  <div
+    :class="[{ navbar: isMainPage }, { scrolled: isScrolled }, { navbarBlack: !isMainPage }]"
+    class="general-navbar"
+  >
     <div class="left-side-nav">
       <a class="logo-anchor" href="/">
         <logoNavMain class="logo" />
@@ -140,7 +143,9 @@ export default {
   z-index: 10;
   color: white;
 }
-
+.navbarBlack {
+  background-color: black;
+}
 .navbar.scrolled {
   background-color: black;
 }
@@ -200,6 +205,7 @@ export default {
 .flex-text {
   white-space: nowrap;
 }
+
 .nav-item:hover {
   text-decoration: underline;
 }

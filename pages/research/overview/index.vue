@@ -315,13 +315,13 @@ export default {
   height: calc(100% - 80px);
   background-color: rgb(255, 255, 255);
 }
-.black {
+/* .black {
   background-color: black;
   height: 80px;
   width: 100%;
   position: fixed;
   z-index: 1;
-}
+} */
 .main-title {
   font-size: 3rem;
   padding: 20px;

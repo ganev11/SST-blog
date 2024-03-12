@@ -115,8 +115,6 @@ export default {
     arrowSide
   },
   mounted() {
-    console.log('this.$route.params._post :>> ', this.$route.params._post)
-
     if (process.client) {
       //   window.addEventListener('scroll', this.onScroll)
       document.addEventListener('click', this.handleDocumentClick)
