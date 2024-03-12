@@ -102,55 +102,33 @@ const handleClick = post => {
 .articles-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
   padding: 20px;
-  justify-content: flex-start;
-  gap: 35px;
 }
 
 .article-card {
-  width: auto;
-  /* background-color: #1a1a1a00;  */
-  /* border-radius: 8px; */
+  width: calc(33% - 1%); /* Adjust the width to display 4 cards per row with gap */
+  margin-bottom: 20px;
   overflow: hidden;
   cursor: pointer;
 }
-/* Desktops */
-@media (min-width: 1224px) {
-  .articles-container {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 30px;
-  }
-  .article-card {
-    flex: 0 0 calc(35% - 45px); /* adjust spacing to match the gap */
-  }
-}
 
 /* Tablets */
-@media (min-width: 768px) and (max-width: 1223px) {
-  .articles-container {
-    justify-content: space-between;
-  }
+@media (max-width: 1223px) {
   .article-card {
-    flex: 0 0 calc(50% - 18px); /* adjust spacing to match the gap */
+    width: calc(50% - 1%); /* Adjust the width to display maximum 2 cards per row with gap */
   }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
   .articles-container {
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start; /* Align items to the start of the container */
   }
-  .article-card {
-    width: 100%;
-  }
-}
 
-.image-container {
-  width: 100%;
-  overflow: hidden;
+  .article-card {
+    width: 100%; /* Display one card per row */
+  }
 }
 
 .article-image {

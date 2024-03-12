@@ -104,61 +104,34 @@ const handleClick = post => {
 /* ARTICLE STYLING */
 .articles-container {
   display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
-  padding: 20px;
-  justify-content: flex-start;
-}
-/* ... existing styles ... */
-.articles-container.wrap {
   flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  padding: 20px;
 }
-.articles-container {
-  justify-content: space-around;
-}
-/* Desktops */
-@media (min-width: 1224px) {
-  .articles-container {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 30px;
-  }
-  .article-card {
-    flex: 0 0 calc(25% - 35px); /* adjust spacing to match the gap */
-  }
+
+.article-card {
+  width: calc(25% - 20px); /* Adjust the width to display 4 cards per row with gap */
+  margin-bottom: 20px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 /* Tablets */
-@media (min-width: 768px) and (max-width: 1223px) {
-  .articles-container {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+@media (max-width: 1223px) {
   .article-card {
-    flex: 0 0 calc(50% - 35px); /* adjust spacing to match the gap */
+    width: calc(50% - 20px); /* Adjust the width to display maximum 2 cards per row with gap */
   }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
   .articles-container {
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start; /* Align items to the start of the container */
   }
+
   .article-card {
-    width: 100%;
+    width: 100%; /* Display one card per row */
   }
-}
-
-.article-card {
-  margin-bottom: 20px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.image-container {
-  width: 100%;
-  overflow: hidden;
 }
 
 .article-image {
