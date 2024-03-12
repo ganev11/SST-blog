@@ -148,9 +148,9 @@
     <br />
     <br />
     <br />
-    <Footer />
     <!-- TESTIMONY END -->
   </div>
+  <Footer />
 </template>
 
 <script>

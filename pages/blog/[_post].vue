@@ -23,9 +23,8 @@
       :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']"
       :redirectUrl="'blog'"
     />
-
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script>

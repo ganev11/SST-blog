@@ -141,8 +141,8 @@
     <!-- Highlights END -->
     <!-- :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" -->
     <!-- <hr class="flex-line" /> -->
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script>
