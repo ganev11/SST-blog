@@ -1,88 +1,90 @@
 <template>
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section logo-section">
-        <logoNavMain class="logo" />
+  <div class="large-screen-background">
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section logo-section">
+          <logoNavMain class="logo" />
+        </div>
+        <div class="flex-columns">
+          <div class="footer-section">
+            <h4>Research</h4>
+            <ul>
+              <li><a class="anchor" :href="`${baseUrl}research/overview`">Overview</a></li>
+              <li><a class="anchor" :href="`${baseUrl}research/index`">Index</a></li>
+              <li><a class="anchor" :href="`${baseUrl}research/gpt-4`">GPT-4</a></li>
+              <li><a class="anchor" :href="`${baseUrl}research/dall-e-3`">DALL-E 3</a></li>
+              <li><a class="anchor" :href="`${baseUrl}research/sora`">Sora</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>API</h4>
+            <ul>
+              <li><a class="anchor" :href="`${baseUrl}api/overview`">Overview</a></li>
+              <li><a class="anchor" :href="`${baseUrl}api/pricing`">Pricing</a></li>
+              <li><a class="anchor" :href="`${baseUrl}api/docs`">Docs</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>ChatGPT</h4>
+            <ul>
+              <li><a class="anchor" :href="`${baseUrl}chatgpt/overview`">Overview</a></li>
+              <li><a class="anchor" :href="`${baseUrl}chatgpt/team`">Team</a></li>
+              <li><a class="anchor" :href="`${baseUrl}chatgpt/enterprise`">Enterprise</a></li>
+              <li><a class="anchor" :href="`${baseUrl}chatgpt/pricing`">Pricing</a></li>
+              <li><a class="anchor" :href="`${baseUrl}chatgpt/try-chatgpt`">Try ChatGPT</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a class="anchor" :href="`${baseUrl}company/about`">About</a></li>
+              <li><a class="anchor" :href="`${baseUrl}company/blog`">Blog</a></li>
+              <li><a class="anchor" :href="`${baseUrl}company/careers`">Careers</a></li>
+              <li><a class="anchor" :href="`${baseUrl}company/charter`">Charter</a></li>
+              <li><a class="anchor" :href="`${baseUrl}company/security`">Security</a></li>
+              <li>
+                <a class="anchor" :href="`${baseUrl}company/customer-stories`">Customer stories</a>
+              </li>
+              <li><a class="anchor" :href="`${baseUrl}company/safety`">Safety</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="flex-columns">
-        <div class="footer-section">
-          <h4>Research</h4>
-          <ul>
-            <li><a class="anchor" :href="`${baseUrl}research/overview`">Overview</a></li>
-            <li><a class="anchor" :href="`${baseUrl}research/index`">Index</a></li>
-            <li><a class="anchor" :href="`${baseUrl}research/gpt-4`">GPT-4</a></li>
-            <li><a class="anchor" :href="`${baseUrl}research/dall-e-3`">DALL-E 3</a></li>
-            <li><a class="anchor" :href="`${baseUrl}research/sora`">Sora</a></li>
-          </ul>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr class="flex-line" />
+      <div class="flex-ft-bt-social">
+        <div class="copyright">
+          <b>OpenAI © 2015–2024</b>
+          <a class="anchor link-copyright" :href="`${baseUrl}terms-policies`">Terms & policies</a>
+          <a class="anchor link-copyright" :href="`${baseUrl}privacy-policy`">Privacy policy</a>
+          <a class="anchor link-copyright" :href="`${baseUrl}brand-guidelines`">Brand guidelines</a>
         </div>
-        <div class="footer-section">
-          <h4>API</h4>
-          <ul>
-            <li><a class="anchor" :href="`${baseUrl}api/overview`">Overview</a></li>
-            <li><a class="anchor" :href="`${baseUrl}api/pricing`">Pricing</a></li>
-            <li><a class="anchor" :href="`${baseUrl}api/docs`">Docs</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>ChatGPT</h4>
-          <ul>
-            <li><a class="anchor" :href="`${baseUrl}chatgpt/overview`">Overview</a></li>
-            <li><a class="anchor" :href="`${baseUrl}chatgpt/team`">Team</a></li>
-            <li><a class="anchor" :href="`${baseUrl}chatgpt/enterprise`">Enterprise</a></li>
-            <li><a class="anchor" :href="`${baseUrl}chatgpt/pricing`">Pricing</a></li>
-            <li><a class="anchor" :href="`${baseUrl}chatgpt/try-chatgpt`">Try ChatGPT</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a class="anchor" :href="`${baseUrl}company/about`">About</a></li>
-            <li><a class="anchor" :href="`${baseUrl}company/blog`">Blog</a></li>
-            <li><a class="anchor" :href="`${baseUrl}company/careers`">Careers</a></li>
-            <li><a class="anchor" :href="`${baseUrl}company/charter`">Charter</a></li>
-            <li><a class="anchor" :href="`${baseUrl}company/security`">Security</a></li>
-            <li>
-              <a class="anchor" :href="`${baseUrl}company/customer-stories`">Customer stories</a>
-            </li>
-            <li><a class="anchor" :href="`${baseUrl}company/safety`">Safety</a></li>
-          </ul>
+        <div class="social-links">
+          <div class="flex-soc">
+            <a class="anchor link-social" :href="`${baseUrl}twitter`">Twitter</a>
+            <a class="anchor link-social" :href="`${baseUrl}youtube`">YouTube</a>
+            <a class="anchor link-social" :href="`${baseUrl}github`">GitHub</a>
+            <a class="anchor link-social" :href="`${baseUrl}soundcloud`">SoundCloud</a>
+            <a class="anchor link-social" :href="`${baseUrl}linkedin`">LinkedIn</a>
+          </div>
+          <a class="anchor link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</a>
         </div>
       </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <hr class="flex-line" />
-    <div class="flex-ft-bt-social">
-      <div class="copyright">
-        <b>OpenAI © 2015–2024</b>
-        <a class="anchor link-copyright" :href="`${baseUrl}terms-policies`">Terms & policies</a>
-        <a class="anchor link-copyright" :href="`${baseUrl}privacy-policy`">Privacy policy</a>
-        <a class="anchor link-copyright" :href="`${baseUrl}brand-guidelines`">Brand guidelines</a>
+      <div>
+        <!-- <a href="#">Back to top ↑</a> -->
       </div>
-      <div class="social-links">
-        <div class="flex-soc">
-          <a class="anchor link-social" :href="`${baseUrl}twitter`">Twitter</a>
-          <a class="anchor link-social" :href="`${baseUrl}youtube`">YouTube</a>
-          <a class="anchor link-social" :href="`${baseUrl}github`">GitHub</a>
-          <a class="anchor link-social" :href="`${baseUrl}soundcloud`">SoundCloud</a>
-          <a class="anchor link-social" :href="`${baseUrl}linkedin`">LinkedIn</a>
-        </div>
-        <a class="anchor link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</a>
-      </div>
-    </div>
-    <div>
-      <!-- <a href="#">Back to top ↑</a> -->
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-  </footer>
+      <br />
+      <br />
+      <br />
+      <br />
+    </footer>
+  </div>
 </template>
 <script>
 import logoNavMain from '../assets/svg/logoNavMain.vue'
@@ -111,7 +113,7 @@ export default {
   color: #fff;
   background-color: #000; /* Assuming a dark theme from the screenshot */
   font-family: Arial, sans-serif;
-  padding: 2rem;
+  padding: 2rem calc((100vw - 1560px) / 2);
 }
 li {
   margin-top: 7px !important;
@@ -236,9 +238,21 @@ li {
     width: 100%;
   }
 }
+@media screen and (max-width: 1600px) {
+  .footer {
+    color: #fff;
+    background-color: #000; /* Assuming a dark theme from the screenshot */
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+  }
+}
 
 .flex-ft-bt-social {
   display: flex;
   flex-direction: row;
+}
+.large-screen-background {
+  position: relative;
+  min-width: 100%;
 }
 </style>

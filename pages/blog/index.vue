@@ -18,8 +18,8 @@
     <ListOfArticles :amount="10" :bckgColor="'white'" :color="'#000'" :redirectUrl="'blog'" />
     <!-- :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" -->
     <!-- <hr class="flex-line" /> -->
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script>
