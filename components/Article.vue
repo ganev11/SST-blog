@@ -1,3 +1,13 @@
+<template>
+  <Head>
+    <Title>{{ seoTitle }}</Title>
+    <Meta name="description" :content="`${seoDescription}`" />
+  </Head>
+  <div :key="rerender">
+    <ArticleContent :article="article" />
+  </div>
+</template>
+
 <script setup>
 import { ref, computed, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
@@ -56,13 +66,24 @@ const formatDate = dateString => {
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', options)
 }
-</script>
 
-<template>
-  <div :key="rerender">
-    <ArticleContent :article="article" />
-  </div>
-</template>
+// Computed properties for SEO metadata
+const seoDescription = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.description) {
+    return article.value.seo.description
+  } else {
+    return 'Read the news about our AI'
+  }
+})
+
+const seoTitle = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.title) {
+    return article.value.seo.title
+  } else {
+    return 'Article'
+  }
+})
+</script>
 
 <style scoped>
 .img {
