@@ -1,8 +1,8 @@
 <template>
-  <!-- <Head>
-    <Title>{{ seoTitle }}</Title>
-    <Meta name="description" :content="`${seoDescription}`" />
-  </Head> -->
+  <Head>
+    <Title v-if="seoTitle">{{ seoTitle }}</Title>
+    <Meta v-if="seoDescription" name="description" :content="`${seoDescription}`" />
+  </Head>
   <div :key="rerender">
     <ArticleContent :article="article" />
   </div>
@@ -81,7 +81,7 @@ const seoDescription = computed(() => {
   if (article.value && article.value.seo && article.value.seo.description) {
     return article.value.seo.description
   } else {
-    return 'Read the news about our AI'
+    return null
   }
 })
 // console.log('seoDescription :>> ', seoDescription.value)
@@ -95,7 +95,7 @@ const seoTitle = computed(() => {
   if (article.value && article.value.seo && article.value.seo.title) {
     return article.value.seo.title
   } else {
-    return 'Article'
+    return null
   }
 })
 // console.log('seoTitle :>> ', seoTitle.value)
@@ -104,17 +104,17 @@ const seoTitle = computed(() => {
 // }, 1000)
 // -------------------- TITLE END --------------------
 
-const setMeta = () => {
-  console.log('setMeta :>> ', seoTitle.value)
-  useHead({
-    title: seoTitle.value,
-    meta: [{ name: 'description', content: 'My amazing site.' }],
-    bodyAttrs: {
-      class: 'test'
-    },
-    script: [{ innerHTML: "console.log('Hello world')" }]
-  })
-}
+// const setMeta = () => {
+//   console.log('setMeta :>> ', seoTitle.value)
+//   useHead({
+//     title: seoTitle.value,
+//     meta: [{ name: 'description', content: 'My amazing site.' }],
+//     bodyAttrs: {
+//       class: 'test'
+//     },
+//     script: [{ innerHTML: "console.log('Hello world')" }]
+//   })
+// }
 
 // setTimeout(() => {
 //   useHead({
