@@ -13,7 +13,6 @@ import { ref, computed, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 import { marked } from 'marked'
 import { useHead } from '@vueuse/head'
-import { useMeta } from '#imports'
 
 const props = defineProps({
   postId: String,
@@ -96,16 +95,14 @@ console.log('seoTitle :>> ', seoTitle.value)
 setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
-// Reactive head properties using useMeta
-useMeta(() => ({
-  title: seoTitle.value,
-  meta: [
-    {
-      name: 'description',
-      content: seoDescription.value
-    }
-  ]
-}))
+useHead({
+  title: 'My App',
+  meta: [{ name: 'description', content: 'My amazing site.' }],
+  bodyAttrs: {
+    class: 'test'
+  },
+  script: [{ innerHTML: "console.log('Hello world')" }]
+})
 // setTimeout(() => {
 //   useHead({
 //     titleTemplate: seoTitle => {
