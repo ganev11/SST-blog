@@ -78,10 +78,10 @@ const seoDescription = computed(() => {
     return 'Read the news about our AI'
   }
 })
-console.log('seoDescription :>> ', seoDescription.value)
-setTimeout(() => {
-  console.log('seoDescription :>> ', seoDescription.value)
-}, 1000)
+// console.log('seoDescription :>> ', seoDescription.value)
+// setTimeout(() => {
+//   console.log('seoDescription :>> ', seoDescription.value)
+// }, 1000)
 // -------------------- DESCRIPTION END --------------------
 
 // -------------------- TITLE START --------------------
@@ -92,15 +92,23 @@ const seoTitle = computed(() => {
     return 'Article'
   }
 })
-console.log('seoTitle :>> ', seoTitle.value)
-setTimeout(() => {
-  console.log('seoTitle :>> ', seoTitle.value)
-}, 1000)
+// console.log('seoTitle :>> ', seoTitle.value)
+// setTimeout(() => {
+//   console.log('seoTitle :>> ', seoTitle.value)
+// }, 1000)
 // -------------------- TITLE END --------------------
 
 const setMeta = async () => {
+  console.log('setMeta :>> ', seoTitle.value)
   await useHead({
-    title: seoTitle.value,
+    // title: seoTitle.value,
+    titleTemplate: seoTitle => {
+      if (seoTitle && seoTitle.value) {
+        return `${seoTitle.value} - Site Title`
+      } else {
+        return 'Site Title'
+      }
+    },
     meta: [{ name: 'description', content: 'My amazing site.' }],
     bodyAttrs: {
       class: 'test'
