@@ -56,10 +56,12 @@ const fetchArticle = async postSlug => {
 watchEffect(async () => {
   if (props.postSlug) {
     article.value = await fetchArticle(props.postSlug)
-    await setMeta()
     if (article.value && article.value.content) {
       article.value.content = marked(article.value.content)
     }
+  }
+  if (article && article.value && article.value.seo) {
+    await setMeta()
   }
 })
 
@@ -100,15 +102,8 @@ const seoTitle = computed(() => {
 
 const setMeta = async () => {
   console.log('setMeta :>> ', seoTitle.value)
-  await useHead({
-    // title: seoTitle.value,
-    titleTemplate: seoTitle => {
-      if (seoTitle && seoTitle.value) {
-        return `${seoTitle.value} - Site Title`
-      } else {
-        return 'Site Title'
-      }
-    },
+  useHead({
+    title: seoTitle.value,
     meta: [{ name: 'description', content: 'My amazing site.' }],
     bodyAttrs: {
       class: 'test'
