@@ -94,20 +94,23 @@ console.log('seoTitle :>> ', seoTitle.value)
 setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
-useHead({
-  titleTemplate: () => {
-    // This function will be reactive and will update the title when seoTitle changes
-    return seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'
-  },
-  meta: [
-    {
-      name: 'description',
-      // This function will also be reactive and update the meta description content
-      // when seoDescription changes
-      content: seoDescription.value
-    }
-  ]
+nextTick(() => {
+  useHead({
+    titleTemplate: () => {
+      // This function will be reactive and will update the title when seoTitle changes
+      return seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'
+    },
+    meta: [
+      {
+        name: 'description',
+        // This function will also be reactive and update the meta description content
+        // when seoDescription changes
+        content: seoDescription.value
+      }
+    ]
+  })
 })
+
 // -------------------- TITLE END --------------------
 </script>
 
