@@ -1,8 +1,8 @@
 <template>
-  <!-- <Head>
+  <Head>
     <Title>{{ seoTitle }}</Title>
     <Meta name="description" :content="`${seoDescription}`" />
-  </Head> -->
+  </Head>
   <div v-if="article" class="main">
     <!-- TITLE SECTION START -->
     <div class="container">
@@ -47,20 +47,20 @@ export default {
     return {}
   },
   computed: {
-    // seoDescription() {
-    //   if (this.article && this.article.seo && this.article.seo.description) {
-    //     return this.article.seo.description
-    //   } else {
-    //     return 'Reade the news about our AI'
-    //   }
-    // },
-    // seoTitle() {
-    //   if (this.article && this.article.seo && this.article.seo.title) {
-    //     return this.article.seo.title
-    //   } else {
-    //     return 'Article'
-    //   }
-    // }
+    seoDescription() {
+      if (this.article && this.article.seo && this.article.seo.description) {
+        return this.article.seo.description
+      } else {
+        return 'Reade the news about our AI'
+      }
+    },
+    seoTitle() {
+      if (this.article && this.article.seo && this.article.seo.title) {
+        return this.article.seo.title
+      } else {
+        return 'Article'
+      }
+    }
   },
   methods: {
     seo() {
@@ -69,6 +69,24 @@ export default {
     redirect(url) {
       this.$router.push(url)
     }
+  },
+  head() {
+    // This function needs to return an object with the meta info
+    return {
+      title: this.seoTitle,
+      meta: [
+        {
+          hid: 'description', // use the `hid` key to ensure the meta tag is updated if it exists
+          name: 'description',
+          content: this.seoDescription
+        }
+        // ... other head properties
+      ]
+    }
+  },
+  mounted() {
+    // This will ensure that the head is updated when the component is mounted
+    this.$meta().refresh()
   }
 }
 </script>

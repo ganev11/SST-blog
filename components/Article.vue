@@ -1,8 +1,8 @@
 <template>
-  <Head>
+  <!-- <Head>
     <Title>{{ seoTitle }}</Title>
     <Meta name="description" :content="`${seoDescription}`" />
-  </Head>
+  </Head> -->
   <div :key="rerender">
     <ArticleContent :article="article" />
   </div>
@@ -113,37 +113,37 @@ setTimeout(() => {
 //   })
 // }, 1000)
 
-onMounted(() => {
-  // This will set the initial head values when the component is mounted
-  useHead({
-    titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
-    meta: [
-      {
-        name: 'description',
-        content: seoDescription.value
-      }
-    ]
-  })
+// onMounted(() => {
+//   // This will set the initial head values when the component is mounted
+//   useHead({
+//     titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
+//     meta: [
+//       {
+//         name: 'description',
+//         content: seoDescription.value
+//       }
+//     ]
+//   })
 
-  // Set up a watcher to update the head whenever the seoTitle or seoDescription change
-  watch(
-    [seoDescription, seoTitle],
-    () => {
-      useHead({
-        titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
-        meta: [
-          {
-            name: 'description',
-            content: seoDescription.value
-          }
-        ]
-      })
-    },
-    {
-      immediate: true // This ensures the watcher is run immediately on mount
-    }
-  )
-})
+//   // Set up a watcher to update the head whenever the seoTitle or seoDescription change
+//   watch(
+//     [seoDescription, seoTitle],
+//     () => {
+//       useHead({
+//         titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
+//         meta: [
+//           {
+//             name: 'description',
+//             content: seoDescription.value
+//           }
+//         ]
+//       })
+//     },
+//     {
+//       immediate: true // This ensures the watcher is run immediately on mount
+//     }
+//   )
+// })
 // -------------------- TITLE END --------------------
 </script>
 
