@@ -68,6 +68,7 @@ const formatDate = dateString => {
 }
 
 // Computed properties for SEO metadata
+// -------------------- DESCRIPTION START --------------------
 const seoDescription = computed(() => {
   if (article.value && article.value.seo && article.value.seo.description) {
     return article.value.seo.description
@@ -75,7 +76,13 @@ const seoDescription = computed(() => {
     return 'Read the news about our AI'
   }
 })
+console.log('seoDescription :>> ', seoDescription.value)
+setTimeout(() => {
+  console.log('seoDescription :>> ', seoDescription.value)
+}, 1000)
+// -------------------- DESCRIPTION END --------------------
 
+// -------------------- TITLE START --------------------
 const seoTitle = computed(() => {
   if (article.value && article.value.seo && article.value.seo.title) {
     return article.value.seo.title
@@ -83,12 +90,18 @@ const seoTitle = computed(() => {
     return 'Article'
   }
 })
+console.log('seoTitle :>> ', seoTitle.value)
+setTimeout(() => {
+  console.log('seoTitle :>> ', seoTitle.value)
+}, 1000)
 useHead({
   // or as a function
   titleTemplate: productCategory => {
-    return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
-  }
+    return seoTitle ? `${seoTitle.value} - Site Title` : 'Site Title'
+  },
+  meta: [{ name: 'description', content: seoDescription.value }]
 })
+// -------------------- TITLE END --------------------
 </script>
 
 <style scoped>
