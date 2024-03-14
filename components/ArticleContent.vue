@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>{{ seoTitle }}</Title>
-    <Meta name="description" :content="`${seoDescription}`" />
+    <Meta name="description" :content="`${article.seo.description}`" />
     <Meta name="robots" :content="`${seoRobots}`" />
     <Meta name="twitter:card" :content="`${twitterCard}`" />
   </Head>
