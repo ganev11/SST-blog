@@ -145,7 +145,7 @@ setTimeout(() => {
 //       immediate: true // This ensures the watcher is run immediately on mount
 //     }
 //   )
-})
+// })
 // -------------------- TITLE END --------------------
 </script>
 
