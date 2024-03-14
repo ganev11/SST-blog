@@ -26,9 +26,14 @@
           We believe our research will eventually lead to artificial general intelligence, a system that can
           solve human-level problems. Building safe and beneficial AGI is our mission.
         </p>
-        <div class="flex-btns">
-          <div class="view-research-index flex-text" @click="redirect(`/try`)">View research index</div>
-          <span class="underline">Learn about safety</span>
+        <div class="flex-btns cta">
+          <div class="view-research-index flex-text">
+            <a :href="`/try`"> View research index </a>
+          </div>
+
+          <span class="underline">
+            <a href="/"> Learn about safety </a>
+          </span>
         </div>
       </div>
     </div>
@@ -271,15 +276,37 @@ export default {
   color: rgb(0, 0, 0);
 }
 .view-research-index {
-  padding: 7px 23px 7px 13px;
+  padding: 7px 13px 7px 13px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 .view-research-index:hover {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
+}
+.view-research-index:hover a {
+  color: rgb(255, 255, 255);
+}
+.view-research-index a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.underline a {
+  color: rgb(0, 0, 0);
+}
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.2em !important;
+  cursor: pointer;
+}
+.underline a:hover {
+  color: #737373;
+}
+.flex-btns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 .text h1 {
   margin-top: 0;
@@ -302,13 +329,6 @@ export default {
   flex: 1; /* Adjust as needed */
   padding: 10px;
   min-width: 300px;
-}
-.underline {
-  text-decoration: underline;
-  cursor: pointer;
-}
-.underline:hover {
-  color: #737373;
 }
 
 .main {

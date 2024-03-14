@@ -30,6 +30,10 @@ const fetchArticle = async postSlug => {
           id
           topic
         }
+        cta {
+          title
+          url
+        }
         title
         _updatedAt
         description

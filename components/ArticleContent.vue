@@ -9,6 +9,17 @@
       <div class="text">
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
+        <div class="flex-btns cta">
+          <div v-if="article.cta[0]" class="view-research-index flex-text">
+            <!-- @click="redirect(`${article.cta[0].url}`)" -->
+            <a :href="`${article.cta[0].url}`">
+              {{ article.cta[0].title }}
+            </a>
+          </div>
+          <span v-if="article.cta[1]" class="underline">
+            <a :href="`${article.cta[1].url}`">{{ article.cta[1].title }} </a>
+          </span>
+        </div>
       </div>
       <div class="image">
         <img :src="article.featuredImage.url" alt="Image description" class="profile-image" />
@@ -169,6 +180,7 @@ export default {
   text-decoration: none;
   color: black; /* Your desired color */
 }
+
 .flex-line {
   border: none;
   height: 1px;
@@ -183,5 +195,38 @@ export default {
   width: 100%; /* Makes the image responsive, adjusting to the width of its container */
   aspect-ratio: 1/1;
   object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+.view-research-index {
+  padding: 7px 13px 7px 13px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.view-research-index:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.view-research-index:hover a {
+  color: rgb(255, 255, 255);
+}
+.view-research-index a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.underline a {
+  color: rgb(0, 0, 0);
+}
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.2em !important;
+  cursor: pointer;
+}
+.underline a:hover {
+  color: #737373;
+}
+.flex-btns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 </style>
