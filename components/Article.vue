@@ -1,8 +1,8 @@
 <template>
-  <Head>
+  <!-- <Head>
     <Title>{{ seoTitle }}</Title>
     <Meta name="description" :content="`${seoDescription}`" />
-  </Head>
+  </Head> -->
   <div :key="rerender">
     <ArticleContent :article="article" />
   </div>
