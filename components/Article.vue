@@ -65,7 +65,7 @@ watchEffect(async () => {
     }
   }
   if (article && article.value && article.value.seo) {
-    await setMeta()
+    setMeta()
   }
 })
 
@@ -104,7 +104,7 @@ const seoTitle = computed(() => {
 // }, 1000)
 // -------------------- TITLE END --------------------
 
-const setMeta = async () => {
+const setMeta = () => {
   console.log('setMeta :>> ', seoTitle.value)
   useHead({
     title: seoTitle.value,
