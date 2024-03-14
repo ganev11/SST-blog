@@ -96,7 +96,7 @@ setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
 useHead({
-  title: 'My App',
+  title: seoTitle.value,
   meta: [{ name: 'description', content: 'My amazing site.' }],
   bodyAttrs: {
     class: 'test'
