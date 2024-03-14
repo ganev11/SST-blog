@@ -12,6 +12,7 @@
 import { ref, computed, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 import { marked } from 'marked'
+import { useHead } from '@vueuse/head'
 
 const props = defineProps({
   postId: String,
@@ -94,23 +95,56 @@ console.log('seoTitle :>> ', seoTitle.value)
 setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
-setTimeout(() => {
+// setTimeout(() => {
+//   useHead({
+//     titleTemplate: seoTitle => {
+//       // This function will be reactive and will update the title when seoTitle changes
+//       return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
+//     },
+//     meta: [
+//       {
+//         name: 'description',
+//         // This function will also be reactive and update the meta description content
+//         // when seoDescription changes
+//         content: seoDescription
+//       }
+//     ]
+//   })
+// }, 1000)
+
+onMounted(() => {
+  // This will set the initial head values when the component is mounted
   useHead({
-    titleTemplate: seoTitle => {
-      // This function will be reactive and will update the title when seoTitle changes
-      return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
-    },
+    titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
     meta: [
       {
         name: 'description',
-        // This function will also be reactive and update the meta description content
-        // when seoDescription changes
-        content: seoDescription
+        content: seoDescription.value
       }
+      // ... other meta tags
     ]
   })
-}, 1000)
 
+  // Set up a watcher to update the head whenever the seoTitle or seoDescription change
+  watch(
+    [seoDescription, seoTitle],
+    () => {
+      useHead({
+        titleTemplate: () => (seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'),
+        meta: [
+          {
+            name: 'description',
+            content: seoDescription.value
+          }
+          // ... other meta tags
+        ]
+      })
+    },
+    {
+      immediate: true // This ensures the watcher is run immediately on mount
+    }
+  )
+})
 // -------------------- TITLE END --------------------
 </script>
 
