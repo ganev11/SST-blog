@@ -85,20 +85,19 @@ setTimeout(() => {
 // -------------------- TITLE START --------------------
 const seoTitle = computed(() => {
   if (article.value && article.value.seo && article.value.seo.title) {
-    return article.value.seo.title
+    return article.value.seo.title.value
   } else {
     return 'Article'
   }
 })
-console.log('seoTitle :>> ', seoTitle.value)
+console.log('seoTitle :>> ', seoTitle)
 setTimeout(() => {
-  console.log('seoTitle :>> ', seoTitle.value)
+  console.log('seoTitle :>> ', seoTitle)
 }, 1000)
-
 useHead({
   titleTemplate: seoTitle => {
     // This function will be reactive and will update the title when seoTitle changes
-    return seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'
+    return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
   },
   meta: [
     {
