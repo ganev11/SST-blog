@@ -7,5 +7,11 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/main.css' // Path to your global CSS file
-  ]
+  ],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1'
+    }
+  }
 })
