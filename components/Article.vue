@@ -83,6 +83,12 @@ const seoTitle = computed(() => {
     return 'Article'
   }
 })
+useHead({
+  // or as a function
+  titleTemplate: productCategory => {
+    return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
+  }
+})
 </script>
 
 <style scoped>
