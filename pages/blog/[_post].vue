@@ -34,6 +34,7 @@ import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
+    ListOfArticles: () => import('~/components/ListOfArticles.vue'),
     play,
     pause,
     Footer
