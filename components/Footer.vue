@@ -9,43 +9,43 @@
           <div class="footer-section">
             <h4>Research</h4>
             <ul>
-              <li><a class="anchor" :href="`${baseUrl}research/overview`">Overview</a></li>
-              <li><a class="anchor" :href="`${baseUrl}research/index`">Index</a></li>
-              <li><a class="anchor" :href="`${baseUrl}research/gpt-4`">GPT-4</a></li>
-              <li><a class="anchor" :href="`${baseUrl}research/dall-e-3`">DALL-E 3</a></li>
-              <li><a class="anchor" :href="`${baseUrl}research/sora`">Sora</a></li>
+              <li><a class="anchor" href="/research/overview">Overview</a></li>
+              <li><a class="anchor" href="/research/index">Index</a></li>
+              <li><a class="anchor" href="/research/gpt-4">GPT-4</a></li>
+              <li><a class="anchor" href="/research/dall-e-3">DALL-E 3</a></li>
+              <li><a class="anchor" href="/research/sora">Sora</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>API</h4>
             <ul>
-              <li><a class="anchor" :href="`${baseUrl}api/overview`">Overview</a></li>
-              <li><a class="anchor" :href="`${baseUrl}api/pricing`">Pricing</a></li>
-              <li><a class="anchor" :href="`${baseUrl}api/docs`">Docs</a></li>
+              <li><a class="anchor" href="/api/overview">Overview</a></li>
+              <li><a class="anchor" href="/api/pricing">Pricing</a></li>
+              <li><a class="anchor" href="/api/docs">Docs</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>ChatGPT</h4>
             <ul>
-              <li><a class="anchor" :href="`${baseUrl}chatgpt/overview`">Overview</a></li>
-              <li><a class="anchor" :href="`${baseUrl}chatgpt/team`">Team</a></li>
-              <li><a class="anchor" :href="`${baseUrl}chatgpt/enterprise`">Enterprise</a></li>
-              <li><a class="anchor" :href="`${baseUrl}chatgpt/pricing`">Pricing</a></li>
-              <li><a class="anchor" :href="`${baseUrl}chatgpt/try-chatgpt`">Try ChatGPT</a></li>
+              <li><a class="anchor" href="/chatgpt/overview">Overview</a></li>
+              <li><a class="anchor" href="/chatgpt/team">Team</a></li>
+              <li><a class="anchor" href="/chatgpt/enterprise">Enterprise</a></li>
+              <li><a class="anchor" href="/chatgpt/pricing">Pricing</a></li>
+              <li><a class="anchor" href="/chatgpt/try-chatgpt">Try ChatGPT</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>Company</h4>
             <ul>
-              <li><a class="anchor" :href="`${baseUrl}company/about`">About</a></li>
-              <li><a class="anchor" :href="`${baseUrl}company/blog`">Blog</a></li>
-              <li><a class="anchor" :href="`${baseUrl}company/careers`">Careers</a></li>
-              <li><a class="anchor" :href="`${baseUrl}company/charter`">Charter</a></li>
-              <li><a class="anchor" :href="`${baseUrl}company/security`">Security</a></li>
+              <li><a class="anchor" href="/company/about">About</a></li>
+              <li><a class="anchor" href="blog">Blog</a></li>
+              <li><a class="anchor" href="/company/careers">Careers</a></li>
+              <li><a class="anchor" href="/company/charter">Charter</a></li>
+              <li><a class="anchor" href="/company/security">Security</a></li>
               <li>
-                <a class="anchor" :href="`${baseUrl}company/customer-stories`">Customer stories</a>
+                <a class="anchor" href="/company/customer-stories">Customer stories</a>
               </li>
-              <li><a class="anchor" :href="`${baseUrl}company/safety`">Safety</a></li>
+              <li><a class="anchor" href="/company/safety">Safety</a></li>
             </ul>
           </div>
         </div>
@@ -61,17 +61,17 @@
       <div class="flex-ft-bt-social">
         <div class="copyright">
           <b>OpenAI © 2015–2024</b>
-          <a class="anchor link-copyright" :href="`${baseUrl}terms-policies`">Terms & policies</a>
-          <a class="anchor link-copyright" :href="`${baseUrl}privacy-policy`">Privacy policy</a>
-          <a class="anchor link-copyright" :href="`${baseUrl}brand-guidelines`">Brand guidelines</a>
+          <a class="anchor link-copyright" href="/terms-policies">Terms & policies</a>
+          <a class="anchor link-copyright" href="/privacy-policy">Privacy policy</a>
+          <a class="anchor link-copyright" href="/brand-guidelines">Brand guidelines</a>
         </div>
         <div class="social-links">
           <div class="flex-soc">
-            <a class="anchor link-social" :href="`${baseUrl}twitter`">Twitter</a>
-            <a class="anchor link-social" :href="`${baseUrl}youtube`">YouTube</a>
-            <a class="anchor link-social" :href="`${baseUrl}github`">GitHub</a>
-            <a class="anchor link-social" :href="`${baseUrl}soundcloud`">SoundCloud</a>
-            <a class="anchor link-social" :href="`${baseUrl}linkedin`">LinkedIn</a>
+            <a class="anchor link-social" href="/twitter">Twitter</a>
+            <a class="anchor link-social" href="/youtube">YouTube</a>
+            <a class="anchor link-social" href="/github">GitHub</a>
+            <a class="anchor link-social" href="/soundcloud">SoundCloud</a>
+            <a class="anchor link-social" href="/linkedin">LinkedIn</a>
           </div>
           <a class="anchor link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</a>
         </div>
@@ -91,9 +91,7 @@ import logoNavMain from '../assets/svg/logoNavMain.vue'
 
 export default {
   data() {
-    return {
-      baseUrl: 'https://sst-blog.vercel.app/'
-    }
+    return {}
   },
   components: {
     logoNavMain

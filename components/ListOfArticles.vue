@@ -88,14 +88,16 @@ const handleClick = post => {
     :style="`background-color: ${props.bckgColor}`"
     v-if="data && data.allArticles"
   >
-    <div class="article-card" v-for="post in data.allArticles" :key="post.id" @click="handleClick(post)">
-      <div class="image-container">
-        <img :src="post.featuredImage.url" :alt="`Image for ${post.title}`" class="article-image" />
-      </div>
-      <div class="article-info">
-        <h2 class="article-title" :style="`color:  ${props.color}`">{{ post.title }}</h2>
-        <p class="article-date">{{ formatDate(post._updatedAt) }}</p>
-      </div>
+    <div class="article-card" v-for="post in data.allArticles" :key="post.id">
+      <a :href="`/${props.redirectUrl}/${post.slug}`">
+        <div class="image-container">
+          <img :src="post.featuredImage.url" :alt="`Image for ${post.title}`" class="article-image" />
+        </div>
+        <div class="article-info">
+          <h2 class="article-title" :style="`color:  ${props.color}`">{{ post.title }}</h2>
+          <p class="article-date">{{ formatDate(post._updatedAt) }}</p>
+        </div>
+      </a>
     </div>
   </div>
 </template>

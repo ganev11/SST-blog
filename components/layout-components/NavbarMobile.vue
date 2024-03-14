@@ -12,7 +12,7 @@
         <span v-for="item in menuItems" :key="`mobile-${item.text}`" class="mobile-nav-item">
           <div @click="toggleSubItems(item)" class="flex-text flex-between">
             <span v-if="item.href">
-              <a class="anchor" :href="`${baseUrl}${item.href}`">
+              <a class="anchor" :href="`${item.href}`">
                 {{ item.text }}
               </a>
             </span>
@@ -24,7 +24,7 @@
           <div v-if="item.isOpen && item.hasArrow" class="sub-items">
             <span v-for="(subItem, index) in item.subItems" :key="index" class="dropdown-item">
               <!-- @click="handleSubItemClick(subItem)" -->
-              <a class="anchor" :href="`${baseUrl}${subItem.href}`">
+              <a class="anchor" :href="`${subItem.href}`">
                 {{ subItem.text }}
               </a>
             </span>
@@ -35,7 +35,7 @@
         <span class="mobile-nav-item">
           <div class="flex-text flex-between">
             <span class="nav-item">
-              <a class="anchor" :href="`${baseUrl}/login`"> Log in </a>
+              <a class="anchor" :href="`/login`"> Log in </a>
             </span>
             <arrowSide class="arrow" />
           </div>
@@ -44,7 +44,7 @@
         <span class="mobile-nav-item">
           <div class="flex-text flex-between">
             <span class="nav-item">
-              <a class="anchor" :href="`${baseUrl}/try`">Try ChatGPT</a>
+              <a class="anchor" :href="`/try`">Try ChatGPT</a>
             </span>
             <arrowSide class="arrow" />
           </div>
@@ -68,7 +68,6 @@ export default {
   props: ['isScrolled', 'menuItems', 'isMainPage'],
   data() {
     return {
-      baseUrl: 'https://sst-blog.vercel.app/',
       hasScrolled: false,
       mobileMenuOpen: false // Controls the visibility of the mobile menu
     }

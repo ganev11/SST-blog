@@ -17,7 +17,7 @@
           :class="{ 'has-arrow': item.hasArrow, 'nav-item-open': item.isOpen }"
         >
           <span v-if="item.href">
-            <a class="anchor relative-top-7" :href="`${baseUrl}${item.href}`">
+            <a class="anchor relative-top-7" :href="`${item.href}`">
               {{ item.text }}
             </a>
           </span>
@@ -33,7 +33,7 @@
           >
             <span v-for="(subItem, index) in item.subItems" :key="index" class="dropdown-item">
               <!-- @click="handleSubItemClick(subItem)" -->
-              <a class="anchor" :href="`${baseUrl}${subItem.href}`">
+              <a class="anchor" :href="`${subItem.href}`">
                 {{ subItem.text }}
               </a>
             </span>
@@ -44,13 +44,13 @@
     <div class="right-side-nav">
       <div class="flex-text">
         <span class="nav-item">
-          <a class="anchor" :href="`${baseUrl}/login`"> Log in </a>
+          <a class="anchor" :href="`/login`"> Log in </a>
         </span>
         <arrowSide class="arrow" />
       </div>
       <div class="try-chatgpt flex-text">
         <span class="nav-item">
-          <a class="anchor" :href="`${baseUrl}/try`">Try ChatGPT</a>
+          <a class="anchor" :href="`/try`">Try ChatGPT</a>
         </span>
         <arrowSide class="arrow" />
       </div>
@@ -68,7 +68,6 @@ export default {
   props: ['isScrolled', 'menuItems', 'isMainPage'],
   data() {
     return {
-      baseUrl: 'https://sst-blog.vercel.app/',
       hasScrolled: false
     }
   },

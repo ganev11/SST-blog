@@ -40,18 +40,16 @@
     <div class="flex-container">
       <div class="flex-item">
         <h2>Pioneering research on the path to AGI</h2>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/research/overview`">
-          Learn about our researc
-        </a>
+        <a class="anchor-content mg-top-20" :href="`/research/overview`"> Learn about our researc </a>
       </div>
       <div class="flex-item">
         <h2>Transforming work and creativity with AI</h2>
         <p class="flex-link"></p>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/product`"> Explore our products </a>
+        <a class="anchor-content mg-top-20" :href="`/product`"> Explore our products </a>
       </div>
       <div class="flex-item">
         <h2>Join us in shaping the future of technology</h2>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/careers`"> View careers </a>
+        <a class="anchor-content mg-top-20" :href="`/careers`"> View careers </a>
       </div>
     </div>
     <hr class="flex-line" />
@@ -69,7 +67,7 @@
           Our work to create safe and beneficial AI requires a deep understanding of the potential risks and
           benefits, as well as careful consideration of the impact.
         </div>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/try`">Learn about safety</a>
+        <a class="anchor-content mg-top-20" :href="`/try`">Learn about safety</a>
       </div>
     </div>
     <br />
@@ -87,12 +85,12 @@
       <div class="subtitle">Research</div>
       <div class="subtitle-text">
         <div>We research generative models and how to align them with human values.</div>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/research`">Learn about our research</a>
+        <a class="anchor-content mg-top-20" :href="`/research`">Learn about our research</a>
       </div>
     </div>
     <br />
     <br />
-    <ListOfArticles :amount="4" :redirectUrl="'research'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
+    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
     <hr class="flex-line" />
     <!-- RESEARCH END -->
     <!-- PRODUCTS START -->
@@ -100,7 +98,7 @@
       <div class="subtitle">Products</div>
       <div class="subtitle-text">
         <div>Our API platform offers our latest models and guides for safety best practices.</div>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/products`">Explore our products</a>
+        <a class="anchor-content mg-top-20" :href="`/products`">Explore our products</a>
       </div>
     </div>
     <br />
@@ -115,7 +113,7 @@
         <div>
           Developing safe and beneficial AI requires people from a wide range of disciplines and backgrounds.
         </div>
-        <a class="anchor-content mg-top-20" :href="`${baseUrl}/careers`">View careers</a>
+        <a class="anchor-content mg-top-20" :href="`/careers`">View careers</a>
       </div>
     </div>
     <br />
@@ -185,7 +183,6 @@ export default {
   },
   data() {
     return {
-      baseUrl: 'https://sst-blog.vercel.app/',
       screenWidth: 0,
       isVideoPlaying: true // Assume video is playing initially because of the autoplay attribute
     }
