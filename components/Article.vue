@@ -106,14 +106,16 @@ const seoTitle = computed(() => {
 
 const setMeta = async () => {
   console.log('setMeta :>> ', seoTitle.value)
-  useHead({
-    title: seoTitle.value,
-    meta: [{ name: 'description', content: 'My amazing site.' }],
-    bodyAttrs: {
-      class: 'test'
-    },
-    script: [{ innerHTML: "console.log('Hello world')" }]
-  })
+  setTimeout(() => {
+    useHead({
+      title: seoTitle.value,
+      meta: [{ name: 'description', content: 'My amazing site.' }],
+      bodyAttrs: {
+        class: 'test'
+      },
+      script: [{ innerHTML: "console.log('Hello world')" }]
+    })
+  }, 1000)
 }
 
 // setTimeout(() => {
