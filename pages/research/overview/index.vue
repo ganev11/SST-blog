@@ -140,7 +140,9 @@
       </div>
       <div class="text">
         <p>Our current AI research builds upon a wealth of previous projects and advances.</p>
-        <span class="underline">Learn about safety</span>
+        <span class="underline">
+          <a href="/"> Learn about safety </a>
+        </span>
       </div>
     </div>
     <!-- Highlights END -->
