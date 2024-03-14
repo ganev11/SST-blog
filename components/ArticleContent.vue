@@ -9,7 +9,7 @@
     <!-- TITLE SECTION START -->
     <div class="container">
       <div class="text">
-        {{ seoDescription }}
+        <!-- {{ seoDescription }} -->
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
       </div>
@@ -52,28 +52,32 @@ export default {
   computed: {
     seoDescription() {
       if (this.article && this.article.seo && this.article.seo.description) {
-        return this.article.seo.description
+        const description = this.article.seo.description
+        return description
       } else {
         return 'Read the news about our AI'
       }
     },
     seoTitle() {
       if (this.article && this.article.seo && this.article.seo.title) {
-        return this.article.seo.title
+        const title = this.article.seo.title
+        return title
       } else {
         return 'Article'
       }
     },
     seoRobots() {
       if (this.article && this.article.seo && this.article.seo.noIndex) {
-        return this.article.seo.noIndex
+        const noIndex = this.article.seo.noIndex
+        return noIndex
       } else {
         return 'index'
       }
     },
     twitterCard() {
       if (this.article && this.article.seo && this.article.seo.twitterCard) {
-        return this.article.seo.twitterCard
+        const twitterCard = this.article.seo.twitterCard
+        return twitterCard
       } else {
         return 'summary'
       }
