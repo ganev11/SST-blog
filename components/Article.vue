@@ -91,10 +91,10 @@ const seoTitle = computed(() => {
   }
 })
 console.log('seoTitle :>> ', seoTitle.value)
-setTimeout(() => {
+nextTick(() => {
   console.log('seoTitle :>> ', seoTitle.value)
-}, 1000)
-setTimeout(() => {
+})
+nextTick(() => {
   useHead({
     titleTemplate: () => {
       // This function will be reactive and will update the title when seoTitle changes
@@ -109,7 +109,7 @@ setTimeout(() => {
       }
     ]
   })
-}, 1000)
+})
 
 // -------------------- TITLE END --------------------
 </script>
