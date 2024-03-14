@@ -9,6 +9,7 @@
     <!-- TITLE SECTION START -->
     <div class="container">
       <div class="text">
+        {{ seoDescription }}
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
       </div>
@@ -53,7 +54,7 @@ export default {
       if (this.article && this.article.seo && this.article.seo.description) {
         return this.article.seo.description
       } else {
-        return 'Reade the news about our AI'
+        return 'Read the news about our AI'
       }
     },
     seoTitle() {
