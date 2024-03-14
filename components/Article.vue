@@ -85,29 +85,32 @@ setTimeout(() => {
 // -------------------- TITLE START --------------------
 const seoTitle = computed(() => {
   if (article.value && article.value.seo && article.value.seo.title) {
-    return article.value.seo.title.value
+    return article.value.seo.title
   } else {
     return 'Article'
   }
 })
-console.log('seoTitle :>> ', seoTitle)
+console.log('seoTitle :>> ', seoTitle.value)
 setTimeout(() => {
-  console.log('seoTitle :>> ', seoTitle)
+  console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
-useHead({
-  titleTemplate: seoTitle => {
-    // This function will be reactive and will update the title when seoTitle changes
-    return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
-  },
-  meta: [
-    {
-      name: 'description',
-      // This function will also be reactive and update the meta description content
-      // when seoDescription changes
-      content: seoDescription.value
-    }
-  ]
-})
+setTimeout(() => {
+  useHead({
+    titleTemplate: seoTitle => {
+      // This function will be reactive and will update the title when seoTitle changes
+      return seoTitle ? `${seoTitle} - Site Title` : 'Site Title'
+    },
+    meta: [
+      {
+        name: 'description',
+        // This function will also be reactive and update the meta description content
+        // when seoDescription changes
+        content: seoDescription
+      }
+    ]
+  })
+}, 1000)
+
 // -------------------- TITLE END --------------------
 </script>
 
