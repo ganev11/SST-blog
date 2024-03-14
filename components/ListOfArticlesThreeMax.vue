@@ -43,6 +43,12 @@ const QUERY = ref(`
       id
       topic
     }
+    seo {
+      description
+      noIndex
+      title
+      twitterCard
+    }
     title
     _updatedAt
     description

@@ -2,6 +2,8 @@
   <Head>
     <Title>{{ seoTitle }}</Title>
     <Meta name="description" :content="`${seoDescription}`" />
+    <Meta name="robots" :content="`${seoRobots}`" />
+    <Meta name="twitter:card" :content="`${twitterCard}`" />
   </Head>
   <div v-if="article" class="main">
     <!-- TITLE SECTION START -->
@@ -59,6 +61,20 @@ export default {
         return this.article.seo.title
       } else {
         return 'Article'
+      }
+    },
+    seoRobots() {
+      if (this.article && this.article.seo && this.article.seo.noIndex) {
+        return this.article.seo.noIndex
+      } else {
+        return 'index'
+      }
+    },
+    twitterCard() {
+      if (this.article && this.article.seo && this.article.seo.twitterCard) {
+        return this.article.seo.twitterCard
+      } else {
+        return 'summary'
       }
     }
   },
