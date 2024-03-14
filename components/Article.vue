@@ -96,7 +96,7 @@ setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
 useHead({
-  title: seoTitle.value,
+  title: () => setTimeout(() => seoTitle.value, 1000),
   meta: [{ name: 'description', content: 'My amazing site.' }],
   bodyAttrs: {
     class: 'test'
