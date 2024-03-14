@@ -56,6 +56,7 @@ const fetchArticle = async postSlug => {
 watchEffect(async () => {
   if (props.postSlug) {
     article.value = await fetchArticle(props.postSlug)
+    await setMeta()
     if (article.value && article.value.content) {
       article.value.content = marked(article.value.content)
     }
@@ -95,14 +96,19 @@ console.log('seoTitle :>> ', seoTitle.value)
 setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
 }, 1000)
-useHead({
-  title: () => setTimeout(() => seoTitle.value, 1000),
-  meta: [{ name: 'description', content: 'My amazing site.' }],
-  bodyAttrs: {
-    class: 'test'
-  },
-  script: [{ innerHTML: "console.log('Hello world')" }]
-})
+// -------------------- TITLE END --------------------
+
+const setMeta = async () => {
+  await useHead({
+    title: seoTitle.value,
+    meta: [{ name: 'description', content: 'My amazing site.' }],
+    bodyAttrs: {
+      class: 'test'
+    },
+    script: [{ innerHTML: "console.log('Hello world')" }]
+  })
+}
+
 // setTimeout(() => {
 //   useHead({
 //     titleTemplate: seoTitle => {
@@ -151,7 +157,6 @@ useHead({
 //     }
 //   )
 // })
-// -------------------- TITLE END --------------------
 </script>
 
 <style scoped>
