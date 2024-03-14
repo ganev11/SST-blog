@@ -42,14 +42,14 @@
       </nav>
     </div>
     <div class="right-side-nav">
-      <div class="flex-text">
+      <div class="flex-text-mid">
         <span class="nav-item">
           <a class="anchor" :href="`/login`"> Log in </a>
         </span>
         <arrowSide class="arrow" />
       </div>
-      <div class="try-chatgpt flex-text">
-        <span class="nav-item">
+      <div class="try-chatgpt flex-text-mid">
+        <span class="nav-item-try">
           <a class="anchor" :href="`/try`">Try ChatGPT</a>
         </span>
         <arrowSide class="arrow" />
@@ -180,15 +180,24 @@ export default {
   gap: 30px;
 }
 .try-chatgpt {
-  padding: 7px 23px 7px 13px;
+  padding: 3px 7px 5px 8px;
   border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
+  font-size: 18px;
 }
 .try-chatgpt:hover {
   background-color: white;
+}
+.try-chatgpt:hover {
   color: black;
+  text-decoration: none;
+}
+
+.nav-item-try .anchor:hover {
+  color: black !important;
+  text-decoration: none !important;
 }
 .logo {
   max-width: 120px;
@@ -204,7 +213,12 @@ export default {
 .flex-text {
   white-space: nowrap;
 }
-
+.flex-text-mid {
+  white-space: nowrap;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
 .nav-item:hover {
   text-decoration: underline;
 }

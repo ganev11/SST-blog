@@ -140,6 +140,7 @@ const handleClick = post => {
 .article-image {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
