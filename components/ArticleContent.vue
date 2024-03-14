@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>{{ seoTitle }}</Title>
-    <Meta name="description" :content="`${article.seo.description}`" />
+    <Meta name="description" :content="seoDescription" />
     <Meta name="robots" :content="`${seoRobots}`" />
     <Meta name="twitter:card" :content="`${twitterCard}`" />
   </Head>
@@ -47,17 +47,19 @@
 export default {
   props: ['article'],
   data() {
-    return {}
+    return {
+      seoDescription: 'Read the news about our AI' // Default SEO description
+    }
   },
   computed: {
-    seoDescription() {
-      if (this.article && this.article.seo && this.article.seo.description) {
-        const description = this.article.seo.description
-        return description
-      } else {
-        return 'Read the news about our AI'
-      }
-    },
+    // seoDescription() {
+    //   if (this.article && this.article.seo && this.article.seo.description) {
+    //     const description = this.article.seo.description
+    //     return description
+    //   } else {
+    //     return 'Read the news about our AI'
+    //   }
+    // },
     seoTitle() {
       if (this.article && this.article.seo && this.article.seo.title) {
         const title = this.article.seo.title
@@ -80,6 +82,21 @@ export default {
         return twitterCard
       } else {
         return 'summary'
+      }
+    }
+  },
+  watch: {
+    article: {
+      deep: true,
+      handler(newArticle) {
+        // Check if the article and its SEO information are available
+        if (newArticle && newArticle.seo && newArticle.seo.description) {
+          // Update the SEO description
+          this.seoDescription = newArticle.seo.description
+        } else {
+          // Fallback if SEO description is not available
+          this.seoDescription = 'Read the news about our AI'
+        }
       }
     }
   },
