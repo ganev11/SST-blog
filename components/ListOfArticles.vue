@@ -123,6 +123,10 @@ const handleClick = post => {
   overflow: hidden;
   cursor: pointer;
 }
+.article-card a {
+  text-decoration: none;
+  color: #fff;
+}
 
 /* Tablets */
 @media (max-width: 1223px) {
