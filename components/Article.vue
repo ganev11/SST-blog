@@ -12,6 +12,7 @@
 import { ref, computed, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 import { marked } from 'marked'
+import { set } from '~/node_modules/nuxt/dist/app/compat/capi'
 
 const props = defineProps({
   postId: String,
@@ -91,26 +92,30 @@ const seoTitle = computed(() => {
   }
 })
 console.log('seoTitle :>> ', seoTitle.value)
-nextTick(() => {
+setTimeout(() => {
   console.log('seoTitle :>> ', seoTitle.value)
-})
-nextTick(() => {
-  useHead({
-    titleTemplate: () => {
+}, 1000)
+
+useHead({
+  titleTemplate: () => {
+    setTimeout(() => {
       // This function will be reactive and will update the title when seoTitle changes
       return seoTitle.value ? `${seoTitle.value} - Site Title` : 'Site Title'
-    },
-    meta: [
-      {
-        name: 'description',
-        // This function will also be reactive and update the meta description content
-        // when seoDescription changes
-        content: seoDescription.value
+    }, 1000)
+  },
+  meta: [
+    {
+      name: 'description',
+      // This function will also be reactive and update the meta description content
+      // when seoDescription changes
+      content: () => {
+        setTimeout(() => {
+          seoDescription.value
+        }, 1000)
       }
-    ]
-  })
+    }
+  ]
 })
-
 // -------------------- TITLE END --------------------
 </script>
 
