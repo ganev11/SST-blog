@@ -2,8 +2,8 @@
   <Head>
     <Title>{{ seoTitle }}</Title>
     <Meta name="description" :content="seoDescription" />
-    <Meta name="robots" :content="`${seoRobots}`" />
-    <Meta name="twitter:card" :content="`${twitterCard}`" />
+    <!-- <Meta name="robots" :content="`${seoRobots}`" />
+    <Meta name="twitter:card" :content="`${twitterCard}`" /> -->
   </Head>
   <div v-if="article" class="main">
     <!-- TITLE SECTION START -->
@@ -48,18 +48,18 @@ export default {
   props: ['article'],
   data() {
     return {
-      seoDescription: 'Read the news about our AI' // Default SEO description
+      // seoDescription: 'Read the news about our AI' // Default SEO description
     }
   },
   computed: {
-    // seoDescription() {
-    //   if (this.article && this.article.seo && this.article.seo.description) {
-    //     const description = this.article.seo.description
-    //     return description
-    //   } else {
-    //     return 'Read the news about our AI'
-    //   }
-    // },
+    seoDescription() {
+      if (this.article && this.article.seo && this.article.seo.description) {
+        const description = this.article.seo.description
+        return description
+      } else {
+        return 'Read the news about our AI'
+      }
+    },
     seoTitle() {
       if (this.article && this.article.seo && this.article.seo.title) {
         const title = this.article.seo.title
@@ -85,21 +85,21 @@ export default {
       }
     }
   },
-  watch: {
-    article: {
-      deep: true,
-      handler(newArticle) {
-        // Check if the article and its SEO information are available
-        if (newArticle && newArticle.seo && newArticle.seo.description) {
-          // Update the SEO description
-          this.seoDescription = newArticle.seo.description
-        } else {
-          // Fallback if SEO description is not available
-          this.seoDescription = 'Read the news about our AI'
-        }
-      }
-    }
-  },
+  // watch: {
+  //   article: {
+  //     deep: true,
+  //     handler(newArticle) {
+  //       // Check if the article and its SEO information are available
+  //       if (newArticle && newArticle.seo && newArticle.seo.description) {
+  //         // Update the SEO description
+  //         this.seoDescription = newArticle.seo.description
+  //       } else {
+  //         // Fallback if SEO description is not available
+  //         this.seoDescription = 'Read the news about our AI'
+  //       }
+  //     }
+  //   }
+  // },
   methods: {
     seo() {
       console.log('article :>> ', this.article)
