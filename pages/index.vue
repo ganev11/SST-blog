@@ -72,7 +72,7 @@
     </div>
     <br />
     <br />
-    <img src="../assets/img/1.jpeg" alt="Safety Image" class="full-width-image" />
+    <img src="../assets/img/1.png" alt="Safety Image" class="full-width-image" />
     <br />
     <br />
     <br />
