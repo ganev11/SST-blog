@@ -1,12 +1,12 @@
 <template>
   <Head>
-    <Title v-if="seo && seo.title">{{ seo.title }}</Title>
+    <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta
-      v-if="seo && seo.description"
+      v-if="seoDescription"
       name="description"
-      :content="`${seo.description}`"
+      :content="`${seoDescription}`"
     />
-    <!-- <Meta v-if="seo.image" property="og:image" :content="`${seo.image}`" /> -->
+    <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" />
   </Head>
   <div class="main">
     <!-- LINKS START -->
@@ -116,6 +116,20 @@ const seo = computed(() => {
     };
   }
 });
+// -------------------- DESCRIPTION START --------------------
+const seoImage = computed(() => {
+  if (
+    article.value &&
+    article.value.seo &&
+    article.value.seo.image &&
+    article.value.seo.image.url
+  ) {
+    return article.value.seo.image.url;
+  } else {
+    return null;
+  }
+});
+// -------------------- DESCRIPTION END --------------------
 // -------------------- DESCRIPTION START --------------------
 const seoDescription = computed(() => {
   if (article.value && article.value.seo && article.value.seo.description) {
