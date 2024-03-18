@@ -12,7 +12,7 @@
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
     <Meta v-if="seoImage" name="og:image" :content="seoImage" />
     <Meta v-if="seoImage" property="og:image" :content="seoImage" />
-    <Meta v-if="seoImage" property="og:url" :content="seoImage" />
+    <!-- <Meta v-if="seoImage" property="og:url" :content="seoImage" /> -->
     <Meta property="og:type" content="article" />
     <!-- Assuming a static value for demonstration -->
     <Meta v-if="seoTitle" property="og:title" :content="seoTitle" />
@@ -127,7 +127,10 @@ const seoDescription = computed(() => {
 });
 
 const seoImage = computed(() => {
-  return article.value?.seo?.image?.url || "../../assets/img/1.png";
+  return (
+    article.value?.seo?.image?.url ||
+    "https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
+  );
 });
 
 const noIndex = computed(() => {
