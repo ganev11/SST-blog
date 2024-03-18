@@ -6,13 +6,7 @@
       name="description"
       :content="`${seoDescription}`"
     />
-    <!-- <Meta
-      v-if="seoImage"
-      property="og:image"
-      content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
-    /> -->
   </Head>
-  <!-- https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png -->
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -22,13 +16,6 @@
         <a href="/blog" class="blog-title">Blog</a>
       </p>
     </div>
-
-    <!-- <img
-      class="full-width-image"
-      src="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
-      alt="soccer stadium"
-    /> -->
-
     <!-- <Article :postId="postId" :postSlug="postSlug" /> -->
     <div :key="rerender">
       <ArticleContent :article="article" />
@@ -51,9 +38,8 @@ import { ref, onMounted, computed, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import play from "../../assets/svg/play.vue";
 import pause from "../../assets/svg/pause.vue";
-import { marked } from "marked";
 import Footer from "~/components/Footer.vue";
-import { useHead } from "@vueuse/head";
+import { marked } from "marked";
 
 const route = useRoute();
 const router = useRouter();
@@ -108,40 +94,6 @@ const fetchArticle = async (postSlug) => {
 article.value = await fetchArticle(postSlug);
 
 // Computed properties for SEO metadata
-// Expanded SEO setup
-const seo = computed(() => {
-  if (article.value && article.value.seo) {
-    return {
-      description: article.value.seo.description,
-      title: article.value.seo.title,
-      image: article.value.seo.image.url,
-      noIndex: article.value.seo.noIndex,
-      twitterCard: article.value.seo.twitterCard,
-    };
-  } else {
-    return {
-      description: null,
-      title: null,
-      image: null,
-      noIndex: false,
-      twitterCard: null,
-    };
-  }
-});
-// -------------------- DESCRIPTION START --------------------
-const seoImage = computed(() => {
-  if (
-    article.value &&
-    article.value.seo &&
-    article.value.seo.image &&
-    article.value.seo.image.url
-  ) {
-    return article.value.seo.image.url;
-  } else {
-    return null;
-  }
-});
-// -------------------- DESCRIPTION END --------------------
 // -------------------- DESCRIPTION START --------------------
 const seoDescription = computed(() => {
   if (article.value && article.value.seo && article.value.seo.description) {
