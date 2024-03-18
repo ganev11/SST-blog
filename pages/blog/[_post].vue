@@ -6,7 +6,7 @@
       name="description"
       :content="`${seoDescription}`"
     />
-    <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" />
+    <!-- <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" /> -->
   </Head>
   <div class="main">
     <!-- LINKS START -->
