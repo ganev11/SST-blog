@@ -1,19 +1,32 @@
 <template>
   <Head>
-    <Title>{{ 'SSTrader' }}</Title>
+    <Title>{{ "SSTrader" }}</Title>
     <Meta name="description" :content="'Learn about our AI'" />
   </Head>
 
   <!-- VIDEO START -->
   <div class="video-background">
-    <video playsinline autoplay muted loop ref="videoElement" @ended="handleVideoEnd">
-      <source ref="videoSource" src="../assets/videos/sst-video.mp4" type="video/mp4" />
+    <video
+      playsinline
+      autoplay
+      muted
+      loop
+      ref="videoElement"
+      @ended="handleVideoEnd"
+    >
+      <source
+        ref="videoSource"
+        src="../assets/videos/sst-video.mp4"
+        type="video/mp4"
+      />
     </video>
     <div class="content">
       <div class="container-title">
         <div class="blue"></div>
         <div class="yellow">
-          <div class="title">Introducing Sora: Creating video from text</div>
+          <div class="title">
+            Introducing SSSSSora: Creating video from text
+          </div>
           <div class="flex-between-video">
             <span>
               <a href="#" class="learn-more">Learn more about Sora</a>
@@ -24,7 +37,7 @@
                   <play class="icon" v-if="isVideoPlaying" />
                   <pause class="icon" v-if="!isVideoPlaying" />
                   <span v-if="!mobile">
-                    {{ isVideoPlaying ? 'Pause video' : 'Play video' }}
+                    {{ isVideoPlaying ? "Pause video" : "Play video" }}
                   </span>
                 </span>
               </button>
@@ -40,23 +53,33 @@
     <div class="flex-container">
       <div class="flex-item">
         <h2>Pioneering research on the path to AGI</h2>
-        <a class="anchor-content mg-top-20" :href="`/research/overview`"> Learn about our researc </a>
+        <a class="anchor-content mg-top-20" :href="`/research/overview`">
+          Learn about our researc
+        </a>
       </div>
       <div class="flex-item">
         <h2>Transforming work and creativity with AI</h2>
         <p class="flex-link"></p>
-        <a class="anchor-content mg-top-20" :href="`/product`"> Explore our products </a>
+        <a class="anchor-content mg-top-20" :href="`/product`">
+          Explore our products
+        </a>
       </div>
       <div class="flex-item">
         <h2>Join us in shaping the future of technology</h2>
-        <a class="anchor-content mg-top-20" :href="`/careers`"> View careers </a>
+        <a class="anchor-content mg-top-20" :href="`/careers`">
+          View careers
+        </a>
       </div>
     </div>
     <hr class="flex-line" />
     <!-- LINKS END -->
     <!-- UPDATES START -->
     <div class="subtitle">Latest updateds</div>
-    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']" />
+    <ListOfArticles
+      :amount="4"
+      :redirectUrl="'blog'"
+      :topicIDsArray="['F40oLv3XSbaxpddA2i6SUQ']"
+    />
     <hr class="flex-line" />
     <!-- UPDATES END -->
     <!-- SAFETY START -->
@@ -64,15 +87,22 @@
       <div class="subtitle">Safety & responsibility</div>
       <div class="subtitle-text">
         <div>
-          Our work to create safe and beneficial AI requires a deep understanding of the potential risks and
-          benefits, as well as careful consideration of the impact.
+          Our work to create safe and beneficial AI requires a deep
+          understanding of the potential risks and benefits, as well as careful
+          consideration of the impact.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/try`">Learn about safety</a>
+        <a class="anchor-content mg-top-20" :href="`/try`"
+          >Learn about safety</a
+        >
       </div>
     </div>
     <br />
     <br />
-    <img src="../assets/img/1.png" alt="Safety Image" class="full-width-image" />
+    <img
+      src="../assets/img/1.png"
+      alt="Safety Image"
+      class="full-width-image"
+    />
     <br />
     <br />
     <br />
@@ -84,26 +114,43 @@
     <div class="flex-subtitle">
       <div class="subtitle">Research</div>
       <div class="subtitle-text">
-        <div>We research generative models and how to align them with human values.</div>
-        <a class="anchor-content mg-top-20" :href="`/research`">Learn about our research</a>
+        <div>
+          We research generative models and how to align them with human values.
+        </div>
+        <a class="anchor-content mg-top-20" :href="`/research`"
+          >Learn about our research</a
+        >
       </div>
     </div>
     <br />
     <br />
-    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']" />
+    <ListOfArticles
+      :amount="4"
+      :redirectUrl="'blog'"
+      :topicIDsArray="['Y88ajMn7TwyihvOb2Uxstg']"
+    />
     <hr class="flex-line" />
     <!-- RESEARCH END -->
     <!-- PRODUCTS START -->
     <div class="flex-subtitle">
       <div class="subtitle">Products</div>
       <div class="subtitle-text">
-        <div>Our API platform offers our latest models and guides for safety best practices.</div>
-        <a class="anchor-content mg-top-20" :href="`/products`">Explore our products</a>
+        <div>
+          Our API platform offers our latest models and guides for safety best
+          practices.
+        </div>
+        <a class="anchor-content mg-top-20" :href="`/products`"
+          >Explore our products</a
+        >
       </div>
     </div>
     <br />
     <br />
-    <ListOfArticles :amount="4" :redirectUrl="'blog'" :topicIDsArray="['S9HLumu1TQKcty1NCnnZ9g']" />
+    <ListOfArticles
+      :amount="4"
+      :redirectUrl="'blog'"
+      :topicIDsArray="['S9HLumu1TQKcty1NCnnZ9g']"
+    />
     <hr class="flex-line" />
     <!-- PRODUCTS END -->
     <!-- CAREERS START -->
@@ -111,14 +158,19 @@
       <div class="subtitle">Careers at OpenAI</div>
       <div class="subtitle-text">
         <div>
-          Developing safe and beneficial AI requires people from a wide range of disciplines and backgrounds.
+          Developing safe and beneficial AI requires people from a wide range of
+          disciplines and backgrounds.
         </div>
         <a class="anchor-content mg-top-20" :href="`/careers`">View careers</a>
       </div>
     </div>
     <br />
     <br />
-    <img src="../assets/img/2.png" alt="Safety Image" class="full-width-image" />
+    <img
+      src="../assets/img/2.png"
+      alt="Safety Image"
+      class="full-width-image"
+    />
     <br />
     <br />
     <br />
@@ -130,13 +182,18 @@
     <div class="quote-image-container">
       <div class="text-container">
         <p class="quote">
-          “I encourage my team to keep learning. Ideas in different topics or fields can often inspire new
-          ideas and broaden the potential solution space.”
+          “I encourage my team to keep learning. Ideas in different topics or
+          fields can often inspire new ideas and broaden the potential solution
+          space.”
         </p>
         <p class="author">Lilian Weng<br />Applied AI at OpenAI</p>
       </div>
       <div class="image-container">
-        <img src="../assets/img/3.png" alt="Lilian Weng" class="profile-image" />
+        <img
+          src="../assets/img/3.png"
+          alt="Lilian Weng"
+          class="profile-image"
+        />
       </div>
     </div>
     <br />
@@ -171,62 +228,62 @@
 //     }
 // ],
 
-import play from '../assets/svg/play.vue'
-import pause from '../assets/svg/pause.vue'
-import Footer from '~/components/Footer.vue'
+import play from "../assets/svg/play.vue";
+import pause from "../assets/svg/pause.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
     play,
     pause,
-    Footer
+    Footer,
   },
   data() {
     return {
       screenWidth: 0,
-      isVideoPlaying: true // Assume video is playing initially because of the autoplay attribute
-    }
+      isVideoPlaying: true, // Assume video is playing initially because of the autoplay attribute
+    };
   },
   computed: {
     mobile() {
-      return this.screenWidth <= 550
-    }
+      return this.screenWidth <= 550;
+    },
   },
   mounted() {
-    this.$refs.videoElement.play()
+    this.$refs.videoElement.play();
     if (process.client) {
-      window.addEventListener('resize', this.updateScreenWidth)
+      window.addEventListener("resize", this.updateScreenWidth);
     }
-    this.updateScreenWidth()
+    this.updateScreenWidth();
   },
   beforeUnmount() {
     if (process.client) {
-      window.removeEventListener('resize', this.updateScreenWidth)
+      window.removeEventListener("resize", this.updateScreenWidth);
     }
   },
   methods: {
     redirect(url) {
-      this.$router.push(url)
+      this.$router.push(url);
     },
     updateScreenWidth() {
-      this.screenWidth = window.innerWidth
+      this.screenWidth = window.innerWidth;
     },
     toggleVideoPlayback() {
-      const videoElement = this.$refs.videoElement
+      const videoElement = this.$refs.videoElement;
       if (videoElement) {
         if (this.isVideoPlaying) {
-          videoElement.pause()
+          videoElement.pause();
         } else {
-          videoElement.play()
+          videoElement.play();
         }
-        this.isVideoPlaying = !this.isVideoPlaying
+        this.isVideoPlaying = !this.isVideoPlaying;
       }
     },
     handleVideoEnd() {
-      this.isVideoPlaying = false
-    }
-  }
-}
+      this.isVideoPlaying = false;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -453,7 +510,8 @@ button:hover {
   color: white;
   font-size: 2.5rem;
   padding: 20px;
-  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times,
+    serif;
   font-size: 2.1rem;
   font-weight: 400;
   line-height: 110%;
@@ -501,7 +559,8 @@ button:hover {
   object-fit: cover;
 }
 .quote {
-  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times,
+    serif;
   font-weight: 400;
   font-size: 2.5em; /* Adjust the size as needed */
   margin-bottom: 0.5em; /* Spacing between quote and author */
