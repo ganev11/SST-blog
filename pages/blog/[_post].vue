@@ -39,7 +39,6 @@ import { useRoute, useRouter } from "vue-router";
 import play from "../../assets/svg/play.vue";
 import pause from "../../assets/svg/pause.vue";
 import Footer from "~/components/Footer.vue";
-
 import { marked } from "marked";
 import { useHead } from "@vueuse/head";
 
@@ -48,7 +47,6 @@ const router = useRouter();
 
 const postId = ref(null);
 const postSlug = ref(null);
-const isVideoPlaying = ref(true); // Assume video is playing initially because of the autoplay attribute
 let rerender = ref(0);
 let article = ref(null);
 
@@ -96,15 +94,6 @@ const fetchArticle = async (postSlug) => {
 };
 article.value = await fetchArticle(postSlug);
 
-// watchEffect(async () => {
-//   if (postSlug) {
-//     article.value = await fetchArticle(postSlug);
-//     if (article.value && article.value.content) {
-//       article.value.content = marked(article.value.content);
-//     }
-//   }
-// });
-
 // Computed properties for SEO metadata
 // -------------------- DESCRIPTION START --------------------
 const seoDescription = computed(() => {
@@ -125,7 +114,14 @@ const seoTitle = computed(() => {
   }
 });
 // -------------------- TITLE END --------------------
-
+watchEffect(async () => {
+  if (postSlug) {
+    article.value = await fetchArticle(postSlug);
+    if (article.value && article.value.content) {
+      article.value.content = marked(article.value.content);
+    }
+  }
+});
 const formatDate = (dateString) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
   const date = new Date(dateString);
