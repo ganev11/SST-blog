@@ -2,11 +2,7 @@
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
-    <Meta
-      v-if="seoImage"
-      property="og:image"
-      content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
-    />
+    <Meta v-if="seoImage" property="og:image" :content="seoImage" />
     <!-- Additional SEO properties -->
     <Meta v-if="noIndex" name="robots" content="noindex" />
     <Meta v-if="twitterCard" name="twitter:card" :content="twitterCard" />
