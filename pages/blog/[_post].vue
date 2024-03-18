@@ -1,14 +1,13 @@
 <template>
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
-    <Meta
-      v-if="seoDescription"
-      name="description"
-      :content="`${seoDescription}`"
-    />
-
-    <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" />
+    <Meta v-if="seoDescription" name="description" :content="seoDescription" />
+    <Meta v-if="seoImage" property="og:image" :content="seoImage" />
+    <!-- Additional SEO properties -->
+    <Meta v-if="noIndex" name="robots" content="noindex" />
+    <Meta v-if="twitterCard" name="twitter:card" :content="twitterCard" />
   </Head>
+
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -18,11 +17,6 @@
         <a href="/blog" class="blog-title">Blog</a>
         <!-- {{ seoImage }} -->
       </p>
-      <!-- <image
-          src="https://www.datocms-assets.com/120012/1709479250-f64972b4-2ad5-4793-9081-9c224c75c292.webp"
-          alt="arrow-left"
-          class="icon"
-        /> -->
     </div>
     <!-- <Article :postId="postId" :postSlug="postSlug" /> -->
     <div :key="rerender">
@@ -80,7 +74,7 @@ const fetchArticle = async (postSlug) => {
         description
         content
         seo {
-          image {
+          image{
             url
           }
           description
@@ -105,39 +99,25 @@ const fetchArticle = async (postSlug) => {
 article.value = await fetchArticle(postSlug);
 
 // Computed properties for SEO metadata
-// -------------------- DESCRIPTION START --------------------
-const seoDescription = computed(() => {
-  if (article.value && article.value.seo && article.value.seo.description) {
-    return article.value.seo.description;
-  } else {
-    return null;
-  }
-});
-// -------------------- DESCRIPTION END --------------------
-
-// -------------------- TITLE START --------------------
 const seoTitle = computed(() => {
-  if (article.value && article.value.seo && article.value.seo.title) {
-    return article.value.seo.title;
-  } else {
-    return null;
-  }
+  return article.value?.seo?.title || null;
 });
-// -------------------- TITLE END --------------------
-// -------------------- TITLE START --------------------
+
+const seoDescription = computed(() => {
+  return article.value?.seo?.description || null;
+});
+
 const seoImage = computed(() => {
-  if (
-    article.value &&
-    article.value.seo &&
-    article.value.seo.image &&
-    article.value.seo.image.url
-  ) {
-    return article.value.seo.image.url;
-  } else {
-    return null;
-  }
+  return article.value?.seo?.image?.url || null;
 });
-// -------------------- TITLE END --------------------
+
+const noIndex = computed(() => {
+  return article.value?.seo?.noIndex || false;
+});
+
+const twitterCard = computed(() => {
+  return article.value?.seo?.twitterCard || null;
+});
 watchEffect(async () => {
   if (postSlug) {
     article.value = await fetchArticle(postSlug);
