@@ -1,12 +1,13 @@
 <template>
-  <!-- <Head>
-    <Title v-if="seoTitle">{{ seoTitle }}</Title>
+  <Head>
+    <Title v-if="seoTitle">{{ seo.title }}</Title>
     <Meta
       v-if="seoDescription"
       name="description"
-      :content="`${seoDescription}`"
+      :content="`${seo.description}`"
     />
-  </Head> -->
+    <Meta v-if="seoDescription" property="og:image" :content="`${seo.image}`" />
+  </Head>
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -115,41 +116,25 @@ const seo = computed(() => {
     };
   }
 });
-useHead({
-  title: seo.value.title,
-  meta: [{ name: "description", content: "My amazing site." }],
+// -------------------- DESCRIPTION START --------------------
+const seoDescription = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.description) {
+    return article.value.seo.description;
+  } else {
+    return null;
+  }
 });
-useHead({
-  title: seo.value.title,
-  meta: [
-    { name: "description", content: seo.value.description },
-    { name: "twitter:card", content: seo.value.twitterCard },
-    { property: "og:title", content: seo.value.title },
-    { property: "og:description", content: seo.value.description },
-    { property: "og:image", content: seo.value.image },
-    // Use 'content="noindex"' only if noIndex is true
-    ...(seo.value.noIndex ? [{ name: "robots", content: "noindex" }] : []),
-  ],
-});
-// // -------------------- DESCRIPTION START --------------------
-// const seoDescription = computed(() => {
-//   if (article.value && article.value.seo && article.value.seo.description) {
-//     return article.value.seo.description;
-//   } else {
-//     return null;
-//   }
-// });
-// // -------------------- DESCRIPTION END --------------------
+// -------------------- DESCRIPTION END --------------------
 
-// // -------------------- TITLE START --------------------
-// const seoTitle = computed(() => {
-//   if (article.value && article.value.seo && article.value.seo.title) {
-//     return article.value.seo.title;
-//   } else {
-//     return null;
-//   }
-// });
-// // -------------------- TITLE END --------------------
+// -------------------- TITLE START --------------------
+const seoTitle = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.title) {
+    return article.value.seo.title;
+  } else {
+    return null;
+  }
+});
+// -------------------- TITLE END --------------------
 watchEffect(async () => {
   if (postSlug) {
     article.value = await fetchArticle(postSlug);
