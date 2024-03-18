@@ -16,7 +16,13 @@
     <div class="bread-crumb">
       <p>
         <a href="/blog" class="blog-title">Blog</a>
+        <!-- {{ seoImage }} -->
       </p>
+      <!-- <image
+          src="https://www.datocms-assets.com/120012/1709479250-f64972b4-2ad5-4793-9081-9c224c75c292.webp"
+          alt="arrow-left"
+          class="icon"
+        /> -->
     </div>
     <!-- <Article :postId="postId" :postSlug="postSlug" /> -->
     <div :key="rerender">
@@ -119,18 +125,18 @@ const seoTitle = computed(() => {
 });
 // -------------------- TITLE END --------------------
 // -------------------- TITLE START --------------------
-const seoImage = computed(() => {
-  if (
-    article.value &&
-    article.value.seo &&
-    article.value.seo.image &&
-    article.value.seo.image.url
-  ) {
-    return article.value.seo.image.url;
-  } else {
-    return null;
-  }
-});
+// const seoImage = computed(() => {
+//   if (
+//     article.value &&
+//     article.value.seo &&
+//     article.value.seo.image &&
+//     article.value.seo.image.url
+//   ) {
+//     return article.value.seo.image.url;
+//   } else {
+//     return null;
+//   }
+// });
 // -------------------- TITLE END --------------------
 watchEffect(async () => {
   if (postSlug) {
