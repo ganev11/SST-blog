@@ -1,12 +1,12 @@
 <template>
-  <Head>
+  <!-- <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta
       v-if="seoDescription"
       name="description"
       :content="`${seoDescription}`"
     />
-  </Head>
+  </Head> -->
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -38,8 +38,8 @@ import { ref, onMounted, computed, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import play from "../../assets/svg/play.vue";
 import pause from "../../assets/svg/pause.vue";
-import Footer from "~/components/Footer.vue";
 import { marked } from "marked";
+import Footer from "~/components/Footer.vue";
 import { useHead } from "@vueuse/head";
 
 const route = useRoute();
@@ -95,25 +95,57 @@ const fetchArticle = async (postSlug) => {
 article.value = await fetchArticle(postSlug);
 
 // Computed properties for SEO metadata
-// -------------------- DESCRIPTION START --------------------
-const seoDescription = computed(() => {
-  if (article.value && article.value.seo && article.value.seo.description) {
-    return article.value.seo.description;
+// Expanded SEO setup
+const seo = computed(() => {
+  if (article.value && article.value.seo) {
+    return {
+      description: article.value.seo.description,
+      title: article.value.seo.title,
+      image: article.value.seo.image.url,
+      noIndex: article.value.seo.noIndex,
+      twitterCard: article.value.seo.twitterCard,
+    };
   } else {
-    return null;
+    return {
+      description: null,
+      title: null,
+      image: null,
+      noIndex: false,
+      twitterCard: null,
+    };
   }
 });
-// -------------------- DESCRIPTION END --------------------
+useHead({
+  title: seo.value.title,
+  meta: [
+    { name: "description", content: seo.value.description },
+    { name: "twitter:card", content: seo.value.twitterCard },
+    { property: "og:title", content: seo.value.title },
+    { property: "og:description", content: seo.value.description },
+    { property: "og:image", content: seo.value.image },
+    // Use 'content="noindex"' only if noIndex is true
+    ...(seo.value.noIndex ? [{ name: "robots", content: "noindex" }] : []),
+  ],
+});
+// // -------------------- DESCRIPTION START --------------------
+// const seoDescription = computed(() => {
+//   if (article.value && article.value.seo && article.value.seo.description) {
+//     return article.value.seo.description;
+//   } else {
+//     return null;
+//   }
+// });
+// // -------------------- DESCRIPTION END --------------------
 
-// -------------------- TITLE START --------------------
-const seoTitle = computed(() => {
-  if (article.value && article.value.seo && article.value.seo.title) {
-    return article.value.seo.title;
-  } else {
-    return null;
-  }
-});
-// -------------------- TITLE END --------------------
+// // -------------------- TITLE START --------------------
+// const seoTitle = computed(() => {
+//   if (article.value && article.value.seo && article.value.seo.title) {
+//     return article.value.seo.title;
+//   } else {
+//     return null;
+//   }
+// });
+// // -------------------- TITLE END --------------------
 watchEffect(async () => {
   if (postSlug) {
     article.value = await fetchArticle(postSlug);
