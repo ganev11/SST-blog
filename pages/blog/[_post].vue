@@ -11,7 +11,7 @@
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
     <Meta v-if="seoImage" property="og:image" :content="seoImage" />
-    <Meta property="og:url" :content="currentUrl" />
+    <Meta v-if="seoImage" property="og:url" :content="seoImage" />
     <Meta property="og:type" content="article" />
     <!-- Assuming a static value for demonstration -->
     <Meta v-if="seoTitle" property="og:title" :content="seoTitle" />
@@ -61,9 +61,9 @@ import { marked } from "marked";
 
 const route = useRoute();
 const router = useRouter();
-const currentUrl = computed(() => {
-  return window.location.origin + route.fullPath;
-});
+// const currentUrl = computed(() => {
+//   return window.location.origin + route.fullPath;
+// });
 const postId = ref(null);
 const postSlug = ref(null);
 let rerender = ref(0);
