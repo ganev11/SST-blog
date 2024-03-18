@@ -2,7 +2,7 @@
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
-    <Meta v-if="seoImage" property="twitter:image" :content="seoImage" />
+    <Meta v-if="seoImage" name="og:image" :content="seoImage" />
     <!-- Additional SEO properties -->
     <Meta v-if="noIndex" name="robots" content="noindex" />
     <Meta v-if="twitterCard" name="twitter:card" :content="twitterCard" />
