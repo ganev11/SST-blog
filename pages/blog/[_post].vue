@@ -1,9 +1,25 @@
 <template>
+  <!-- <Head>
+    <Title v-if="seoTitle">{{ seoTitle }}</Title>
+    <Meta v-if="seoDescription" name="description" :content="seoDescription" />
+    <Meta v-if="seoImage" property="og:image" :content="seoImage" />
+
+    <Meta v-if="noIndex" name="robots" content="noindex" />
+    <Meta v-if="twitterCard" name="twitter:card" :content="twitterCard" />
+  </Head> -->
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
-    <Meta v-if="seoImage" name="og:image" :content="seoImage" />
-    <!-- Additional SEO properties -->
+    <Meta v-if="seoImage" property="og:image" :content="seoImage" />
+    <Meta property="og:url" :content="currentUrl" />
+    <Meta property="og:type" content="article" />
+    <!-- Assuming a static value for demonstration -->
+    <Meta v-if="seoTitle" property="og:title" :content="seoTitle" />
+    <Meta
+      v-if="seoDescription"
+      property="og:description"
+      :content="seoDescription"
+    />
     <Meta v-if="noIndex" name="robots" content="noindex" />
     <Meta v-if="twitterCard" name="twitter:card" :content="twitterCard" />
   </Head>
@@ -45,7 +61,9 @@ import { marked } from "marked";
 
 const route = useRoute();
 const router = useRouter();
-
+const currentUrl = computed(() => {
+  return window.location.origin + route.fullPath;
+});
 const postId = ref(null);
 const postSlug = ref(null);
 let rerender = ref(0);
