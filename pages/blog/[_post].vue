@@ -1,8 +1,8 @@
 <template>
   <Head>
-    <Title v-if="seo.title">{{ seo.title }}</Title>
+    <Title v-if="seo && seo.title">{{ seo.title }}</Title>
     <Meta
-      v-if="seo.description"
+      v-if="seo && seo.description"
       name="description"
       :content="`${seo.description}`"
     />
