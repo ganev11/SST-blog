@@ -13,12 +13,12 @@
     <Meta
       v-if="seoImage"
       name="og:image"
-      content="https://sst-blog.vercel.app/blog/sstraderassistant-ai-special-market-innovation-for-traders"
+      content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
     />
     <Meta
       v-if="seoImage"
       property="og:image"
-      content="https://sst-blog.vercel.app/blog/sstraderassistant-ai-special-market-innovation-for-traders"
+      content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
     />
     <!-- <Meta v-if="seoImage" property="og:url" :content="seoImage" /> -->
     <Meta property="og:type" content="article" />
