@@ -6,8 +6,13 @@
       name="description"
       :content="`${seoDescription}`"
     />
-    <!-- <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" /> -->
   </Head>
+  <Meta
+    v-if="seoImage"
+    property="og:image"
+    content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
+  />
+  <!-- https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png -->
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -17,6 +22,13 @@
         <a href="/blog" class="blog-title">Blog</a>
       </p>
     </div>
+
+    <!-- <img
+      class="full-width-image"
+      src="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
+      alt="soccer stadium"
+    /> -->
+
     <!-- <Article :postId="postId" :postSlug="postSlug" /> -->
     <div :key="rerender">
       <ArticleContent :article="article" />
