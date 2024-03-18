@@ -126,7 +126,7 @@ const seoDescription = computed(() => {
 });
 
 const seoImage = computed(() => {
-  return article.value?.seo?.image?.url || null;
+  return article.value?.seo?.image?.url || "../../assets/img/1.png";
 });
 
 const noIndex = computed(() => {
