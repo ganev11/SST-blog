@@ -1,12 +1,12 @@
 <template>
-  <Head>
+  <!-- <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta
       v-if="seoDescription"
       name="description"
       :content="`${seoDescription}`"
     />
-  </Head>
+  </Head> -->
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
@@ -114,6 +114,10 @@ const seo = computed(() => {
       twitterCard: null,
     };
   }
+});
+useHead({
+  title: seo.value.title,
+  meta: [{ name: "description", content: "My amazing site." }],
 });
 useHead({
   title: seo.value.title,
