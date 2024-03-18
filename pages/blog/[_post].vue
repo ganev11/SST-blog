@@ -10,8 +10,16 @@
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
-    <Meta v-if="seoImage" name="og:image" :content="seoImage" />
-    <Meta v-if="seoImage" property="og:image" :content="seoImage" />
+    <Meta
+      v-if="seoImage"
+      name="og:image"
+      content="https://sst-blog.vercel.app/blog/sstraderassistant-ai-special-market-innovation-for-traders"
+    />
+    <Meta
+      v-if="seoImage"
+      property="og:image"
+      content="https://sst-blog.vercel.app/blog/sstraderassistant-ai-special-market-innovation-for-traders"
+    />
     <!-- <Meta v-if="seoImage" property="og:url" :content="seoImage" /> -->
     <Meta property="og:type" content="article" />
     <!-- Assuming a static value for demonstration -->
