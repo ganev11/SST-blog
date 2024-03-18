@@ -1,12 +1,12 @@
 <template>
   <Head>
-    <Title v-if="seoTitle">{{ seo.title }}</Title>
+    <Title v-if="seo.title">{{ seo.title }}</Title>
     <Meta
-      v-if="seoDescription"
+      v-if="seo.description"
       name="description"
       :content="`${seo.description}`"
     />
-    <Meta v-if="seoDescription" property="og:image" :content="`${seo.image}`" />
+    <Meta v-if="seo.image" property="og:image" :content="`${seo.image}`" />
   </Head>
   <div class="main">
     <!-- LINKS START -->
