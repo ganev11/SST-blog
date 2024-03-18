@@ -6,12 +6,12 @@
       name="description"
       :content="`${seoDescription}`"
     />
+    <Meta
+      v-if="seoImage"
+      property="og:image"
+      content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
+    />
   </Head>
-  <Meta
-    v-if="seoImage"
-    property="og:image"
-    content="https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png"
-  />
   <!-- https://www.datocms-assets.com/120012/1710688597-sstrader29_detailed_futuristic_and_super_realistic_soccer_stadi_6639aab0-7f96-4fbb-b983-266a14efb7d4.png -->
   <div class="main">
     <!-- LINKS START -->
