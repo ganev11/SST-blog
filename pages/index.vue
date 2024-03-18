@@ -24,9 +24,7 @@
       <div class="container-title">
         <div class="blue"></div>
         <div class="yellow">
-          <div class="title">
-            Introducing SSSSSora: Creating video from text
-          </div>
+          <div class="title">Introducing Sora: Creating video from text</div>
           <div class="flex-between-video">
             <span>
               <a href="#" class="learn-more">Learn more about Sora</a>

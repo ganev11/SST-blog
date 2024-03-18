@@ -1,4 +1,12 @@
 <template>
+  <Head>
+    <Title v-if="seoTitle">{{ seoTitle }}</Title>
+    <Meta
+      v-if="seoDescription"
+      name="description"
+      :content="`${seoDescription}`"
+    />
+  </Head>
   <div class="main">
     <!-- LINKS START -->
     <div class="black"></div>
@@ -13,7 +21,10 @@
         <a href="/blog" class="blog-title">Blog</a>
       </p>
     </div>
-    <Article :postId="postId" :postSlug="postSlug" />
+    <!-- <Article :postId="postId" :postSlug="postSlug" /> -->
+    <div :key="rerender">
+      <ArticleContent :article="article" />
+    </div>
     <hr class="flex-line" />
     <div class="subtitle">Research</div>
     <ListOfArticles
@@ -27,68 +38,111 @@
   <Footer />
 </template>
 
-<script>
-import play from '../../assets/svg/play.vue'
-import pause from '../../assets/svg/pause.vue'
-import Footer from '~/components/Footer.vue'
+<script setup>
+import { ref, onMounted, computed, watchEffect } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import play from "../../assets/svg/play.vue";
+import pause from "../../assets/svg/pause.vue";
+import Footer from "~/components/Footer.vue";
 
-export default {
-  components: {
-    play,
-    pause,
-    Footer
-  },
-  data() {
-    return {
-      screenWidth: 0,
-      postId: null, // Initialize postId to null
-      postSlug: null, // Initialize postSlug to null
-      isVideoPlaying: true // Assume video is playing initially because of the autoplay attribute
-    }
-  },
-  computed: {
-    mobile() {
-      return this.screenWidth <= 550
-    }
-  },
-  mounted() {
-    this.postId = this.$route.query.postId // Access postId from the query
-    // console.log('this.$route :>> ', this.$route.params._post)
-    this.postSlug = this.$route.params._post // Access postSlug from the query
+import { marked } from "marked";
+import { useHead } from "@vueuse/head";
 
-    if (process.client) {
-      window.addEventListener('resize', this.updateScreenWidth)
-    }
-    this.updateScreenWidth()
-  },
-  beforeUnmount() {
-    if (process.client) {
-      window.removeEventListener('resize', this.updateScreenWidth)
-    }
-  },
-  methods: {
-    redirect(url) {
-      this.$router.push(url)
-    },
-    updateScreenWidth() {
-      this.screenWidth = window.innerWidth
-    },
-    toggleVideoPlayback() {
-      const videoElement = this.$refs.videoElement
-      if (videoElement) {
-        if (this.isVideoPlaying) {
-          videoElement.pause()
-        } else {
-          videoElement.play()
+const route = useRoute();
+const router = useRouter();
+
+const postId = ref(null);
+const postSlug = ref(null);
+const isVideoPlaying = ref(true); // Assume video is playing initially because of the autoplay attribute
+
+onMounted(async () => {
+  postId.value = route.query.postId; // Access postId from the query
+  postSlug.value = route.params._post; // Access postSlug from the route params
+  await fetchArticle(postSlug);
+});
+
+let rerender = ref(0);
+let article = ref(null);
+const fetchArticle = async (postSlug) => {
+  console.log("postSlug :>> ", postSlug.value);
+  const QUERY = ref(`
+  {
+        article(filter: { slug: { eq: "${postSlug.value}" } }) {
+        id
+        slug
+        topics {
+          id
+          topic
         }
-        this.isVideoPlaying = !this.isVideoPlaying
+        cta {
+          title
+          url
+        }
+        title
+        _updatedAt
+        description
+        content
+        seo {
+          description
+          noIndex
+          title
+          twitterCard
+        }
+        featuredImage {
+          url
+        }
+        author {
+          id
+          name
+        }
       }
-    },
-    handleVideoEnd() {
-      this.isVideoPlaying = false
+    }
+    `);
+  const { data } = await useGraphqlQuery({ query: QUERY.value });
+  console.log(" data.value.article :>> ", data.value.article);
+  return data.value.article;
+};
+watchEffect(async () => {
+  if (postSlug) {
+    article.value = await fetchArticle(postSlug);
+    if (article.value && article.value.content) {
+      article.value.content = marked(article.value.content);
     }
   }
-}
+  if (article && article.value && article.value.seo) {
+    setMeta();
+  }
+});
+
+// Computed properties for SEO metadata
+// -------------------- DESCRIPTION START --------------------
+const seoDescription = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.description) {
+    return article.value.seo.description;
+  } else {
+    return null;
+  }
+});
+// -------------------- DESCRIPTION END --------------------
+
+// -------------------- TITLE START --------------------
+const seoTitle = computed(() => {
+  if (article.value && article.value.seo && article.value.seo.title) {
+    return article.value.seo.title;
+  } else {
+    return null;
+  }
+});
+// -------------------- TITLE END --------------------
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "short", day: "numeric" };
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", options);
+};
+const redirect = (url) => {
+  router.push(url);
+};
 </script>
 
 <style scoped>
@@ -117,7 +171,8 @@ export default {
 .main-title {
   font-size: 3rem;
   padding: 20px;
-  font-family: Arial, Helvetica, sans-serif, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-family: Arial, Helvetica, sans-serif, ui-serif, Georgia, Cambria,
+    Times New Roman, Times, serif;
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 110%;
@@ -134,16 +189,6 @@ export default {
     max-width: 100%;
     font-size: 40px !important;
   }
-}
-
-.video-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-  color: white;
 }
 
 .title {
@@ -243,7 +288,8 @@ button:hover {
   color: rgb(0, 0, 0);
   font-size: 2.5rem;
   padding: 20px;
-  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times,
+    serif;
   font-size: 2.1rem;
   font-weight: 400;
   line-height: 110%;
@@ -286,7 +332,8 @@ button:hover {
 }
 
 .quote {
-  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-family: Signifier, ui-serif, Georgia, Cambria, Times New Roman, Times,
+    serif;
   font-weight: 400;
   font-size: 2.5em; /* Adjust the size as needed */
   margin-bottom: 0.5em; /* Spacing between quote and author */

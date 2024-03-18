@@ -1,7 +1,11 @@
 <template>
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
-    <Meta v-if="seoDescription" name="description" :content="`${seoDescription}`" />
+    <Meta
+      v-if="seoDescription"
+      name="description"
+      :content="`${seoDescription}`"
+    />
   </Head>
   <div :key="rerender">
     <ArticleContent :article="article" />
@@ -9,18 +13,19 @@
 </template>
 
 <script setup>
-import { ref, computed, watchEffect } from 'vue'
-import { useRouter } from 'vue-router'
-import { marked } from 'marked'
-import { useHead } from '@vueuse/head'
+import { ref, computed, watchEffect } from "vue";
+import { useRouter } from "vue-router";
+import { marked } from "marked";
+import { useHead } from "@vueuse/head";
 
 const props = defineProps({
   postId: String,
-  postSlug: String
-})
-let rerender = ref(0)
-let article = ref(null)
-const fetchArticle = async postSlug => {
+  postSlug: String,
+});
+
+let rerender = ref(0);
+let article = ref(null);
+const fetchArticle = async (postSlug) => {
   const QUERY = ref(`
   {
         article(filter: { slug: { eq: "${postSlug}" } }) {
@@ -53,55 +58,47 @@ const fetchArticle = async postSlug => {
         }
       }
     }
-    `)
-  const { data } = await useGraphqlQuery({ query: QUERY.value })
-  return data.value.article
-}
+    `);
+  const { data } = await useGraphqlQuery({ query: QUERY.value });
+  return data.value.article;
+};
 watchEffect(async () => {
   if (props.postSlug) {
-    article.value = await fetchArticle(props.postSlug)
+    article.value = await fetchArticle(props.postSlug);
     if (article.value && article.value.content) {
-      article.value.content = marked(article.value.content)
+      article.value.content = marked(article.value.content);
     }
   }
   if (article && article.value && article.value.seo) {
-    setMeta()
+    setMeta();
   }
-})
+});
 
-const formatDate = dateString => {
-  const options = { year: 'numeric', month: 'short', day: 'numeric' }
-  const date = new Date(dateString)
-  return date.toLocaleDateString('en-US', options)
-}
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "short", day: "numeric" };
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", options);
+};
 
 // Computed properties for SEO metadata
 // -------------------- DESCRIPTION START --------------------
 const seoDescription = computed(() => {
   if (article.value && article.value.seo && article.value.seo.description) {
-    return article.value.seo.description
+    return article.value.seo.description;
   } else {
-    return null
+    return null;
   }
-})
-// console.log('seoDescription :>> ', seoDescription.value)
-// setTimeout(() => {
-//   console.log('seoDescription :>> ', seoDescription.value)
-// }, 1000)
+});
 // -------------------- DESCRIPTION END --------------------
 
 // -------------------- TITLE START --------------------
 const seoTitle = computed(() => {
   if (article.value && article.value.seo && article.value.seo.title) {
-    return article.value.seo.title
+    return article.value.seo.title;
   } else {
-    return null
+    return null;
   }
-})
-// console.log('seoTitle :>> ', seoTitle.value)
-// setTimeout(() => {
-//   console.log('seoTitle :>> ', seoTitle.value)
-// }, 1000)
+});
 // -------------------- TITLE END --------------------
 
 // const setMeta = () => {
