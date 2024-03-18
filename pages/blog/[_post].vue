@@ -1,12 +1,12 @@
 <template>
-  <!-- <Head>
+  <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta
       v-if="seoDescription"
       name="description"
       :content="`${seoDescription}`"
     />
-  </Head> -->
+  </Head>
   <div class="main">
     <!-- LINKS START -->
     <div class="black margin-bot-110"></div>
