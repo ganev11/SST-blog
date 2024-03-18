@@ -6,9 +6,7 @@ export default defineNuxtConfig({
       datoCmsToken: process.env.DATO_CMS_TOKEN,
     },
   },
-  css: [
-    "~/assets/css/main.css", // Path to your global CSS file
-  ],
+  css: ["~/assets/css/main.css"],
   app: {
     head: {
       charset: "utf-8",
