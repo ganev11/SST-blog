@@ -9,13 +9,8 @@
   </Head>
   <div class="main">
     <!-- LINKS START -->
-    <div class="black"></div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <div class="black margin-bot-110"></div>
+
     <div class="bread-crumb">
       <p>
         <a href="/blog" class="blog-title">Blog</a>
@@ -54,15 +49,12 @@ const router = useRouter();
 const postId = ref(null);
 const postSlug = ref(null);
 const isVideoPlaying = ref(true); // Assume video is playing initially because of the autoplay attribute
-
-onMounted(async () => {
-  postId.value = route.query.postId; // Access postId from the query
-  postSlug.value = route.params._post; // Access postSlug from the route params
-  await fetchArticle(postSlug);
-});
-
 let rerender = ref(0);
 let article = ref(null);
+
+postId.value = route.query.postId; // Access postId from the query
+postSlug.value = route.params._post; // Access postSlug from the route params
+
 const fetchArticle = async (postSlug) => {
   console.log("postSlug :>> ", postSlug.value);
   const QUERY = ref(`
@@ -99,20 +91,19 @@ const fetchArticle = async (postSlug) => {
     }
     `);
   const { data } = await useGraphqlQuery({ query: QUERY.value });
-  console.log(" data.value.article :>> ", data.value.article);
+  // setMeta();
   return data.value.article;
 };
-watchEffect(async () => {
-  if (postSlug) {
-    article.value = await fetchArticle(postSlug);
-    if (article.value && article.value.content) {
-      article.value.content = marked(article.value.content);
-    }
-  }
-  if (article && article.value && article.value.seo) {
-    setMeta();
-  }
-});
+article.value = await fetchArticle(postSlug);
+
+// watchEffect(async () => {
+//   if (postSlug) {
+//     article.value = await fetchArticle(postSlug);
+//     if (article.value && article.value.content) {
+//       article.value.content = marked(article.value.content);
+//     }
+//   }
+// });
 
 // Computed properties for SEO metadata
 // -------------------- DESCRIPTION START --------------------
@@ -146,6 +137,9 @@ const redirect = (url) => {
 </script>
 
 <style scoped>
+.margin-bot-110 {
+  margin-bottom: 110px;
+}
 .blog-title {
   text-decoration: none;
   margin-left: 12px;
