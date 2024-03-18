@@ -10,6 +10,7 @@
   <Head>
     <Title v-if="seoTitle">{{ seoTitle }}</Title>
     <Meta v-if="seoDescription" name="description" :content="seoDescription" />
+    <Meta v-if="seoImage" name="og:image" :content="seoImage" />
     <Meta v-if="seoImage" property="og:image" :content="seoImage" />
     <Meta v-if="seoImage" property="og:url" :content="seoImage" />
     <Meta property="og:type" content="article" />
