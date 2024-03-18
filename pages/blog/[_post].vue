@@ -7,7 +7,7 @@
       :content="`${seoDescription}`"
     />
 
-    <!-- <Meta v-if="seoImage" name="image" :content="`${seoImage}`" /> -->
+    <Meta v-if="seoImage" property="og:image" :content="`${seoImage}`" />
   </Head>
   <div class="main">
     <!-- LINKS START -->
@@ -125,18 +125,18 @@ const seoTitle = computed(() => {
 });
 // -------------------- TITLE END --------------------
 // -------------------- TITLE START --------------------
-// const seoImage = computed(() => {
-//   if (
-//     article.value &&
-//     article.value.seo &&
-//     article.value.seo.image &&
-//     article.value.seo.image.url
-//   ) {
-//     return article.value.seo.image.url;
-//   } else {
-//     return null;
-//   }
-// });
+const seoImage = computed(() => {
+  if (
+    article.value &&
+    article.value.seo &&
+    article.value.seo.image &&
+    article.value.seo.image.url
+  ) {
+    return article.value.seo.image.url;
+  } else {
+    return null;
+  }
+});
 // -------------------- TITLE END --------------------
 watchEffect(async () => {
   if (postSlug) {
