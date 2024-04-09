@@ -24,10 +24,10 @@
       <div class="container-title">
         <div class="blue"></div>
         <div class="yellow">
-          <div class="title">Introducing Sora: Creating video from text</div>
+          <div class="title">ChatSST: Your AI-Powered Sports Analysis Assistant</div>
           <div class="flex-between-video">
             <span>
-              <a href="#" class="learn-more">Learn more about Sora</a>
+              <a href="#" class="learn-more">Learn more about ChatSST</a>
             </span>
             <span>
               <button class="play-stop" @click="toggleVideoPlayback">
@@ -50,22 +50,22 @@
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
-        <h2>Pioneering research on the path to AGI</h2>
+        <h2>Discover Football Pro</h2>
         <a class="anchor-content mg-top-20" :href="`/research/overview`">
-          Learn about our researc
+          Master the Game with AI-powered predictions
         </a>
       </div>
       <div class="flex-item">
-        <h2>Transforming work and creativity with AI</h2>
+        <h2>Elevate your sportsbook with ChatSST</h2>
         <p class="flex-link"></p>
         <a class="anchor-content mg-top-20" :href="`/product`">
-          Explore our products
+          Boost engagement with ChatSST
         </a>
       </div>
       <div class="flex-item">
-        <h2>Join us in shaping the future of technology</h2>
+        <h2>Transform your Telegram Channel with AI-Powered Live Predictions</h2>
         <a class="anchor-content mg-top-20" :href="`/careers`">
-          View careers
+          Be Part of the Innovation
         </a>
       </div>
     </div>
@@ -82,15 +82,15 @@
     <!-- UPDATES END -->
     <!-- SAFETY START -->
     <div class="flex-subtitle">
-      <div class="subtitle">Safety & responsibility</div>
+      <div class="subtitle">Our Mission </div>
       <div class="subtitle-text">
         <div>
-          Our work to create safe and beneficial AI requires a deep
-          understanding of the potential risks and benefits, as well as careful
-          consideration of the impact.
+          At SSTrader.com, we're committed to transforming the iGaming world 
+          by bringing AI into the hands of everyone, from casual bettors 
+          to professional traders and operators.
         </div>
         <a class="anchor-content mg-top-20" :href="`/try`"
-          >Learn about safety</a
+          >More about our mission </a
         >
       </div>
     </div>
@@ -110,13 +110,13 @@
     <!-- SAFETY END -->
     <!-- RESEARCH START -->
     <div class="flex-subtitle">
-      <div class="subtitle">Research</div>
+      <div class="subtitle">Solutions</div>
       <div class="subtitle-text">
         <div>
-          We research generative models and how to align them with human values.
+          We're transforming iGaming by pioneering AI technologies.
         </div>
         <a class="anchor-content mg-top-20" :href="`/research`"
-          >Learn about our research</a
+          >Learn about our solutions</a
         >
       </div>
     </div>
@@ -134,11 +134,11 @@
       <div class="subtitle">Products</div>
       <div class="subtitle-text">
         <div>
-          Our API platform offers our latest models and guides for safety best
-          practices.
+          Our platform empowers sports bettors and traders to create their advanced prediction models
+          easily.
         </div>
         <a class="anchor-content mg-top-20" :href="`/products`"
-          >Explore our products</a
+          >Explore our platform </a
         >
       </div>
     </div>
@@ -153,13 +153,14 @@
     <!-- PRODUCTS END -->
     <!-- CAREERS START -->
     <div class="flex-subtitle">
-      <div class="subtitle">Careers at OpenAI</div>
+      <div class="subtitle">Merging Betting & Trading Worlds</div>
       <div class="subtitle-text">
         <div>
-          Developing safe and beneficial AI requires people from a wide range of
-          disciplines and backgrounds.
+          SSTrader platform provides a sports betting experience 
+          mirroring financial trading.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/careers`">View careers</a>
+        <a class="anchor-content mg-top-20" :href="`/careers`">Discover Football Pro
+</a>
       </div>
     </div>
     <br />
@@ -180,11 +181,11 @@
     <div class="quote-image-container">
       <div class="text-container">
         <p class="quote">
-          “I encourage my team to keep learning. Ideas in different topics or
-          fields can often inspire new ideas and broaden the potential solution
-          space.”
+          “We aims to transform iGaming with a user-friendly AI platform, empowering the gaming
+          community to seamlessly utilize AI for strategic insights and pave the way
+          for game-specific AGI development.”
         </p>
-        <p class="author">Lilian Weng<br />Applied AI at OpenAI</p>
+        <p class="author">SSTrader Team <br </p>
       </div>
       <div class="image-container">
         <img
