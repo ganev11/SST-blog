@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.9.5",
     "@nuxtjs/axios": "^5.13.6",
+    "@rollup/wasm-node": "^4.14.1",
     "@vue/apollo-composable": "^4.0.1",
     "@vueuse/head": "^2.0.0",
     "graphql": "^16.8.1",
@@ -23,5 +24,8 @@
   },
   "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.11"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node"
   }
 }
