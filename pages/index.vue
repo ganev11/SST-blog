@@ -190,7 +190,7 @@
       <div class="image-container">
         <img
           src="../assets/img/3.png"
-          alt="Lilian Weng"
+          alt="SSTrader"
           class="profile-image"
         />
       </div>
