@@ -44,13 +44,53 @@
       </div>
       <div class="form-right">
         <form @submit.prevent="submitForm">
-          <label for="name">First name *</label>
-          <input type="text" name="name" v-model="name" />
-          <label for="email">Email *</label>
-          <input type="email" name="email" v-model="email" />
+          <!-- First Name -->
+          <label for="firstName">First Name *</label>
+          <input
+            type="text"
+            name="firstName"
+            v-model="firstName"
+            class="input-field"
+          />
+
+          <!-- Last Name -->
+          <label for="lastName">Last Name *</label>
+          <input
+            type="text"
+            name="lastName"
+            v-model="lastName"
+            class="input-field"
+          />
+
+          <!-- Business Email -->
+          <label for="businessEmail">Business Email *</label>
+          <input
+            type="email"
+            name="businessEmail"
+            v-model="businessEmail"
+            class="input-field"
+          />
+
+          <!-- Company Website -->
+          <label for="companyWebsite">Company Website</label>
+          <input
+            type="text"
+            name="companyWebsite"
+            v-model="companyWebsite"
+            class="input-field"
+          />
+
+          <!-- Message -->
           <label for="message">Message *</label>
-          <textarea name="message" v-model="message"></textarea>
-          <button class="submit" type="submit">Send Message</button>
+          <textarea
+            name="message"
+            v-model="message"
+            class="input-field-text-area"
+          ></textarea>
+          <!-- Submit Button -->
+          <button class="submit-button" type="submit" :disabled="!isFormValid">
+            Send Message
+          </button>
         </form>
       </div>
     </div>
@@ -70,14 +110,26 @@ export default {
   data() {
     return {
       screenWidth: 0,
-      name: "",
-      email: "",
+      firstName: "",
+      lastName: "",
+      businessEmail: "",
+      companyWebsite: "",
       message: "",
     };
   },
   computed: {
     mobile() {
       return this.screenWidth <= 550;
+    },
+    isFormValid() {
+      // Basic validation checks
+      return (
+        this.isValidName(this.firstName) &&
+        this.isValidName(this.lastName) &&
+        this.isValidEmail(this.businessEmail) &&
+        (this.companyWebsite === "" || this.isValidURL(this.companyWebsite)) &&
+        this.message.trim().length > 0
+      );
     },
   },
   mounted() {
@@ -93,23 +145,41 @@ export default {
   },
   methods: {
     async submitForm() {
+      const formData = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.businessEmail,
+        companyWebsite: this.companyWebsite,
+        message: this.message,
+      };
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name: this.name,
-          email: this.email,
-          message: this.message,
-        }),
+        body: JSON.stringify(formData),
       });
       const result = await response.json();
       if (result.success) {
         console.log(result);
       }
+    },
+    isValidName(name) {
+      return name.trim().length > 0;
+    },
+    isValidEmail(email) {
+      // Simple regex for email validation
+      const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      return regex.test(email);
+    },
+    isValidURL(url) {
+      // Simple regex for URL validation
+      const regex =
+        /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+      return regex.test(url);
     },
     redirect(url) {
       this.$router.push(url);
@@ -120,22 +190,68 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-.submit {
-  background-color: #000;
+.input-field {
+  min-height: 40px; /* Adjust as needed */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: calc(100% - 19px);
+  font-size: 14px;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #e0e0e0;
+}
+.input-field-text-area {
+  min-height: 100px; /* Adjust as needed */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: calc(100% - 19px);
+  font-size: 14px;
+}
+.input-field-text-area:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #e0e0e0;
+}
+
+/* Additional styling for labels if needed */
+label {
+  font-size: 18px;
+}
+.submit-button {
+  background-color: #000 !important;
   color: #fff;
   border: none;
+  border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  min-height: 53px !important;
   border-radius: 4px;
+  margin: 10px 0;
 }
-.submit:hover {
-  background-color: #fff;
+.submit-button:hover {
+  background-color: #fff !important;
+  min-height: 53px !important;
   color: #000;
+  border-radius: 4px;
   border: 1px solid #000;
 }
+.submit-button:disabled {
+  background-color: #ccc !important;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+</style>
+
+<style scoped>
 .profile-image {
   height: auto; /* Maintains the aspect ratio of the image */
   object-fit: cover; /* Ensures the image covers the area without stretching */
