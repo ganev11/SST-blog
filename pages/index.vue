@@ -159,7 +159,7 @@
           SSTrader platform provides a sports betting experience 
           mirroring financial trading.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/sstrader-index-your-advanced-ai-model-for-football-predictions`">Discover SSTrader Index
+        <a class="anchor-content mg-top-20" :href="`/blog/sstrader-index-your-advanced-ai-model-for-football-predictions`">Discover SSTrader Index
 </a>
       </div>
     </div>
