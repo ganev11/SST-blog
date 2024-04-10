@@ -27,7 +27,7 @@
           <div class="title">ChatSST: Your AI-Powered Sports Analysis Assistant</div>
           <div class="flex-between-video">
             <span>
-              <a href="#" class="learn-more">Learn more about ChatSST</a>
+              <a href="`/blog/introducing-chatsst-the-future-of-sports-predictions" class="learn-more`">Learn more about ChatSST</a>
             </span>
             <span>
               <button class="play-stop" @click="toggleVideoPlayback">
@@ -51,20 +51,20 @@
     <div class="flex-container">
       <div class="flex-item">
         <h2> Master the Game with AI-powered predictions</h2>
-        <a class="anchor-content mg-top-20" :href="`/research/overview`">
+        <a class="anchor-content mg-top-20" :href="`/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters`">
           Discover Football Pro
         </a>
       </div>
       <div class="flex-item">
         <h2>Elevate your sportsbook with ChatSST</h2>
         <p class="flex-link"></p>
-        <a class="anchor-content mg-top-20" :href="`/product`">
+        <a class="anchor-content mg-top-20" :href="`/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators`">
           Boost engagement with ChatSST
         </a>
       </div>
       <div class="flex-item">
         <h2>Transform your Telegram Channel with AI Live Predictions</h2>
-        <a class="anchor-content mg-top-20" :href="`/careers`">
+        <a class="anchor-content mg-top-20" :href="`/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict`">
           Be Part of the Innovation
         </a>
       </div>
@@ -89,7 +89,7 @@
           by bringing AI into the hands of everyone, from casual bettors 
           to professional traders and operators.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/try`"
+        <a class="anchor-content mg-top-20" :href="`/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com`"
           >More about our mission </a
         >
       </div>
@@ -115,8 +115,8 @@
         <div>
           We're transforming iGaming by pioneering AI technologies.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/research`"
-          >Learn about our solutions</a
+        <a class="anchor-content mg-top-20" :href="`research/overview`"
+          >Explore Our Solution </a
         >
       </div>
     </div>
@@ -137,8 +137,8 @@
           Our platform empowers sports bettors and traders to create their advanced prediction models
           easily.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/products`"
-          >Explore our platform </a
+        <a class="anchor-content mg-top-20" :href="`/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters`"
+          >Learn more about Football Pro </a
         >
       </div>
     </div>
@@ -159,7 +159,7 @@
           SSTrader platform provides a sports betting experience 
           mirroring financial trading.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/careers`">Discover Football Pro
+        <a class="anchor-content mg-top-20" :href="`/sstrader-index-your-advanced-ai-model-for-football-predictions`">Discover SSTrader Index
 </a>
       </div>
     </div>
