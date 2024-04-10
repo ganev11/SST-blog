@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>{{ "SSTrader" }}</Title>
-    <Meta name="description" :content="'Learn about our AI'" />
+    <Meta name="description":content="' Learn about our AI'" />
   </Head>
 
   <!-- VIDEO START -->
@@ -50,9 +50,9 @@
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
-        <h2>Discover Football Pro</h2>
+        <h2> Master the Game with AI-powered predictions</h2>
         <a class="anchor-content mg-top-20" :href="`/research/overview`">
-          Master the Game with AI-powered predictions
+          Discover Football Pro
         </a>
       </div>
       <div class="flex-item">
@@ -63,7 +63,7 @@
         </a>
       </div>
       <div class="flex-item">
-        <h2>Transform your Telegram Channel with AI-Powered Live Predictions</h2>
+        <h2>Transform your Telegram Channel with AI Live Predictions</h2>
         <a class="anchor-content mg-top-20" :href="`/careers`">
           Be Part of the Innovation
         </a>
