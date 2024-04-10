@@ -97,7 +97,7 @@
     <br />
     <br />
     <img
-      src="../assets/img/1.png"
+      src="../assets/img/Robot.png"
       alt="Safety Image"
       class="full-width-image"
     />
@@ -166,7 +166,7 @@
     <br />
     <br />
     <img
-      src="../assets/img/2.png"
+      src="../assets/img/Office empty 2.png"
       alt="Safety Image"
       class="full-width-image"
     />
