@@ -23,7 +23,7 @@
       </div>
       <div class="text">
         <p>
-        We're not simply developing new technology - we're crafting the Future of iGaming with AI.
+        We're not simply developing new technology - We're crafting the Future of iGaming with AI.
         </p>
         <div class="flex-btns cta">
           <div class="view-research-index flex-text">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="img-wrap">
-      <img src="~/assets/img/image_office.webp" alt="Research" class="profile-image" />
+      <img src="~/assets/img/Office SST1.png" alt="Office" class="profile-image" />
     </div>
     <!-- TITLE SECTION END -->
     <hr class="flex-line" />
@@ -123,7 +123,7 @@
       :redirectUrl="'blog'"
     />
     <br />
-    <img src="~/assets/img/image_laptop.webp" alt="Research" class="profile-image" />
+    <img src="~/assets/img/Office empty 2.png" alt="Research" class="profile-image" />
     <br />
     <br />
     <br />
