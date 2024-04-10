@@ -27,7 +27,7 @@
         </p>
         <div class="flex-btns cta">
           <div class="view-research-index flex-text">
-            <a :href="`/try`"> Learn more about us </a>
+            <a :href="`blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com`"> Learn more about us </a>
           </div>
 
           <span class="underline">
