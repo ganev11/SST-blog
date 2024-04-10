@@ -50,8 +50,12 @@
             type="text"
             name="firstName"
             v-model="firstName"
+            @blur="validateFirstName"
             class="input-field"
           />
+          <p v-if="firstNameError" class="error-message">
+            {{ firstNameError }}
+          </p>
 
           <!-- Last Name -->
           <label for="lastName">Last Name *</label>
@@ -59,8 +63,10 @@
             type="text"
             name="lastName"
             v-model="lastName"
+            @blur="validateLastName"
             class="input-field"
           />
+          <p v-if="lastNameError" class="error-message">{{ lastNameError }}</p>
 
           <!-- Business Email -->
           <label for="businessEmail">Business Email *</label>
@@ -68,25 +74,36 @@
             type="email"
             name="businessEmail"
             v-model="businessEmail"
+            @blur="validateBusinessEmail"
             class="input-field"
           />
+          <p v-if="businessEmailError" class="error-message">
+            {{ businessEmailError }}
+          </p>
 
           <!-- Company Website -->
-          <label for="companyWebsite">Company Website</label>
+          <label for="companyWebsite">Company Website*</label>
           <input
             type="text"
             name="companyWebsite"
             v-model="companyWebsite"
+            @blur="validateCompanyWebsite"
             class="input-field"
           />
+          <p v-if="companyWebsiteError" class="error-message">
+            {{ companyWebsiteError }}
+          </p>
 
           <!-- Message -->
           <label for="message">Message *</label>
           <textarea
             name="message"
             v-model="message"
+            @blur="validateMessage"
             class="input-field-text-area"
           ></textarea>
+          <p v-if="messageError" class="error-message">{{ messageError }}</p>
+
           <!-- Submit Button -->
           <button class="submit-button" type="submit" :disabled="!isFormValid">
             Send Message
@@ -110,25 +127,33 @@ export default {
   data() {
     return {
       screenWidth: 0,
+      // form fields
       firstName: "",
       lastName: "",
       businessEmail: "",
       companyWebsite: "",
       message: "",
+      // validation errors
+      firstNameError: "",
+      lastNameError: "",
+      businessEmailError: "",
+      companyWebsiteError: "",
+      messageError: "",
     };
   },
   computed: {
     mobile() {
       return this.screenWidth <= 550;
     },
+
     isFormValid() {
-      // Basic validation checks
+      // Checks for the presence of error messages
       return (
-        this.isValidName(this.firstName) &&
-        this.isValidName(this.lastName) &&
-        this.isValidEmail(this.businessEmail) &&
-        (this.companyWebsite === "" || this.isValidURL(this.companyWebsite)) &&
-        this.message.trim().length > 0
+        !this.firstNameError &&
+        !this.lastNameError &&
+        !this.businessEmailError &&
+        !this.companyWebsiteError &&
+        !this.messageError
       );
     },
   },
@@ -145,47 +170,85 @@ export default {
   },
   methods: {
     async submitForm() {
-      const formData = {
-        access_key: WEB3FORMS_ACCESS_KEY,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.businessEmail,
-        companyWebsite: this.companyWebsite,
-        message: this.message,
-      };
+      // Validate all fields before attempting to submit
+      this.validateFirstName();
+      this.validateLastName();
+      this.validateBusinessEmail();
+      this.validateCompanyWebsite();
+      this.validateMessage();
+      // Check if form is still valid after validations
+      if (this.isFormValid) {
+        const formData = {
+          access_key: WEB3FORMS_ACCESS_KEY,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.businessEmail,
+          companyWebsite: this.companyWebsite,
+          message: this.message,
+        };
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      if (result.success) {
-        console.log(result);
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        const result = await response.json();
+        if (result.success) {
+          console.log(result);
+        }
       }
     },
-    isValidName(name) {
-      return name.trim().length > 0;
+    validateFirstName() {
+      this.firstNameError =
+        this.firstName.trim().length > 0 ? "" : "First name is required.";
     },
-    isValidEmail(email) {
-      // Simple regex for email validation
+    validateLastName() {
+      this.lastNameError =
+        this.lastName.trim().length > 0 ? "" : "Last name is required.";
+    },
+    validateBusinessEmail() {
       const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-      return regex.test(email);
+      this.businessEmailError = regex.test(this.businessEmail)
+        ? ""
+        : "A valid business email is required.";
     },
-    isValidURL(url) {
-      // Simple regex for URL validation
+    validateCompanyWebsite() {
       const regex =
         /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-      return regex.test(url);
+      this.companyWebsiteError =
+        this.companyWebsite === "" || regex.test(this.companyWebsite)
+          ? ""
+          : "A valid URL is required.";
+    },
+    validateMessage() {
+      this.messageError =
+        this.message.trim().length > 0 ? "" : "Message is required.";
     },
     redirect(url) {
       this.$router.push(url);
     },
     updateScreenWidth() {
       this.screenWidth = window.innerWidth;
+    },
+  },
+  watch: {
+    firstName(newVal) {
+      if (newVal !== "") this.validateFirstName();
+    },
+    lastName(newVal) {
+      if (newVal !== "") this.validateLastName();
+    },
+    businessEmail(newVal) {
+      if (newVal !== "") this.validateBusinessEmail();
+    },
+    companyWebsite(newVal) {
+      if (newVal !== "") this.validateCompanyWebsite();
+    },
+    message(newVal) {
+      if (newVal !== "") this.validateMessage();
     },
   },
 };
@@ -220,6 +283,11 @@ export default {
   background-color: #e0e0e0;
 }
 
+p.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 0px !important;
+}
 /* Additional styling for labels if needed */
 label {
   font-size: 18px;
