@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>{{ "SSTrader" }}</Title>
-    <Meta name="description":content="' Learn about our AI'" />
+    <Meta name="description":content="'Learn about our AI'" />
   </Head>
 
   <!-- VIDEO START -->
