@@ -87,7 +87,7 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <h2>For Super Tipsters and </h2>
+        <h2>For Super Tipsters </h2>
       </div>
       <div class="text">
         <span>
