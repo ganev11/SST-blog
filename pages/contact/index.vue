@@ -38,7 +38,7 @@
 
     <!-- FOCUS START -->
     <hr class="flex-line" />
-    <div class="container">
+    <div class="container" v-if="!isSubmittedSuccessfully">
       <div class="text">
         <div class="subtitle">Contact</div>
       </div>
@@ -111,6 +111,13 @@
         </form>
       </div>
     </div>
+    <div v-else class="container success-message">
+      <h2>Thank you for reaching out!</h2>
+      <p>
+        Your message has been successfully sent. We will get back to you
+        shortly.
+      </p>
+    </div>
     <!-- FOCUS END -->
   </div>
   <Footer />
@@ -118,7 +125,7 @@
 
 <script>
 import Footer from "~/components/Footer.vue";
-const WEB3FORMS_ACCESS_KEY = "73b7d4c5-6e49-42ea-83fd-ba1d78f01c60";
+const WEB3FORMS_ACCESS_KEY = "cc7c5ee6-458b-48c1-9bce-2224cbcb24a1";
 
 export default {
   components: {
@@ -139,6 +146,7 @@ export default {
       businessEmailError: "",
       companyWebsiteError: "",
       messageError: "",
+      isSubmittedSuccessfully: false,
     };
   },
   computed: {
@@ -197,7 +205,8 @@ export default {
         });
         const result = await response.json();
         if (result.success) {
-          console.log(result);
+          // console.log("success", result.success);
+          this.isSubmittedSuccessfully = true;
         }
       }
     },
@@ -218,10 +227,13 @@ export default {
     validateCompanyWebsite() {
       const regex =
         /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-      this.companyWebsiteError =
-        this.companyWebsite === "" || regex.test(this.companyWebsite)
-          ? ""
-          : "A valid URL is required.";
+      if (this.companyWebsite === "") {
+        this.companyWebsiteError = "Company website is required.";
+      } else if (!regex.test(this.companyWebsite)) {
+        this.companyWebsiteError = "A valid URL is required.";
+      } else {
+        this.companyWebsiteError = "";
+      }
     },
     validateMessage() {
       this.messageError =
@@ -254,6 +266,15 @@ export default {
 };
 </script>
 <style scoped>
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+  gap: 20px;
+  padding: 100px 20px 180px 20px !important;
+  align-content: center;
+}
 .input-field {
   min-height: 40px; /* Adjust as needed */
   border-radius: 5px;
