@@ -45,6 +45,7 @@
       <p class="quote">
        ”Coming together from sports traders to tipsters, bookmakers, and syndicates, we push sports predictions forward
         using AI. It's more than business to us; it's a passion.” 
+       </p>
       <div class="font-size-20">
         <span><b> SSTrader Team </b> </span>
         <br />
