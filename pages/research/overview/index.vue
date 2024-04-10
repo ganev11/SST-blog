@@ -139,7 +139,7 @@
       <div class="text">
         <p>The Next Generation of Our AI Tools, Currently Under Development.</p>
         <span class="underline">
-          <a href="/"> Learn about safety </a>
+          <a href="/"> Learn about our future products </a>
         </span>
       </div>
     </div>
