@@ -27,7 +27,7 @@
           <div class="title">ChatSST: Your AI-Powered Sports Analysis Assistant</div>
           <div class="flex-between-video">
             <span>
-              <a href="`/blog/introducing-chatsst-the-future-of-sports-predictions" class="learn-more`">Learn more about ChatSST</a>
+              <a href="/blog/introducing-chatsst-the-future-of-sports-predictions" class="learn-more">Learn more about ChatSST</a>
             </span>
             <span>
               <button class="play-stop" @click="toggleVideoPlayback">
