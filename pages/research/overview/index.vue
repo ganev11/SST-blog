@@ -27,11 +27,11 @@
         </p>
         <div class="flex-btns cta">
           <div class="view-research-index flex-text">
-            <a href="/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com"> Learn more about us </a>
+            <a href="/contact"> Contact sales </a>
           </div>
 
           <span class="underline">
-            <a href="/"> Learn about AI </a>
+            <a href="/"> Learn about us </a>
           </span>
         </div>
       </div>
