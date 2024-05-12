@@ -60,18 +60,17 @@
       <hr class="flex-line" />
       <div class="flex-ft-bt-social">
         <div class="copyright">
-          <b>SSTrader © xxxx–2024</b>
+          <b>SSTrader © 2018-2024</b>
           <a class="anchor link-copyright" href="/terms-policies">Terms & policies</a>
           <a class="anchor link-copyright" href="/privacy-policy">Privacy policy</a>
-          <a class="anchor link-copyright" href="/brand-guidelines">Brand guidelines</a>
         </div>
         <div class="social-links">
           <div class="flex-soc">
-            <a class="anchor link-social" href="/twitter">Twitter</a>
-            <a class="anchor link-social" href="/youtube">YouTube</a>
-            <a class="anchor link-social" href="/github">GitHub</a>
-            <a class="anchor link-social" href="/soundcloud">SoundCloud</a>
-            <a class="anchor link-social" href="/linkedin">LinkedIn</a>
+            <a class="anchor link-social" href="https://twitter.com/sstrader777">Twitter</a>
+            <a class="anchor link-social" href="/twitter">Facebook</a>
+            <a class="anchor link-social" href="https://www.youtube.com/@sstrader1023">YouTube</a>
+            <a class="anchor link-social" href="https://www.linkedin.com/company/sstrader/">LinkedIn</a>
+            <a class="anchor link-social" href="https://t.me/SSTraderAI">Telegram</a>
           </div>
           <a class="anchor link-social" href="#" @click.prevent="scrollToTop">Back to top ↑</a>
         </div>

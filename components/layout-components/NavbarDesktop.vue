@@ -44,13 +44,13 @@
     <div class="right-side-nav">
       <div class="flex-text-mid">
         <span class="nav-item">
-          <a class="anchor" :href="`/login`"> Log in </a>
+          <a class="anchor" :href="`https://auth.sstrader.com/gateway`"> Log in </a>
         </span>
         <arrowSide class="arrow" />
       </div>
       <div class="try-chatgpt flex-text-mid">
         <span class="nav-item-try">
-          <a class="anchor" :href="`/try`">Try ChatGPT</a>
+          <a class="anchor" :href="`https://auth.sstrader.com/login`">Try ChatSST</a>
         </span>
         <arrowSide class="arrow" />
       </div>

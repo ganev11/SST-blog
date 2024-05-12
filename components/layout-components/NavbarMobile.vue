@@ -35,7 +35,7 @@
         <span class="mobile-nav-item">
           <div class="flex-text flex-between">
             <span class="nav-item">
-              <a class="anchor" :href="`/login`"> Log in </a>
+              <a class="anchor" :href="`https://auth.sstrader.com/gateway`"> Log in </a>
             </span>
             <arrowSide class="arrow" />
           </div>
@@ -44,7 +44,7 @@
         <span class="mobile-nav-item">
           <div class="flex-text flex-between">
             <span class="nav-item">
-              <a class="anchor" :href="`/try`">Try ChatGPT</a>
+              <a class="anchor" :href="`https://auth.sstrader.com/login`">Try ChatGPT</a>
             </span>
             <arrowSide class="arrow" />
           </div>
