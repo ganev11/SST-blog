@@ -26,20 +26,16 @@ export default {
       isScrolled: false,
       menuItems: [
         {
-          text: 'Research',
+          text: 'Sports',
           href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Overview', href: '/research/overview' },
-            { text: 'Index', href: '/sub2' },
-            { text: 'GPT-4', href: '/sub4' },
-            { text: 'DALL·E', href: '/sub5' },
-            { text: 'Sora', href: '/sub6' }
+            { text: 'Football Pro', href: '/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters' },
           ]
         },
         {
-          text: 'API',
+          text: 'ChatSST',
           href: false,
           hasArrow: true,
           isOpen: false,

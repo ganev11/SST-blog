@@ -67,7 +67,7 @@
         <div class="social-links">
           <div class="flex-soc">
             <a class="anchor link-social" href="https://twitter.com/sstrader777">Twitter</a>
-            <a class="anchor link-social" href="/twitter">Facebook</a>
+            <a class="anchor link-social" href="https://www.facebook.com/sstrader.official">Facebook</a>
             <a class="anchor link-social" href="https://www.youtube.com/@sstrader1023">YouTube</a>
             <a class="anchor link-social" href="https://www.linkedin.com/company/sstrader/">LinkedIn</a>
             <a class="anchor link-social" href="https://t.me/SSTraderAI">Telegram</a>
