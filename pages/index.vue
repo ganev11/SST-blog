@@ -1,7 +1,8 @@
 <template>
   <Head>
-    <Title>{{ "SSTrader" }}</Title>
-    <Meta name="description":content="'Learn about our AI'" />
+    <Title>Revolutionize iGaming with SSTrader’s AI-Powered Prediction Tools</Title>
+    <Meta name="description":content="'Imagine a world where every prediction, strategy, and decision is enhanced by AI. SSTrader.com brings this vision to life, providing powerful AI prediction tools to everyone from casual players to major operators.'" />
+    <Meta name="og:image" :content="'https://www.datocms-assets.com/120012/1710504738-new-3.png'" />
   </Head>
 
   <!-- VIDEO START -->
