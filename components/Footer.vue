@@ -7,45 +7,30 @@
         </div>
         <div class="flex-columns">
           <div class="footer-section">
-            <h4>Research</h4>
+            <h4>Sports</h4>
             <ul>
-              <li><a class="anchor" href="/research/overview">Overview</a></li>
-              <li><a class="anchor" href="/research/index">Index</a></li>
-              <li><a class="anchor" href="/research/gpt-4">GPT-4</a></li>
-              <li><a class="anchor" href="/research/dall-e-3">DALL-E 3</a></li>
-              <li><a class="anchor" href="/research/sora">Sora</a></li>
+              <li><a class="anchor" href="/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters">Football Pro</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>API</h4>
+            <h4>ChatSST</h4>
             <ul>
-              <li><a class="anchor" href="/api/overview">Overview</a></li>
-              <li><a class="anchor" href="/api/pricing">Pricing</a></li>
-              <li><a class="anchor" href="/api/docs">Docs</a></li>
+              <li><a class="anchor" href="/blog/introducing-chatsst-the-future-of-sports-predictions">For Players</a></li>
+              <li><a class="anchor" href="/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators">For Bookmakers</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>ChatGPT</h4>
+            <h4>Our Mission</h4>
             <ul>
-              <li><a class="anchor" href="/chatgpt/overview">Overview</a></li>
-              <li><a class="anchor" href="/chatgpt/team">Team</a></li>
-              <li><a class="anchor" href="/chatgpt/enterprise">Enterprise</a></li>
-              <li><a class="anchor" href="/chatgpt/pricing">Pricing</a></li>
-              <li><a class="anchor" href="/chatgpt/try-chatgpt">Try ChatGPT</a></li>
+              <li><a class="anchor" href="/blog">Blog</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>Company</h4>
             <ul>
-              <li><a class="anchor" href="/company/about">About</a></li>
-              <li><a class="anchor" href="blog">Blog</a></li>
-              <li><a class="anchor" href="/company/careers">Careers</a></li>
-              <li><a class="anchor" href="/company/charter">Charter</a></li>
-              <li><a class="anchor" href="/company/security">Security</a></li>
-              <li>
-                <a class="anchor" href="/company/customer-stories">Customer stories</a>
-              </li>
-              <li><a class="anchor" href="/company/safety">Safety</a></li>
+              <li><a class="anchor" href="/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com">About</a></li>
+              <li><a class="anchor" href="/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com">Our Mission</a></li>
+              <li><a class="anchor" href="/contact">Contact Us</a></li>
             </ul>
           </div>
         </div>
