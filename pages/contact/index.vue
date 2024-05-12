@@ -21,14 +21,14 @@
       <div class="box-left">
         <h1>Contact our sales team</h1>
         <p>
-          We’re happy to answer questions and get you acquainted with OpenAI,
-          including connecting you with helpful resources, exploring use cases
-          for your team, and discussing packaging options.
+          Let's discuss how our AI features can make your igaming business
+          a leader in innovation and set you apart from the competition.
+          
         </p>
       </div>
       <div class="box-right">
         <img
-          src="~/assets/img/contact.webp"
+          src="~/assets/img/2.png"
           alt="Research"
           class="profile-image"
         />

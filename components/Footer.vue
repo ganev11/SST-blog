@@ -60,7 +60,7 @@
       <hr class="flex-line" />
       <div class="flex-ft-bt-social">
         <div class="copyright">
-          <b>OpenAI © 2015–2024</b>
+          <b>SSTrader © xxxx–2024</b>
           <a class="anchor link-copyright" href="/terms-policies">Terms & policies</a>
           <a class="anchor link-copyright" href="/privacy-policy">Privacy policy</a>
           <a class="anchor link-copyright" href="/brand-guidelines">Brand guidelines</a>

@@ -19,39 +19,37 @@
     <!-- TITLE SECTION START -->
     <div class="container">
       <div class="text">
-        <h1>Pioneering research on the path to AGI</h1>
+        <h1>Pioneering AI in iGaming </h1>
       </div>
       <div class="text">
         <p>
-          We believe our research will eventually lead to artificial general intelligence, a system that can
-          solve human-level problems. Building safe and beneficial AGI is our mission.
+        We're not simply developing new technology - We're crafting the Future of iGaming with AI.
         </p>
         <div class="flex-btns cta">
           <div class="view-research-index flex-text">
-            <a :href="`/try`"> View research index </a>
+            <a href="/contact"> Contact sales </a>
           </div>
 
           <span class="underline">
-            <a href="/"> Learn about safety </a>
+            <a href="/"> Learn about us </a>
           </span>
         </div>
       </div>
     </div>
     <div class="img-wrap">
-      <img src="~/assets/img/image_office.webp" alt="Research" class="profile-image" />
+      <img src="~/assets/img/Office SST1.png" alt="Office" class="profile-image" />
     </div>
     <!-- TITLE SECTION END -->
     <hr class="flex-line" />
     <div class="text-container">
       <p class="quote">
-        “Safely aligning powerful AI systems is one of the most important unsolved problems for our mission.
-        Techniques like learning from human feedback are helping us get closer, and we are actively
-        researching new techniques to help us fill the gaps.”
-      </p>
+       ”Coming together from sports traders to tipsters, bookmakers, and syndicates, we push sports predictions forward
+        using AI. It's more than business to us; it's a passion.” 
+       </p>
       <div class="font-size-20">
-        <span><b> Josh Achiam </b> </span>
+        <span><b> SSTrader Team </b> </span>
         <br />
-        <span> Researcher at OpenAI</span>
+      
       </div>
     </div>
     <br />
@@ -60,12 +58,12 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <div class="subtitle">Focus areas</div>
+        <div class="subtitle">Our Goal </div>
       </div>
       <div class="text">
         <p>
-          We build our generative models using a technology called deep learning, which leverages large
-          amounts of data to train an AI system to perform a task.
+          We leverage cutting-edge technologies and large amounts of data to develop AI solutions that 
+          elevate your igaming business, helping you stand out with superior tools.
         </p>
       </div>
     </div>
@@ -74,12 +72,12 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <h2>Text</h2>
+        <h2>For Super Sports Traders </h2>
       </div>
       <div class="text">
         <span>
-          Our text models are advanced language processing tools that can generate, classify, and summarize
-          text with high levels of coherence and accuracy.
+          Our tools are designed to deepen your game analysis, while our visualizations provide a clear 
+          understanding of the on-field action, helping you make more informed decisions.
         </span>
       </div>
     </div>
@@ -89,13 +87,13 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <h2>Image</h2>
+        <h2>For Super Tipsters </h2>
       </div>
       <div class="text">
         <span>
-          Our research on generative modeling for images has led to representation models like CLIP, which
-          makes a map between text and images that an AI can read, and DALL-E, a tool for creating vivid
-          images from text descriptions.
+          Our AI insights empower tipsters not only to make better-informed decisions but also to offer
+         their communities automated live AI predictions, keeping them engaged 24/7.
+          
         </span>
       </div>
     </div>
@@ -110,12 +108,12 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <h2>Audio</h2>
+        <h2>For Super Bookmakers</h2>
       </div>
       <div class="text">
         <span>
-          Our research on applying AI to audio processing and audio generation has led to developments in
-          automatic speech recognition and original musical compositions.
+          Our solutions transform your platform from a trend-follower to a trendsetter. Strategic tools
+          that boosts engagement, retention, and global market access for bookmakers and operators.
         </span>
       </div>
     </div>
@@ -126,7 +124,7 @@
       :redirectUrl="'blog'"
     />
     <br />
-    <img src="~/assets/img/image_laptop.webp" alt="Research" class="profile-image" />
+    <img src="~/assets/img/Office empty 2.png" alt="Research" class="profile-image" />
     <br />
     <br />
     <br />
@@ -136,12 +134,12 @@
     <hr class="flex-line" />
     <div class="container">
       <div class="text">
-        <div class="subtitle">Past highlights</div>
+        <div class="subtitle">Coming Soon </div>
       </div>
       <div class="text">
-        <p>Our current AI research builds upon a wealth of previous projects and advances.</p>
+        <p>The Next Generation of Our AI Tools, Currently Under Development.</p>
         <span class="underline">
-          <a href="/"> Learn about safety </a>
+          <a href="/"> Learn about our future products </a>
         </span>
       </div>
     </div>
