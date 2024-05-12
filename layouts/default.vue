@@ -40,38 +40,19 @@ export default {
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'Overview', href: '/sub1' },
-            { text: 'Pricing', href: '/sub2' },
-            { text: 'Docs', href: '/sub3' }
+            { text: 'For Players', href: '/blog/introducing-chatsst-the-future-of-sports-predictions' },
+            { text: 'For Bookmakers', href: '/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators' },
           ]
         },
-        {
-          text: 'Chat GPT',
-          href: false,
-          hasArrow: true,
-          isOpen: false,
-          subItems: [
-            { text: 'Overview', href: '/sub1' },
-            { text: 'Team', href: '/sub2' },
-            { text: 'Enterprise', href: '/sub3' },
-            { text: 'Pricing', href: '/sub4' },
-            { text: 'Try ChatGPT', href: '/sub5' }
-          ]
-        },
-        { text: 'Safety', href: '/safety', hasArrow: false, isOpen: false },
+        { text: 'Blog', href: '/blog', hasArrow: false, isOpen: false },
         {
           text: 'Company',
           href: false,
           hasArrow: true,
           isOpen: false,
           subItems: [
-            { text: 'About', href: '/sub1' },
-            { text: 'Blog', href: '/blog' },
-            { text: 'Careers', href: '/sub3' },
-            { text: 'Residency', href: '/sub4' },
-            { text: 'Charter', href: '/sub5' },
-            { text: 'Security', href: '/sub6' },
-            { text: 'Customer stories', href: '/sub7' }
+            { text: 'About', href: '/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com' },
+            { text: 'Contact Us', href: '/contact' },
           ]
         }
       ]
