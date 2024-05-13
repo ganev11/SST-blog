@@ -45,6 +45,7 @@ export default {
           ]
         },
         { text: 'Blog', href: '/blog', hasArrow: false, isOpen: false },
+        { text: 'Solutions', href: '/research/overview', hasArrow: false, isOpen: false },
         {
           text: 'Company',
           href: false,

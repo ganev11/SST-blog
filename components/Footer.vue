@@ -20,9 +20,11 @@
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Our Mission</h4>
+            <h4>Solutions</h4>
             <ul>
               <li><a class="anchor" href="/blog">Blog</a></li>
+              <li><a class="anchor" href="/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict">SuperSportsAI Nexus</a></li>
+              <li><a class="anchor" href="/blog/sstraderassistant-ai-special-market-innovation-for-traders">SSTraderAssistant AI</a></li>
             </ul>
           </div>
           <div class="footer-section">
