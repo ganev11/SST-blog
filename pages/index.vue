@@ -2,7 +2,7 @@
   <Head>
     <Title>Revolutionize iGaming with SSTrader’s AI-Powered Prediction Tools</Title>
     <Meta name="description":content="'Imagine a world where every prediction, strategy, and decision is enhanced by AI. SSTrader.com brings this vision to life, providing powerful AI prediction tools to everyone from casual players to major operators.'" />
-    <Meta name="og:image" :content="'https://www1.sstrader.com/_nuxt/Office%20empty%202.Cz0wayrX.png'" />
+    <Meta name="og:image" :content="'https://sstrader.com/_nuxt/Office%20empty%202.Cz0wayrX.png'" />
   </Head>
 
   <!-- VIDEO START -->
