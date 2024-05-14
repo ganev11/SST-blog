@@ -44,8 +44,18 @@ export default {
             { text: 'For Bookmakers', href: '/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators' },
           ]
         },
+        {
+          text: 'Products',
+          href: false,
+          hasArrow: true,
+          isOpen: false,
+          subItems: [
+            { text: 'Solutions', href: '/research/overview' },
+            { text: 'SuperSportsAI Nexus', href: '/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict' },
+            { text: 'SSTraderAssistant AI', href: '/blog/sstraderassistant-ai-special-market-innovation-for-traders' },
+          ]
+        },
         { text: 'Blog', href: '/blog', hasArrow: false, isOpen: false },
-        { text: 'Solutions', href: '/research/overview', hasArrow: false, isOpen: false },
         {
           text: 'Company',
           href: false,

@@ -20,9 +20,9 @@
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Solutions</h4>
+            <h4>Products</h4>
             <ul>
-              <li><a class="anchor" href="/blog">Blog</a></li>
+              <li><a class="anchor" href="/research/overview">Solutions</a></li>
               <li><a class="anchor" href="/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict">SuperSportsAI Nexus</a></li>
               <li><a class="anchor" href="/blog/sstraderassistant-ai-special-market-innovation-for-traders">SSTraderAssistant AI</a></li>
             </ul>
@@ -32,6 +32,7 @@
             <ul>
               <li><a class="anchor" href="/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com">About</a></li>
               <li><a class="anchor" href="/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com">Our Mission</a></li>
+              <li><a class="anchor" href="/blog">Blog</a></li>
               <li><a class="anchor" href="/contact">Contact Us</a></li>
             </ul>
           </div>
