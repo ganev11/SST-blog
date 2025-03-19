@@ -1,7 +1,7 @@
 <template>
   <Head>
-    <Title>Revolutionize iGaming with SSTrader’s AI-Powered Prediction Tools</Title>
-    <Meta name="description":content="'Imagine a world where every prediction, strategy, and decision is enhanced by AI. SSTrader.com brings this vision to life, providing powerful AI prediction tools to everyone from casual players to major operators.'" />
+    <Title>SSTrader – Revolutionizing Sports Betting with AI </Title>
+    <Meta name="description":content="'SSTrader delivers powerful AI solutions for sportsbooks, operators, and bettors—creating personalized, engaging, and data-driven sports betting experiences.'" />
     <Meta name="og:image" :content="'https://sstrader.com/_nuxt/Office%20empty%202.Cz0wayrX.png'" />
   </Head>
 
@@ -14,6 +14,7 @@
       loop
       ref="videoElement"
       @ended="handleVideoEnd"
+      preload="auto"
     >
       <source
         ref="videoSource"
@@ -25,7 +26,7 @@
       <div class="container-title">
         <div class="blue"></div>
         <div class="yellow">
-          <div class="title">ChatSST: Your AI-Powered Sports Analysis Assistant</div>
+          <div class="title">ChatSST: AI Sports Betting Insights, Simplified</div>
           <div class="flex-between-video">
             <span>
               <a href="/blog/introducing-chatsst-the-future-of-sports-predictions" class="learn-more">Learn more about ChatSST</a>
@@ -51,22 +52,22 @@
     <!-- LINKS START -->
     <div class="flex-container">
       <div class="flex-item">
-        <h2> Master the Game with AI-powered predictions</h2>
+        <h2> Advanced AI Football Predictions Platform </h2>
         <a class="anchor-content mg-top-20" :href="`/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters`">
           Discover Football Pro
         </a>
       </div>
       <div class="flex-item">
-        <h2>Elevate your sportsbook with ChatSST</h2>
+        <h2>Boost Your Sportsbook Engagement </h2>
         <p class="flex-link"></p>
         <a class="anchor-content mg-top-20" :href="`/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators`">
-          Boost engagement with ChatSST
+          Integrate ChatSST
         </a>
       </div>
       <div class="flex-item">
-        <h2>Transform your Telegram Channel with AI Live Predictions</h2>
-        <a class="anchor-content mg-top-20" :href="`/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict`">
-          Be Part of the Innovation
+        <h2> AI Live Betting Agent API </h2>
+        <a class="anchor-content mg-top-20" :href="`/blog/ai-live-tipster-24-7-api-personalized-sports-predictions-and-insights`">
+          Join the AI Revolution
         </a>
       </div>
     </div>
@@ -86,9 +87,8 @@
       <div class="subtitle">Our Mission </div>
       <div class="subtitle-text">
         <div>
-          At SSTrader.com, we're committed to transforming the iGaming world 
-          by bringing AI into the hands of everyone, from casual bettors 
-          to professional traders and operators.
+          SSTrader empowers every stakeholder in sports betting — players,
+          sportsbooks, and traders, with intuitive AI tools for smarter decisions.
         </div>
         <a class="anchor-content mg-top-20" :href="`/blog/pioneering-the-next-era-of-igaming-with-ai-at-sstrader-com`"
           >More about our mission </a
@@ -101,6 +101,7 @@
       src="../assets/img/Robot.png"
       alt="Safety Image"
       class="full-width-image"
+      loading="lazy"
     />
     <br />
     <br />
@@ -114,7 +115,8 @@
       <div class="subtitle">Solutions</div>
       <div class="subtitle-text">
         <div>
-          We're transforming iGaming by pioneering AI technologies.
+        We create innovative AI-powered betting solutions that transform user
+        engagement and boost operational efficiency.
         </div>
         <a class="anchor-content mg-top-20" :href="`research/overview`"
           >Explore Our Solution </a
@@ -135,11 +137,11 @@
       <div class="subtitle">Products</div>
       <div class="subtitle-text">
         <div>
-          Our platform empowers sports bettors and traders to create their advanced prediction models
-          easily.
+          Easily build and customize your sports prediction strategies with our
+          advanced AI-driven platform.
         </div>
         <a class="anchor-content mg-top-20" :href="`/blog/advanced-in-play-football-analytics-master-the-game-with-pro-dashboard-filters`"
-          >Learn more about Football Pro </a
+          >Explore Football Pro </a
         >
       </div>
     </div>
@@ -154,13 +156,13 @@
     <!-- PRODUCTS END -->
     <!-- CAREERS START -->
     <div class="flex-subtitle">
-      <div class="subtitle">Merging Betting & Trading Worlds</div>
+      <div class="subtitle">Powerful API for Developers</div>
       <div class="subtitle-text">
         <div>
-          SSTrader platform provides a sports betting experience 
-          mirroring financial trading.
+          Scalable API delivering personalized AI
+          insights for sports betting apps.
         </div>
-        <a class="anchor-content mg-top-20" :href="`/blog/sstrader-index-your-advanced-ai-model-for-football-predictions`">Discover SSTrader Index
+        <a class="anchor-content mg-top-20" :href="`/blog/ai-live-tipster-24-7-api-personalized-sports-predictions-and-insights`">Explore API Now
 </a>
       </div>
     </div>
@@ -170,6 +172,7 @@
       src="../assets/img/Office empty 2.png"
       alt="Safety Image"
       class="full-width-image"
+      loading="lazy"
     />
     <br />
     <br />
@@ -182,9 +185,9 @@
     <div class="quote-image-container">
       <div class="text-container">
         <p class="quote">
-          “We aims to transform iGaming with a user-friendly AI platform, empowering the gaming
-          community to seamlessly utilize AI for strategic insights and pave the way
-          for game-specific AGI development.”
+          “Our vision is simple: Provide scalable AI infrastructure 
+           empowering anyone to build smarter betting agents and chatbots
+           powering intelligent sports betting experiences.”
         </p>
         <p class="author">SSTrader Team <br </p>
       </div>
@@ -193,6 +196,7 @@
           src="../assets/img/3.png"
           alt="SSTrader"
           class="profile-image"
+          loading="lazy"
         />
       </div>
     </div>
