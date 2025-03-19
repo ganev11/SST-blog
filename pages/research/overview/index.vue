@@ -66,12 +66,12 @@
       <div class="text">
         <div class="subtitle">Problems We Solve for Sportsbooks </div>
       </div>
-      <div class="text">
-        <p>
-          Limited player engagement due to generic betting content.
-          Difficulty retaining users without personalized experiences.
-          Struggling to differentiate from competitors in a crowded market.
-        </p>
+       <div class="text">
+        <ul>
+          <li>Limited player engagement due to generic betting content.</li>
+          <li>Difficulty retaining users without personalized experiences.</li>
+          <li>Struggling to differentiate from competitors in a crowded market.</li>
+        </ul>
       </div>
     </div>
     <!-- FOCUS END -->
