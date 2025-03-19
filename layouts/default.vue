@@ -41,7 +41,7 @@ export default {
           isOpen: false,
           subItems: [
             { text: 'For Players', href: '/blog/introducing-chatsst-the-future-of-sports-predictions' },
-            { text: 'For Bookmakers', href: '/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators' },
+            { text: 'For Business', href: '/blog/maximize-engagement-growth-ai-driven-chatbot-for-igaming-operators' },
           ]
         },
         {
@@ -51,8 +51,8 @@ export default {
           isOpen: false,
           subItems: [
             { text: 'Solutions', href: '/research/overview' },
-            { text: 'SuperSportsAI Nexus', href: '/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict' },
-            { text: 'SSTraderAssistant AI', href: '/blog/sstraderassistant-ai-special-market-innovation-for-traders' },
+            { text: 'In-Play Betting Agent API', href: '/blog/ai-live-tipster-24-7-api-personalized-sports-predictions-and-insights' },
+            { text: 'Telegram AI Predictions', href: '/blog/introducing-supersportsai-nexus-the-ultimate-telegram-bot-for-live-sports-predict' },
           ]
         },
         { text: 'Blog', href: '/blog', hasArrow: false, isOpen: false },
