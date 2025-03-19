@@ -65,7 +65,7 @@
         </a>
       </div>
       <div class="flex-item">
-        <h2> AI Live Betting Agent API </h2>
+        <h2> AI Live Betting Agent API Real-Time Insights </h2>
         <a class="anchor-content mg-top-20" :href="`/blog/ai-live-tipster-24-7-api-personalized-sports-predictions-and-insights`">
           Join the AI Revolution
         </a>
