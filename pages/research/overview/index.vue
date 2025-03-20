@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="img-wrap">
-      <img src="~/assets/img/Office SST1.png" alt="Office" class="profile-image" />
+      <img src="~/assets/img/Office SST1.png" alt="Office" class="profile-image" loading="lazy" /> 
     </div>
     <!-- TITLE SECTION END -->
     <hr class="flex-line" />
@@ -131,7 +131,7 @@
       :redirectUrl="'blog'"
     />
     <br />
-    <img src="~/assets/img/Office empty 2.png" alt="Research" class="profile-image" />
+    <img src="~/assets/img/Office empty 2.png" alt="Research" class="profile-image"loading="lazy" />
     <br />
     <br />
     <br />
