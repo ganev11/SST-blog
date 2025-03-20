@@ -2,7 +2,7 @@
   <Head>
     <Title>SSTrader: AI Infrastructure for Smarter Sports Betting </Title>
     <Meta name="description":content="'SSTrader helps sportsbooks and betting brands attract and retain players through AI-driven predictions, real-time insights, and personalized betting experiences.'" />
-    <Meta name="og:image" :content="'https://www1.sstrader.com/_nuxt/Office%20empty%202.Cz0wayrX.png'" />
+    <Meta name="og:image" :content="'https://www1.sstrader.com/_nuxt/Office%20empty%202.Cz0wayrX.png'"loading="lazy" />
   </Head>
   <div class="main">
     <!-- LINKS START -->
