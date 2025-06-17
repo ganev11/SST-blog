@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "offline-build": "node scripts/offline-build.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
