@@ -94,7 +94,9 @@ async function downloadAssets(articles) {
 async function runGenerate() {
   await new Promise((resolve, reject) => {
     const npxCmd = process.platform === 'win32' ? 'npx.cmd' : 'npx';
-    const child = spawn(npxCmd, ['nuxi', 'generate'], { stdio: 'inherit' });
+    const options = { stdio: 'inherit' };
+    if (process.platform === 'win32') options.shell = true;
+    const child = spawn(npxCmd, ['nuxi', 'generate'], options);
     child.on('close', code => {
       if (code !== 0) reject(new Error('nuxt generate failed'));
       else resolve();
