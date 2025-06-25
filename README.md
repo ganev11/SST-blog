@@ -102,6 +102,8 @@ npm run offline-build
 
 This command downloads all image assets referenced by the GraphQL queries into
 `/public/datocms`, runs `nuxt generate`, and rewrites the built files in `dist/`
+
 to point at those local images. The script automatically loads variables from a
 `.env` file and exits if `DATO_CMS_TOKEN` is missing.
+
 
