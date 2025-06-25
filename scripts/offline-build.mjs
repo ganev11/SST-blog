@@ -1,6 +1,30 @@
 import fs from 'fs/promises';
+
+import fsSync from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
+
+function loadEnv() {
+  const envPath = path.resolve('.env');
+  if (fsSync.existsSync(envPath)) {
+    const lines = fsSync.readFileSync(envPath, 'utf-8').split(/\r?\n/);
+    for (const line of lines) {
+      const match = line.match(/^\s*([^#=]+?)\s*=\s*(.*)\s*$/);
+      if (match) {
+        let value = match[2];
+        if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+          value = value.slice(1, -1);
+        }
+        if (!process.env[match[1]]) {
+          process.env[match[1]] = value;
+        }
+      }
+    }
+  }
+}
+
+loadEnv();
+
 
 const token = process.env.DATO_CMS_TOKEN;
 if (!token) {
