@@ -87,7 +87,14 @@ const handleClick = post => {
   >
     <div class="article-card" v-for="post in data.allArticles" :key="post.id" @click="handleClick(post)">
       <div class="image-container">
-        <img :src="post.featuredImage.url" :alt="`Image for ${post.title}`" class="article-image" />
+        <NuxtImg
+          :src="post.featuredImage.url"
+          :alt="`Image for ${post.title}`"
+          class="article-image"
+          width="600"
+          sizes="sm:100vw md:50vw lg:400px"
+          format="webp"
+        />
       </div>
       <div class="article-info">
         <h2 class="article-title" :style="`color:  ${props.color}`">{{ post.title }}</h2>

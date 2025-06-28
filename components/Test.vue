@@ -37,7 +37,14 @@ const handleClick = () => {
     <!-- Use h2 for title for semantic HTML, you can change as needed -->
     <p>{{ post.description }}</p>
     {{ post.content }}
-    <img :src="post.featuredImage.url" :alt="`Image for ${post.title}`" class="img" />
+    <NuxtImg
+      :src="post.featuredImage.url"
+      :alt="`Image for ${post.title}`"
+      class="img"
+      width="600"
+      sizes="sm:100vw md:50vw lg:400px"
+      format="webp"
+    />
     <!-- Display the image -->
   </div>
 </template>

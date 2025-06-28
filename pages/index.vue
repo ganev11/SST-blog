@@ -97,11 +97,13 @@
     </div>
     <br />
     <br />
-    <img
-      src="../assets/img/Robot.png"
+    <NuxtImg
+      src="/assets/img/Robot.png"
       alt="Safety Image"
       class="full-width-image"
       loading="lazy"
+      width="800"
+      format="webp"
     />
     <br />
     <br />
@@ -168,11 +170,13 @@
     </div>
     <br />
     <br />
-    <img
-      src="../assets/img/Office empty 2.png"
+    <NuxtImg
+      src="/assets/img/Office empty 2.png"
       alt="Safety Image"
       class="full-width-image"
       loading="lazy"
+      width="800"
+      format="webp"
     />
     <br />
     <br />
@@ -192,11 +196,13 @@
         <p class="author">SSTrader Team <br </p>
       </div>
       <div class="image-container">
-        <img
-          src="../assets/img/3.png"
+        <NuxtImg
+          src="/assets/img/3.png"
           alt="SSTrader"
           class="profile-image"
           loading="lazy"
+          width="400"
+          format="webp"
         />
       </div>
     </div>
