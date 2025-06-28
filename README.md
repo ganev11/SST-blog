@@ -117,7 +117,7 @@ This command downloads all image assets referenced by the GraphQL queries into
  `.env` file and exits if `DATO_CMS_TOKEN` is missing. On Windows the script
  automatically spawns `npx.cmd`, so ensure Node.js is installed and available on
  your `PATH`. During this build the `OFFLINE_BUILD` environment variable is set
- so Nuxt uses the `static` image provider instead of `ipx`, which avoids Windows
+ so Nuxt uses the `ipxStatic` image provider instead of `ipx`, which avoids Windows
  path issues when generating image assets.
 
 
