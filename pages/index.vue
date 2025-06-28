@@ -171,7 +171,7 @@
     <br />
     <br />
     <NuxtImg
-      src="/assets/img/Office empty 2.png"
+      src="/assets/img/Office-empty-2.png"
       alt="Safety Image"
       class="full-width-image"
       loading="lazy"

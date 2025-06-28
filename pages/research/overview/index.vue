@@ -44,7 +44,7 @@
     </div>
     <div class="img-wrap">
       <NuxtImg
-        src="/assets/img/Office SST1.png"
+        src="/assets/img/OfficeSST1.png"
         alt="Office"
         class="profile-image"
         loading="lazy"
@@ -139,7 +139,7 @@
     />
     <br />
     <NuxtImg
-      src="/assets/img/Office empty 2.png"
+      src="/assets/img/Office-empty-2.png"
       alt="Research"
       class="profile-image"
       loading="lazy"
