@@ -135,6 +135,28 @@ async function rewriteDist(mapping) {
   }
 }
 
+async function copyDir(src, dest) {
+  await fs.mkdir(dest, { recursive: true });
+  const entries = await fs.readdir(src, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      await copyDir(srcPath, destPath);
+    } else {
+      await fs.copyFile(srcPath, destPath);
+    }
+  }
+}
+
+async function copyLocalAssets() {
+  const srcDir = path.join('assets', 'img');
+  const destDir = path.join('dist', 'assets', 'img');
+  if (fsSync.existsSync(srcDir)) {
+    await copyDir(srcDir, destDir);
+  }
+}
+
 async function main() {
   const articles = await fetchArticles();
   const mapping = await downloadAssets(articles);
@@ -143,6 +165,7 @@ async function main() {
   // using invalid characters from remote URLs.
   process.env.OFFLINE_BUILD = '1';
   await runGenerate();
+  await copyLocalAssets();
   await rewriteDist(mapping);
   console.log('Offline build complete');
 }
