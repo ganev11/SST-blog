@@ -9,9 +9,10 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   modules: ["@nuxt/image"],
   image: {
-    // Use the IPX provider normally, but switch to the "ipxStatic" provider
-    // when performing an offline build to avoid Windows path issues
-    provider: process.env.OFFLINE_BUILD ? "ipxStatic" : "ipx",
+    // Use the IPX provider normally. During an offline build we disable image
+    // processing entirely to avoid Windows path issues when IPX tries to create
+    // files based on remote URLs.
+    provider: process.env.OFFLINE_BUILD ? "none" : "ipx",
     domains: ["www.datocms-assets.com"],
   },
   app: {
