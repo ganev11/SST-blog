@@ -38,6 +38,16 @@ yarn dev
 bun run dev
 ```
 
+### Using the Nuxt Image module
+
+This project now uses the `@nuxt/image` module for optimized image delivery.
+After pulling the latest code, run `npm install` to install the new dependency
+and then start the dev server as usual:
+
+```bash
+npm run dev
+```
+
 ## Production
 
 Build the application for production:

@@ -22,7 +22,14 @@
         </div>
       </div>
       <div class="image">
-        <img :src="article.featuredImage.url" alt="Image description" class="profile-image" />
+        <NuxtImg
+          :src="article.featuredImage.url"
+          alt="Image description"
+          class="profile-image"
+          width="800"
+          sizes="sm:100vw md:50vw lg:400px"
+          format="webp"
+        />
       </div>
     </div>
     <!-- TITLE SECTION END -->

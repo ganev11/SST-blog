@@ -27,10 +27,12 @@
         </p>
       </div>
       <div class="box-right">
-        <img
-          src="~/assets/img/2.png"
+        <NuxtImg
+          src="/assets/img/2.png"
           alt="Research"
           class="profile-image"
+          width="600"
+          format="webp"
         />
       </div>
     </div>

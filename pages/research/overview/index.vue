@@ -43,7 +43,14 @@
       </div>
     </div>
     <div class="img-wrap">
-      <img src="~/assets/img/Office SST1.png" alt="Office" class="profile-image" loading="lazy" /> 
+      <NuxtImg
+        src="/assets/img/Office SST1.png"
+        alt="Office"
+        class="profile-image"
+        loading="lazy"
+        width="800"
+        format="webp"
+      />
     </div>
     <!-- TITLE SECTION END -->
     <hr class="flex-line" />
@@ -131,7 +138,14 @@
       :redirectUrl="'blog'"
     />
     <br />
-    <img src="~/assets/img/Office empty 2.png" alt="Research" class="profile-image"loading="lazy" />
+    <NuxtImg
+      src="/assets/img/Office empty 2.png"
+      alt="Research"
+      class="profile-image"
+      loading="lazy"
+      width="800"
+      format="webp"
+    />
     <br />
     <br />
     <br />

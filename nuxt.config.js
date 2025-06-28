@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
+  modules: ["@nuxt/image"],
+  image: {
+    provider: "ipx",
+    domains: ["www.datocms-assets.com"],
+  },
   app: {
     head: {
       charset: "utf-8",
