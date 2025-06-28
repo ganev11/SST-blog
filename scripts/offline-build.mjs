@@ -138,6 +138,10 @@ async function rewriteDist(mapping) {
 async function main() {
   const articles = await fetchArticles();
   const mapping = await downloadAssets(articles);
+  // Disable IPX image processing during the static generation step
+  // so Windows builds do not fail when "ipx" tries to create files
+  // using invalid characters from remote URLs.
+  process.env.OFFLINE_BUILD = '1';
   await runGenerate();
   await rewriteDist(mapping);
   console.log('Offline build complete');
