@@ -112,8 +112,9 @@ npm run offline-build
 
 This command downloads all image assets referenced by the GraphQL queries into
 `/public/datocms`, runs `nuxt generate`, and rewrites the built files in `dist/`
-
- to point at those local images. The script automatically loads variables from a
+to point at those local images. It also copies any local images under
+`/assets/img` into the generated `dist` directory so paths like
+`/assets/img/Robot.png` continue to work. The script automatically loads variables from a
  `.env` file and exits if `DATO_CMS_TOKEN` is missing. On Windows the script
  automatically spawns `npx.cmd`, so ensure Node.js is installed and available on
  your `PATH`. During this build the `OFFLINE_BUILD` environment variable is set
