@@ -115,11 +115,13 @@ This command downloads all image assets referenced by the GraphQL queries into
 to point at those local images. It also copies any local images under
 `/assets/img` into the generated `dist` directory so paths like
 `/assets/img/Robot.png` continue to work. The script automatically loads variables from a
- `.env` file and exits if `DATO_CMS_TOKEN` is missing. On Windows the script
- automatically spawns `npx.cmd`, so ensure Node.js is installed and available on
- your `PATH`. During this build the `OFFLINE_BUILD` environment variable is set
- so Nuxt disables image processing (uses the `none` provider) instead of the
- default `ipx` provider, avoiding Windows path issues when generating image
- assets.
+`.env` file and exits if `DATO_CMS_TOKEN` is missing. On Windows the script
+automatically spawns `npx.cmd`, so ensure Node.js is installed and available on
+your `PATH`. During this build the `OFFLINE_BUILD` environment variable is set
+so Nuxt disables image processing (uses the `none` provider) instead of the
+default `ipx` provider, avoiding Windows path issues when generating image
+ assets. After the build completes, the script now generates multiple image
+ sizes for each downloaded asset and updates the generated HTML `srcset`
+ attributes so offline pages still use responsive images.
 
 
