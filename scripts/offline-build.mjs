@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import fsSync from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
+import sharp from 'sharp';
 
 function loadEnv() {
   const envPath = path.resolve('.env');
@@ -66,10 +67,25 @@ async function download(url, dir) {
   return filename;
 }
 
+async function generateVariants(filePath) {
+  const { dir, name, ext } = path.parse(filePath);
+  if (ext.toLowerCase() === '.svg') return {};
+  const widths = [384, 400, 640, 768, 800, 1280];
+  const variants = {};
+  for (const w of widths) {
+    const outName = `${name}-${w}w${ext}`;
+    const outPath = path.join(dir, outName);
+    await sharp(filePath).resize({ width: w }).toFile(outPath);
+    variants[w] = `/datocms/${outName}`;
+  }
+  return variants;
+}
+
 async function downloadAssets(articles) {
   const dir = path.join('public', 'datocms');
   await fs.mkdir(dir, { recursive: true });
   const mapping = {};
+  const variantsMap = {};
   const regex = /(https?:\/\/[^\s"')]+\.(?:png|jpe?g|gif|webp|svg))/gi;
   for (const art of articles) {
     const urls = [];
@@ -82,13 +98,16 @@ async function downloadAssets(articles) {
       if (mapping[url]) continue;
       try {
         const name = await download(url, dir);
+        const localPath = path.join(dir, name);
+        const variants = await generateVariants(localPath);
         mapping[url] = `/datocms/${name}`;
+        variantsMap[`/datocms/${name}`] = variants;
       } catch (e) {
         console.error(e);
       }
     }
   }
-  return mapping;
+  return { mapping, variantsMap };
 }
 
 async function runGenerate() {
@@ -135,6 +154,25 @@ async function rewriteDist(mapping) {
   }
 }
 
+async function rewriteSrcsets(variantsMap) {
+  const files = await getFiles('dist');
+  for (const file of files) {
+    let content = await fs.readFile(file, 'utf-8');
+    let changed = false;
+    for (const [orig, variants] of Object.entries(variantsMap)) {
+      for (const [w, pathVar] of Object.entries(variants)) {
+        const escaped = orig.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`${escaped}\s+${w}w`, 'g');
+        if (regex.test(content)) {
+          content = content.replace(regex, `${pathVar} ${w}w`);
+          changed = true;
+        }
+      }
+    }
+    if (changed) await fs.writeFile(file, content);
+  }
+}
+
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
   const entries = await fs.readdir(src, { withFileTypes: true });
@@ -159,7 +197,7 @@ async function copyLocalAssets() {
 
 async function main() {
   const articles = await fetchArticles();
-  const mapping = await downloadAssets(articles);
+  const { mapping, variantsMap } = await downloadAssets(articles);
   // Disable IPX image processing during the static generation step
   // so Windows builds do not fail when "ipx" tries to create files
   // using invalid characters from remote URLs.
@@ -167,6 +205,7 @@ async function main() {
   await runGenerate();
   await copyLocalAssets();
   await rewriteDist(mapping);
+  await rewriteSrcsets(variantsMap);
   console.log('Offline build complete');
 }
 
