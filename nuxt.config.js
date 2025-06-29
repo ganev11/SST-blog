@@ -1,3 +1,5 @@
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
 export default defineNuxtConfig({
   ssr: true, // Explicitly enable SSR
   devtools: { enabled: true },
@@ -14,6 +16,17 @@ export default defineNuxtConfig({
     // files based on remote URLs.
     provider: process.env.OFFLINE_BUILD ? "none" : "ipx",
     domains: ["www.datocms-assets.com"],
+  },
+  vite: {
+    plugins: [
+      ViteImageOptimizer({
+        png: { quality: 80 },
+        jpeg: { quality: 80 },
+        jpg: { quality: 80 },
+        webp: { quality: 80 },
+        avif: { quality: 50 },
+      }),
+    ],
   },
   app: {
     head: {
